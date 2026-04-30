@@ -1,11 +1,8 @@
-version: "3.8"
 services:
   mysql:
     image: mysql:8.0
     container_name: lofishmart_mysql
     restart: unless-stopped
-    env_file:
-      - ./lofishmart-backend/.env.example
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_PASS}
       - MYSQL_DATABASE=${DB_NAME}
@@ -18,14 +15,14 @@ services:
     image: phpmyadmin/phpmyadmin
     container_name: lofishmart_phpmyadmin
     restart: unless-stopped
-    env_file:
-      - ./lofishmart-backend/.env
     environment:
       - PMA_HOST=mysql
       - PMA_PORT=3306
       - MYSQL_ROOT_PASSWORD=${DB_PASS}
     ports:
       - "8080:80"
+    depends_on:
+      - mysql
 
 volumes:
   mysql_data:
