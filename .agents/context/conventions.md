@@ -24,7 +24,9 @@ These conventions apply to **all agents** working on this project. They reflect 
 ✅ routes/selling.js     ← production route
 ❌ routes/index.js       ← TEST / LEGACY ONLY
 ```
-- All routers must be mounted with a prefix in `app.js`.
+- All routers are mounted **under `/api`** in `app.js` (e.g., `app.use('/api/product', productRouter)`).
+- Route files define paths **without** the `/api` prefix — it is applied only at the mount point.
+- Full rule: `lofishmart-backend/API_RULES.md`
 - Any route receiving `multipart/form-data` **must** include Multer middleware.
 
 ### Controllers
@@ -33,13 +35,16 @@ These conventions apply to **all agents** working on this project. They reflect 
 
 ### Database / Migrations
 ```bash
-# Creating a migration
-npx typeorm migration:create db/migrations/DescriptiveName
+# Creating a migration (ALWAYS use this — never create the file manually)
+npm run migration:create -- ./db/migrations/DescriptiveName
 
 # Running migrations
-npm run migration:run
+npm run migration
 
-# Creating a seeder (never create manually)
+# Reverting the last migration
+npm run migration:revert
+
+# Creating a seeder (ALWAYS use this — never create the file manually)
 npm run seeder:create <SeederName>
 
 # Running seeders
@@ -47,6 +52,7 @@ npm run seeder:run
 ```
 - **Never** edit migration files after they have been run in any environment.
 - Seeders are tracked separately in the `seeders` table, not `migrations`.
+- Full rules: `lofishmart-backend/RULES.md`
 
 ### Middleware
 - JWT verification is applied via `middleware/auth.js`.

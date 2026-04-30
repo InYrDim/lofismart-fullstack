@@ -10,7 +10,7 @@ Manages all database schema changes, migrations, seeders, and TypeORM entity ali
 1. `.agents/context/project-overview.md`
 2. `.agents/context/tech-stack.md`
 3. `.agents/context/constraints.md`
-4. `lofishmart-backend/RULES.md`
+4. `lofishmart-backend/RULES.md` ← **migration & seeder commands are defined here — read before any DB work**
 5. **`lofishmart-backend/DATABASE_SCHEMA.md`** ← always regenerate before reading
 6. Active task file
 
@@ -39,10 +39,10 @@ node scripts/dump_schema_to_md.js
 ```
 1. Dump and read DATABASE_SCHEMA.md.
 2. Create a new TypeORM entity in the appropriate entities/ file.
-3. Generate migration:
-   npx typeorm migration:create db/migrations/AddExampleTable
-4. Implement up() and down() in the migration file.
-5. Run: npm run migration:run
+3. Generate migration (use npm script — never create manually):
+   npm run migration:create -- ./db/migrations/AddExampleTable
+4. Implement up() and down() in the generated file.
+5. Run: npm run migration
 6. Dump schema again to verify: node scripts/dump_schema_to_md.js
 7. Update task file.
 ```
@@ -50,8 +50,8 @@ node scripts/dump_schema_to_md.js
 ### Adding a Column to Existing Table
 ```
 1. Dump and read DATABASE_SCHEMA.md to confirm current state.
-2. Generate migration:
-   npx typeorm migration:create db/migrations/AddColumnToExample
+2. Generate migration (use npm script — never create manually):
+   npm run migration:create -- ./db/migrations/AddColumnToExample
 3. Implement up() (ALTER TABLE ADD COLUMN) and down() (DROP COLUMN).
 4. Update the TypeORM entity to match.
 5. Run migration and verify.
@@ -116,9 +116,10 @@ These are critical foreign key chains — do not alter without reviewing impact:
 ## Checklist Before Completing
 
 - [ ] Ran `node scripts/dump_schema_to_md.js` before starting
+- [ ] Migration created with `npm run migration:create -- ./db/migrations/<Name>` (never manually)
 - [ ] Migration has both `up()` and `down()` implemented
-- [ ] Seeder was created with `npm run seeder:create`, not manually
+- [ ] Seeder created with `npm run seeder:create <Name>` (never manually)
 - [ ] Entity file updated to match new schema
-- [ ] Migration ran successfully (`npm run migration:run`)
+- [ ] Migration ran successfully (`npm run migration`)
 - [ ] Schema dump run again after changes to verify
 - [ ] Task file updated with migration name and schema changes

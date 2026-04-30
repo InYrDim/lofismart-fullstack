@@ -11,9 +11,10 @@ Implements and modifies backend features in the `lofishmart-backend/` Node.js Ex
 2. `.agents/context/tech-stack.md`
 3. `.agents/context/conventions.md`
 4. `.agents/context/constraints.md`
-5. `lofishmart-backend/RULES.md`
-6. `lofishmart-backend/openapi.yaml` (if touching API contracts)
-7. Active task file
+5. `lofishmart-backend/RULES.md` ← migrations, seeders, routing rules
+6. `lofishmart-backend/API_RULES.md` ← **always read before touching any route or endpoint**
+7. `lofishmart-backend/openapi.yaml` (if touching API contracts)
+8. Active task file
 
 ---
 
@@ -90,17 +91,21 @@ module.exports = exampleController;
 ### Mounting in app.js
 ```js
 const exampleRouter = require('./routes/example');
-app.use('/api/example', exampleRouter);
+app.use('/api/example', exampleRouter);  // always /api prefix — see API_RULES.md
 ```
+
+> **API Base Path Rule**: All routers are mounted under `/api` in `app.js`.
+> Route files (`routes/*.js`) define paths **without** the `/api` prefix — it is applied at the mount point only.
 
 ---
 
 ## Checklist Before Completing
 
 - [ ] Route is in the correct domain file (not `routes/index.js`)
-- [ ] Router is mounted in `app.js`
+- [ ] Router is mounted in `app.js` **with `/api` prefix** (e.g., `app.use('/api/example', router)`)
+- [ ] Route file itself does NOT include `/api` in its internal paths
 - [ ] JWT middleware applied to all protected routes
-- [ ] RBAC middleware applied with correct roles (check `PERMISSIONS.md`)
+- [ ] RBAC middleware applied with correct roles (check `APP_DOCUMENTATION/PERMISSIONS.md`)
 - [ ] Multer middleware added if request uses `multipart/form-data`
 - [ ] `openapi.yaml` updated
 - [ ] Task file updated with list of changes
