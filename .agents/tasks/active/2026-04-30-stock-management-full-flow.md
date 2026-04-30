@@ -57,9 +57,10 @@ This feature also requires proper **CRUD management of Gudang and Outlets** (cre
 ## Acceptance Criteria
 
 A task is complete when:
-- [ ] Admin can create, edit, and soft-delete Gudang locations
-- [ ] Admin can create, edit, and soft-delete Outlet locations
-- [ ] Admin can assign a Supervisor to an outlet
+- [x] **ST-01: Gudang & Outlet CRUD**
+  - Implement full CRUD for `Profile` (types: `GUDANG`, `OUTLET`).
+  - Add Supervisor-to-Outlet assignment logic.
+  - Build frontend management interface.
 - [ ] Stock can be received from a supplier into a chosen Gudang (with proof upload)
 - [ ] Stock can be transferred from Gudang → Outlet via the 3-status flow
 - [ ] Supervisor can verify (ACC) or the transfer can be cancelled
