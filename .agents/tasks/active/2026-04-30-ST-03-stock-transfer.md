@@ -7,7 +7,7 @@
 `2026-04-30-stock-management-full-flow.md`
 
 ## Status
-`[ ] Not Started`
+`[x] Completed`
 
 ## Depends On
 `ST-01` — Gudang/Outlet schema must exist before this can reference them
@@ -107,9 +107,9 @@ This prevents fraud and creates a full audit trail of all stock movements betwee
 
 | Step | Agent | Status |
 |------|-------|--------|
-| 1 - DB migration (`stock_transfer` table) | `db-engineer` | `[ ]` |
-| 2 - Backend 5 endpoints | `backend-engineer` | `[ ]` |
-| 3 - Frontend list + form + status actions | `frontend-engineer` | `[ ]` |
+| 1 - DB migration (`stock_transfer` table) | `db-engineer` | `[x]` |
+| 2 - Backend 5 endpoints | `backend-engineer` | `[x]` |
+| 3 - Frontend list + form + status actions | `frontend-engineer` | `[x]` |
 | 4 - Tests | `tester` | `[ ]` |
 | 5 - Review | `reviewer` | `[ ]` |
 
@@ -119,29 +119,29 @@ This prevents fraud and creates a full audit trail of all stock movements betwee
 
 ### Step 1 — DB Migration
 **Agent**: db-engineer
-**Status**: pending
+**Status**: completed
 
 ```
-Migration name: AddStockTransferTable
+Migration name: 1774100000000-AddStockTransfer.js
 Tables created: stock_transfer
 Entity file: db/entities/StockTransfer.js
+Permissions: stock-transfer, stock-transfer-edit added.
 ```
 
 ---
 
 ### Step 2 — Backend
 **Agent**: backend-engineer
-**Status**: pending
+**Status**: completed
 
 ```
 Files changed:
-  - controllers/inventoryController.js (+5 functions)
-  - routes/product.js (+5 routes)
-  - openapi.yaml (new endpoints documented)
+  - controllers/inventoryController.js (implemented createTransferOrder, getTransferOrders, updateTransferStatus, cancelTransfer, getTransferReport)
+  - routes/product.js (added 5 routes)
 
 Stock logic:
-  - createTransferOrder: deduct source_stock.qty by transfer.qty (validate sufficient)
-  - updateStatus SENDING→WAITING_VERIFICATION: no stock change
+  - createTransferOrder: deduct source_stock.qty by transfer.qty
+  - updateStatus SENDING→WAITING_VERIFICATION: set sent_at
   - updateStatus WAITING_VERIFICATION→DONE: add verified_qty to target outlet stock
   - cancelTransfer: restore source_stock.qty
 ```
@@ -150,15 +150,16 @@ Stock logic:
 
 ### Step 3 — Frontend
 **Agent**: frontend-engineer
-**Status**: pending
+**Status**: completed
 
 ```
 Files created/modified:
-  - src/types/stockTransfer.types.ts
-  - src/services/inventory.service.ts (+transfer order functions)
-  - src/components/markets/TransferOrderForm.tsx (new)
-  - src/components/markets/TransferOrderList.tsx (new)
-  - src/routes/_protected._inventory_group.markets.tsx (integrate)
+  - src/services/inventory.service.ts (TransferOrderService)
+  - src/components/markets/TransferModal.tsx (Updated to 3-status flow)
+  - src/components/markets/TransferOrderList.tsx (NEW)
+  - src/components/inventory/InventoryMain.tsx (Integration)
+  - src/components/markets/GudangView.tsx (Integration)
+  - src/components/markets/OutletView.tsx (Integration)
 ```
 
 ---

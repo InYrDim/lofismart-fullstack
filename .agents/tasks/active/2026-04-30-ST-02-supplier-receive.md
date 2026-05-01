@@ -7,7 +7,7 @@
 `2026-04-30-stock-management-full-flow.md`
 
 ## Status
-`[ ] Not Started`
+`[x] Completed`
 
 ## Depends On
 `ST-01` — Gudang schema must be confirmed and migrated first
@@ -83,9 +83,9 @@ On submission, the Gudang's stock for that product increases.
 
 | Step | Agent | Status |
 |------|-------|--------|
-| 1 - Verify existing endpoint | `backend-engineer` | `[ ]` |
-| 2 - Extend backend to support gudang_id | `backend-engineer` | `[ ]` |
-| 3 - Frontend form update | `frontend-engineer` | `[ ]` |
+| 1 - Verify existing endpoint | `backend-engineer` | `[x]` |
+| 2 - Extend backend to support warehouse_id + proof | `backend-engineer` | `[x]` |
+| 3 - Frontend form update | `frontend-engineer` | `[x]` |
 | 4 - Test | `tester` | `[ ]` |
 | 5 - Review | `reviewer` | `[ ]` |
 
@@ -95,45 +95,46 @@ On submission, the Gudang's stock for that product increases.
 
 ### Step 1 — Verify Existing Endpoint
 **Agent**: backend-engineer
-**Status**: pending
+**Status**: completed
 
 ```
 File checked: controllers/inventoryController.js → receiveFromSupplier
 Current behavior:
-  - Accepts: <list fields>
-  - Creates: <Purchase record? Stock record?>
-  - Market target: <fixed? from request?>
-Gap identified: <describe what's missing>
+  - Accepts: supplier_id, warehouse_id (refactored from werehouse_id), product_id, purchased_qty, accepted_qty, rejected_qty, reject_reason, price, batch, unit.
+  - Creates: Purchase record, Stock record (or increments), Reject record (if any).
+  - Market target: Dynamic from request (warehouse_id).
+Gap identified: Missing image proof upload support in the backend and frontend.
 ```
 
 ---
 
 ### Step 2 — Backend Extension
 **Agent**: backend-engineer
-**Status**: pending
+**Status**: completed
 
 ```
 Files changed:
-  - controllers/inventoryController.js (receiveFromSupplier extended)
-  - routes/product.js (if route signature changes)
-  - openapi.yaml (updated schema)
+  - controllers/inventoryController.js (receiveFromSupplier & receiveBulkFromSupplier extended with Multer)
+  - routes/product.js (added upload.single('proof'))
+  - db/entities/Purchase.js (added image_proof column)
+  - db/migrations/1777587233798-AddProofToPurchase.js (NEW migration)
 
 Changes:
-  - Added `gudang_id` param to request body
-  - Stock created/updated for target gudang
+  - Added `image_proof` to Purchase entity and DB schema.
+  - Implemented Multer memory storage handling in controllers to save proof images to `upload/purchase/`.
+  - Added JSON parsing for bulk items when sent via FormData.
 ```
 
 ---
 
 ### Step 3 — Frontend
 **Agent**: frontend-engineer
-**Status**: pending
+**Status**: completed
 
 ```
 Files changed:
-  - src/services/inventory.service.ts  ← update receiveFromSupplier payload type
-  - src/components/markets/ReceiveStockForm.tsx (or equivalent)  ← add gudang selector
-  - src/types/inventory.types.ts  ← update ReceivePayload interface
+  - src/services/inventory.service.ts (Fixed warehouse typo, added FormData support for proof)
+  - src/routes/_protected._inventory_group.inventory.receive-supplier.tsx (Added Proof Upload UI, fixed API payload)
 ```
 
 ---

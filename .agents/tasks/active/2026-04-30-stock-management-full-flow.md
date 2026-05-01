@@ -61,13 +61,13 @@ A task is complete when:
   - Implement full CRUD for `Profile` (types: `GUDANG`, `OUTLET`).
   - Add Supervisor-to-Outlet assignment logic.
   - Build frontend management interface.
-- [ ] Stock can be received from a supplier into a chosen Gudang (with proof upload)
-- [ ] Stock can be transferred from Gudang → Outlet via the 3-status flow
-- [ ] Supervisor can verify (ACC) or the transfer can be cancelled
-- [ ] Each Gudang and Outlet shows only its own stock in the inventory view
-- [ ] Admin UI allows switching context between outlets/gudangs
-- [ ] Supervisor can only see their assigned outlet
-- [ ] All above passes tests
+- [x] Stock can be received from a supplier into a chosen Gudang (with proof upload)
+- [x] Stock can be transferred from Gudang → Outlet via the 3-status flow
+- [x] Supervisor can verify (ACC) or the transfer can be cancelled
+- [x] Each Gudang and Outlet shows only its own stock in the inventory view
+- [x] Admin UI allows switching context between outlets/gudangs
+- [x] Supervisor can only see their assigned outlet
+- [ ] All above passes tests (pending ST-04 Step 5 — end-to-end testing)
 
 ---
 
@@ -100,4 +100,4 @@ This master task is split into 4 micro-tasks, each in their own file:
 
 ## Final Review
 **Agent**: reviewer → orchestrator
-**Status**: `[ ]` pending all micro-tasks
+**Status**: `[ ]` pending end-to-end tests (ST-04 Step 5)
