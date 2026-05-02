@@ -1,0 +1,133 @@
+#!/bin/bash
+
+# Colors for terminal output
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+echo -e "${CYAN}====================================================${NC}"
+echo -e "${CYAN}   🚀 LofiSmart Development Environment Starter    ${NC}"
+echo -e "${CYAN}====================================================${NC}"
+
+# Ensure we are in the root directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+# 1. Start Docker Engine if not running
+if ! docker info > /dev/null 2>&1; then
+    echo -e "${YELLOW}🐳 Docker is not running. Attempting to start Docker Desktop...${NC}"
+    
+    # Try common Windows paths for Docker Desktop
+    DOCKER_PATH="/c/Program Files/Docker/Docker/Docker Desktop.exe"
+    
+    if [ -f "$DOCKER_PATH" ]; then
+        # Use start to run without blocking, though bash & usually works too
+        # On Windows bash, this path works
+        "$DOCKER_PATH" &
+        echo -e "${YELLOW}⏳ Waiting for Docker daemon to become responsive...${NC}"
+        # Wait up to 2 minutes
+        MAX_DOCKER_WAIT=60
+        DOCKER_COUNT=0
+        until docker info > /dev/null 2>&1 || [ $DOCKER_COUNT -eq $MAX_DOCKER_WAIT ]; do
+            echo -ne "${YELLOW}.${NC}"
+            sleep 2
+            ((DOCKER_COUNT++))
+        done
+        
+        if [ $DOCKER_COUNT -eq $MAX_DOCKER_WAIT ]; then
+            echo -e "\n${RED}❌ Docker failed to start in time. Please start it manually.${NC}"
+            exit 1
+        fi
+        echo -e "\n${GREEN}✅ Docker is ready!${NC}"
+    else
+        echo -e "${RED}❌ Docker Desktop not found at $DOCKER_PATH.${NC}"
+        echo -e "${YELLOW}Please start Docker manually and try again.${NC}"
+        exit 1
+    fi
+fi
+
+# 2. Sync .env file (Backend -> Root)
+# If root .env doesn't exist OR is different from backend .env, copy it.
+if [ -f "lofishmart-backend/.env" ]; then
+    if [ ! -f ".env" ]; then
+        echo -e "${YELLOW}⚠️  No .env file found in root. Copying from backend...${NC}"
+        cp lofishmart-backend/.env .env
+        echo -e "${GREEN}✅ .env file created in root.${NC}"
+    else
+        # Compare files to see if they changed
+        if ! cmp -s "lofishmart-backend/.env" ".env"; then
+            echo -e "${YELLOW}🔄 .env in backend has changed. Updating root .env...${NC}"
+            cp lofishmart-backend/.env .env
+            echo -e "${GREEN}✅ .env file updated.${NC}"
+        fi
+    fi
+else
+    echo -e "${RED}❌ No .env file found in lofishmart-backend/.env.${NC}"
+    if [ ! -f ".env" ]; then
+        echo -e "${YELLOW}Please create a .env file based on .env.example${NC}"
+        exit 1
+    fi
+fi
+
+# 3. Start Docker Compose
+echo -e "\n${CYAN}🐳 1. Starting Docker Compose services...${NC}"
+docker compose up -d
+
+# 4. Wait for MySQL (Port 3306)
+echo -e "${YELLOW}⏳ Waiting for MySQL to be ready...${NC}"
+MAX_RETRIES=30
+COUNT=0
+until docker exec lofishmart_mysql mysqladmin ping -h localhost --silent 2>/dev/null || [ $COUNT -eq $MAX_RETRIES ]; do
+    echo -ne "${YELLOW}.${NC}"
+    sleep 2
+    ((COUNT++))
+done
+
+if [ $COUNT -eq $MAX_RETRIES ]; then
+    echo -e "\n${RED}❌ MySQL failed to start in time. Check docker logs.${NC}"
+    exit 1
+fi
+
+echo -e "\n${GREEN}✅ MySQL is up and running!${NC}"
+
+# 5. Start Backend
+echo -e "\n${CYAN}📦 2. Starting Backend (lofishmart-backend)...${NC}"
+cd lofishmart-backend
+
+# Run npm run start in background
+npm run start &
+BACKEND_PID=$!
+
+# Wait for backend to be up (checking port 3000)
+echo -e "${YELLOW}⏳ Waiting for Backend to be ready on port 3000...${NC}"
+COUNT=0
+until curl -s http://localhost:3000/api > /dev/null || [ $COUNT -eq $MAX_RETRIES ]; do
+    echo -ne "${YELLOW}.${NC}"
+    sleep 2
+    ((COUNT++))
+    # Check if process is still alive
+    if ! kill -0 $BACKEND_PID 2>/dev/null; then
+        echo -e "\n${RED}❌ Backend process died!${NC}"
+        exit 1
+    fi
+done
+
+if [ $COUNT -eq $MAX_RETRIES ]; then
+    echo -e "\n${RED}❌ Backend timed out!${NC}"
+    kill $BACKEND_PID
+    exit 1
+fi
+
+echo -e "\n${GREEN}✅ Backend is up and running!${NC}"
+
+# 6. Start Frontend
+echo -e "\n${CYAN}🎨 3. Starting Frontend (lofishmart-frontend)...${NC}"
+cd ../lofishmart-frontend
+
+# Trap Ctrl+C to kill the backend process before exiting
+trap "echo -e '\n${YELLOW}Stopping development environment...${NC}'; kill $BACKEND_PID; exit" SIGINT SIGTERM
+
+# Run frontend in foreground (interactive)
+npm run dev
