@@ -48,27 +48,24 @@ if ! docker info > /dev/null 2>&1; then
     fi
 fi
 
-# 2. Sync .env file (Backend -> Root)
-# If root .env doesn't exist OR is different from backend .env, copy it.
-if [ -f "lofishmart-backend/.env" ]; then
-    if [ ! -f ".env" ]; then
-        echo -e "${YELLOW}⚠️  No .env file found in root. Copying from backend...${NC}"
+
+
+# 2. Sync .env file
+if [ -f "lofishmart-backend/.env" ] && [ -f ".env" ]; then
+    if ! cmp -s "lofishmart-backend/.env" ".env"; then
+        echo -e "${YELLOW}🔄 .env files are out of sync. Updating root .env from backend...${NC}"
         cp lofishmart-backend/.env .env
-        echo -e "${GREEN}✅ .env file created in root.${NC}"
-    else
-        # Compare files to see if they changed
-        if ! cmp -s "lofishmart-backend/.env" ".env"; then
-            echo -e "${YELLOW}🔄 .env in backend has changed. Updating root .env...${NC}"
-            cp lofishmart-backend/.env .env
-            echo -e "${GREEN}✅ .env file updated.${NC}"
-        fi
     fi
+elif [ -f "lofishmart-backend/.env" ]; then
+    echo -e "${YELLOW}⚠️  No .env file found in root. Copying from backend...${NC}"
+    cp lofishmart-backend/.env .env
+elif [ -f ".env" ]; then
+    echo -e "${YELLOW}⚠️  No .env file found in backend. Copying from root...${NC}"
+    cp .env lofishmart-backend/.env
 else
-    echo -e "${RED}❌ No .env file found in lofishmart-backend/.env.${NC}"
-    if [ ! -f ".env" ]; then
-        echo -e "${YELLOW}Please create a .env file based on .env.example${NC}"
-        exit 1
-    fi
+    echo -e "${RED}❌ No .env file found in root or backend.${NC}"
+    echo -e "${YELLOW}Please create a .env file based on .env.example${NC}"
+    exit 1
 fi
 
 # 3. Start Docker Compose
