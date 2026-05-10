@@ -228,7 +228,8 @@ Setelah produk ditemukan, frontend mengirim data produk sebagai **JSON object** 
   "code": "8991234567890",
   "base_price": 50000,
   "total_price": 75000,
-  "weight": 1.5
+  "weight": 1.5,
+  "type": "kg"
 }
 ```
 
@@ -239,12 +240,13 @@ Setelah produk ditemukan, frontend mengirim data produk sebagai **JSON object** 
 | `base_price`   | number | Harga dasar per kg                           |
 | `total_price`  | number | Harga setelah dikalkulasi (`basePrice × weight`) |
 | `weight`       | number | Berat produk dari timbangan (kg)             |
+| `type`         | string | Satuan produk: `"kg"` atau `"ekor"`          |
 
 ### Alur Pengiriman Data
 
 ```
 ScaleListener (produk ditemukan)
-  └── response = { name, code, base_price, total_price, weight }
+  └── response = { name, code, base_price, total_price, weight, type }
        └── send(JSON.stringify(response))
             └── port.writable.getWriter()
                  └── TextEncoder.encode(jsonString + "\n")
@@ -259,9 +261,10 @@ const response = {
   name: product.name,
   code: product.barcode,
   base_price: product.basePrice,
-  total_price: product.basePrice * roundedWeight,
-  weight: roundedWeight,
-};
+				total_price: product.basePrice * roundedWeight,
+					weight: roundedWeight,
+					type: product.unit === "2" || product.unit === "PCS" ? "ekor" : "kg",
+				};
 send(JSON.stringify(response)).catch((err) => {
   logger.error("Gagal mengirim data ke serial:", err);
 });
