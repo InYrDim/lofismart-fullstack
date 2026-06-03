@@ -120,11 +120,24 @@ fi
 echo -e "\n${GREEN}✅ Backend is up and running!${NC}"
 
 # 6. Start Frontend
+# 6. Start Frontend
 echo -e "\n${CYAN}🎨 3. Starting Frontend (lofishmart-frontend)...${NC}"
 cd ../lofishmart-frontend
 
 # Trap Ctrl+C to kill the backend process before exiting
 trap "echo -e '\n${YELLOW}Stopping development environment...${NC}'; kill $BACKEND_PID; exit" SIGINT SIGTERM
+
+# Open browser in incognito mode
+echo -e "${YELLOW}🌐 Opening browser in incognito mode...${NC}"
+# Attempt to open Chrome incognito, fallback to Edge InPrivate
+(
+    sleep 3
+    if command -v start >/dev/null; then
+        start chrome --incognito http://localhost:5173 2>/dev/null || \
+        start msedge -inprivate http://localhost:5173 2>/dev/null || \
+        start http://localhost:5173
+    fi
+) &
 
 # Run frontend in foreground (interactive)
 npm run dev
