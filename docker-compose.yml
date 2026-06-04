@@ -24,5 +24,47 @@ services:
     depends_on:
       - mysql
 
+  frontend:
+    build:
+      context: ./lofishmart-frontend
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_BASE_URL=http://localhost:${BACKEND_PORT}/api
+        - VITE_WEBSOCKET_URL=ws://localhost:${BACKEND_PORT}/ws/transaction
+        - VITE_ENABLE_WEBSOCKET=true
+        - VITE_XENDIT_SECRET_KEY=xnd_development_ykEXZ7YVjpAqp4yglKZY9VtmKC1Vs9sgwGO2fwjV1IPlaSldRwl3izUtHDCWvsr
+        - VITE_DEV=false
+        - VITE_PROD=true
+    container_name: lofishmart_frontend
+    ports:
+      - "${FRONTEND_PORT}:80"
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./lofishmart-backend
+      dockerfile: Dockerfile
+    container_name: lofishmart_backend
+    ports:
+      - "${BACKEND_PORT}:3000"
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_NAME=${DB_NAME}
+      - DB_SYNC=${DB_SYNC}
+      - DB_LOGG=${DB_LOGG}
+      - JWT_SECRET=${JWT_SECRET}
+      - PROD=${PROD}
+      - DEV=${DEV}
+      - DEV_ADMIN_URL=${DEV_ADMIN_URL}
+      - PROD_ADMIN_URL=${PROD_ADMIN_URL}
+      - XENDIT_WEBHOOK_TOKEN=${XENDIT_WEBHOOK_TOKEN}
+      - BACKEND_PORT=${BACKEND_PORT}
+    depends_on:
+      - mysql
+    restart: unless-stopped
+
 volumes:
   mysql_data:

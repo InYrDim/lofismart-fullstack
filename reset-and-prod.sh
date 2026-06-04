@@ -8,26 +8,36 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 echo -e "${CYAN}====================================================${NC}"
-echo -e "${CYAN}    ♻️  LofiSmart Full Reset & Dev Starter          ${NC}"
+echo -e "${CYAN}    ♻️  LofiSmart Full Reset & Production Starter          ${NC}"
 echo -e "${CYAN}====================================================${NC}"
 
-# Ensure env is set to dev
-cp .env.dev .env
-cp lofishmart-backend/.env.dev lofishmart-backend/.env
-cp lofishmart-frontend/.env.dev lofishmart-frontend/.env
+# Ensure env is set to prod
+cp .env.prod .env
+cp lofishmart-backend/.env.prod lofishmart-backend/.env
+cp lofishmart-frontend/.env.prod lofishmart-frontend/.env
 
 # Copy compose config
-cp docker-compose.dev.yml docker-compose.yml
+cp docker-compose.prod.yml docker-compose.yml
 
 # 1. Pastikan Docker dan MySQL berjalan dulu (karena reset-db butuh MySQL)
 echo -e "${YELLOW}🐳 Memastikan Docker & MySQL siap...${NC}"
 docker compose up -d
 
-# Tunggu MySQL sebentar (sama seperti logic di start-dev.sh)
+# Load environment variables
+if [ -f ".env" ]; then
+    while IFS= read -r line || [ -n "$line" ]; do
+        line=$(echo "$line" | tr -d '\r')
+        if [[ ! "$line" =~ ^# ]] && [[ "$line" =~ = ]]; then
+            export "$line"
+        fi
+    done < .env
+fi
+
+# Tunggu MySQL sebentar
 echo -e "${YELLOW}⏳ Menunggu MySQL...${NC}"
 MAX_RETRIES=30
 COUNT=0
-until docker exec lofishmart_mysql mysqladmin ping -h localhost --silent 2>/dev/null || [ $COUNT -eq $MAX_RETRIES ]; do
+until docker exec lofishmart_mysql mysqladmin ping -h 127.0.0.1 -u root -p"${DB_PASS}" --silent 2>/dev/null || [ $COUNT -eq $MAX_RETRIES ]; do
     echo -ne "."
     sleep 2
     ((COUNT++))
@@ -49,5 +59,5 @@ if [ $? -ne 0 ]; then
 fi
 
 # 3. Jalankan Start Dev (Backend & Frontend)
-echo -e "\n${CYAN}🚀 Memulai Server Development...${NC}"
-bash start-dev.sh
+echo -e "\n${CYAN}🚀 Memulai Server Production...${NC}"
+bash start-prod.sh
