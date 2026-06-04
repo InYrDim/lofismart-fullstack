@@ -15,6 +15,14 @@ echo -e "${CYAN}====================================================${NC}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
+# set env to dev
+cp .env.dev .env
+cp lofishmart-backend/.env.dev lofishmart-backend/.env
+cp lofishmart-frontend/.env.dev lofishmart-frontend/.env
+
+# copy compose
+cp docker-compose.dev.yml docker-compose.yml
+
 # 1. Start Docker Engine if not running
 if ! docker info > /dev/null 2>&1; then
     echo -e "${YELLOW}🐳 Docker is not running. Attempting to start Docker Desktop...${NC}"
