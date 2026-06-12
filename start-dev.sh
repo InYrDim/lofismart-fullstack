@@ -20,7 +20,7 @@ cp .env.dev .env
 cp lofishmart-backend/.env.dev lofishmart-backend/.env
 cp lofishmart-frontend/.env.dev lofishmart-frontend/.env
 
-# copy compose
+# set dev compose
 cp docker-compose.dev.yml docker-compose.yml
 
 # 1. Start Docker Engine if not running
@@ -101,14 +101,18 @@ echo -e "\n${GREEN}✅ MySQL is up and running!${NC}"
 echo -e "\n${CYAN}📦 2. Starting Backend (lofishmart-backend)...${NC}"
 cd lofishmart-backend
 
+# Load BACKEND_PORT from env
+BACKEND_PORT=$(grep -E "^BACKEND_PORT=" .env | cut -d'=' -f2 | tr -d '\r')
+BACKEND_PORT=${BACKEND_PORT}
+
 # Run npm run start in background
 npm run start &
 BACKEND_PID=$!
 
-# Wait for backend to be up (checking port 3000)
-echo -e "${YELLOW}⏳ Waiting for Backend to be ready on port 3000...${NC}"
+# Wait for backend to be up
+echo -e "${YELLOW}⏳ Waiting for Backend to be ready on port ${BACKEND_PORT}...${NC}"
 COUNT=0
-until curl -s http://localhost:3000/api > /dev/null || [ $COUNT -eq $MAX_RETRIES ]; do
+until curl -s http://localhost:${BACKEND_PORT}/api > /dev/null || [ $COUNT -eq $MAX_RETRIES ]; do
     echo -ne "${YELLOW}.${NC}"
     sleep 2
     ((COUNT++))

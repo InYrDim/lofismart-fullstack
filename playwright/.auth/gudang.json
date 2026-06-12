@@ -1,0 +1,18 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "http://localhost:5173",
+      "localStorage": [
+        {
+          "name": "lofish_user",
+          "value": "{\"id\":\"GDNG001\",\"name\":\"Petugas Gudang 1\",\"role\":\"GDNG\",\"username\":\"gudang1\",\"email\":\"gudang1@lofish.market\",\"image\":null,\"market_id\":null,\"market\":null,\"login\":true,\"hasPermit\":[\"stock-transfer-edit\",\"stock-transfer\"]}"
+        },
+        {
+          "name": "lofish_token",
+          "value": "Bearer waM4ct5m7YxqviBT"
+        }
+      ]
+    }
+  ]
+}
