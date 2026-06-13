@@ -1,0 +1,2562 @@
+{
+  ".codex/hooks.json": {
+    "mtime": 1781297629.0736616,
+    "ast_hash": "553beed8792d7902ee8d2f02c61153a5",
+    "semantic_hash": ""
+  },
+  ".kilo/package.json": {
+    "mtime": 1778161638.708154,
+    "ast_hash": "8f13e142484d681d644cd2a54a949e16",
+    "semantic_hash": ""
+  },
+  "e2e/package.json": {
+    "mtime": 1778470951.1148224,
+    "ast_hash": "b3961e482e792aa4272f3d6afdf2daf4",
+    "semantic_hash": ""
+  },
+  "e2e/playwright.config.ts": {
+    "mtime": 1780556896.4690847,
+    "ast_hash": "d17b2aa284fade4a62569e2da6f14d01",
+    "semantic_hash": ""
+  },
+  "e2e/playwright/.auth/admin.json": {
+    "mtime": 1780562869.2835462,
+    "ast_hash": "a6abadae686076da906d2a70c38fd488",
+    "semantic_hash": ""
+  },
+  "e2e/playwright/.auth/gudang.json": {
+    "mtime": 1780562872.966894,
+    "ast_hash": "84ec693a86c438344cf3ebfebc3f94a0",
+    "semantic_hash": ""
+  },
+  "e2e/playwright/.auth/kasir.json": {
+    "mtime": 1780562871.1479242,
+    "ast_hash": "a05585dbca5ebad763d3c2df63501ade",
+    "semantic_hash": ""
+  },
+  "e2e/playwright/.auth/user.json": {
+    "mtime": 1778471613.8851042,
+    "ast_hash": "7bda918d8a69d8fbf3567ed1f5afa170",
+    "semantic_hash": ""
+  },
+  "e2e/test-results/.last-run.json": {
+    "mtime": 1780562953.3017287,
+    "ast_hash": "f196824657d8858bc7fa44eecbba38b1",
+    "semantic_hash": ""
+  },
+  "e2e/tests/auth.setup.ts": {
+    "mtime": 1778473012.8026643,
+    "ast_hash": "c5ef98eeae43623d353bb10709ad16a8",
+    "semantic_hash": ""
+  },
+  "e2e/tests/dashboard.admin.spec.ts": {
+    "mtime": 1780555391.1252422,
+    "ast_hash": "42037dd1feab1618460f3d83005b49e3",
+    "semantic_hash": ""
+  },
+  "e2e/tests/data-transaksi.admin.spec.ts": {
+    "mtime": 1780556026.690845,
+    "ast_hash": "5dec86b27b2a414bb98dc4052681913e",
+    "semantic_hash": ""
+  },
+  "e2e/tests/management.admin.spec.ts": {
+    "mtime": 1780557408.7557416,
+    "ast_hash": "cfb26bae88731cad9e8c1174fc55e20f",
+    "semantic_hash": ""
+  },
+  "e2e/tests/pos.kasir.spec.ts": {
+    "mtime": 1780555398.3805408,
+    "ast_hash": "5c89a684f19cfe91225ef4a4bdad59f7",
+    "semantic_hash": ""
+  },
+  "e2e/tests/products.admin.spec.ts": {
+    "mtime": 1780558721.363227,
+    "ast_hash": "e4a0b96c3a0921dc1fe3ed0959c50f4d",
+    "semantic_hash": ""
+  },
+  "e2e/tests/stock.gudang.spec.ts": {
+    "mtime": 1780556028.59803,
+    "ast_hash": "ad696eee938ae23852aad297873f86a3",
+    "semantic_hash": ""
+  },
+  "e2e/tsconfig.json": {
+    "mtime": 1778470659.909167,
+    "ast_hash": "7b0179cb91b39e16c871638a4287d8f5",
+    "semantic_hash": ""
+  },
+  "eslint.config.mjs": {
+    "mtime": 1777637531.3879151,
+    "ast_hash": "e3474893d156c6f5c80aa6f02eeb02cc",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/app.js": {
+    "mtime": 1777637788.5791183,
+    "ast_hash": "3f0436bc649b81b4a29991265ca68157",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/bin/www": {
+    "mtime": 1777637788.5791183,
+    "ast_hash": "1914edc73141c27f1630bef3ecd0f149",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/config/data-source.js": {
+    "mtime": 1777637788.5811265,
+    "ast_hash": "7bd90b2a57df7ed00f9276c97b9f241c",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/config/logger.js": {
+    "mtime": 1777637788.5811265,
+    "ast_hash": "4d6345256bf2b2a6303c27e768625d92",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/config/typeorm-cli.js": {
+    "mtime": 1777637788.5811265,
+    "ast_hash": "6a38dd42871eb3f6f9c32e964a175b78",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/config/typeorm-seeder-cli.js": {
+    "mtime": 1777637788.5811265,
+    "ast_hash": "0cf0842c652f1a4e25840540fae41cbb",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/controllers/authController.js": {
+    "mtime": 1777637788.5831337,
+    "ast_hash": "1195e33e8525289636e0b162f11409b1",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/controllers/featureController.js": {
+    "mtime": 1777637788.5831337,
+    "ast_hash": "e94082767274c6ca6527bc98618ad84a",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/controllers/inventoryController.js": {
+    "mtime": 1778483101.1262867,
+    "ast_hash": "a24b55604ee47b4f962e4a29c741ef64",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/controllers/outletController.js": {
+    "mtime": 1777637788.5831337,
+    "ast_hash": "6b43c7acaa89b00e8fb261b66482a54e",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/controllers/productController.js": {
+    "mtime": 1778392466.701227,
+    "ast_hash": "e67064289d0edd3b650161faf0265264",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/controllers/transactionController.js": {
+    "mtime": 1778386670.0329995,
+    "ast_hash": "3d98f47b024ac3beb89e06f949b5c11b",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/controllers/userController.js": {
+    "mtime": 1777637788.5831337,
+    "ast_hash": "9081aa304455ff2cc0dda65c8e0da41a",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/controllers/warehouseController.js": {
+    "mtime": 1777637788.5831337,
+    "ast_hash": "2b8e75bfa78702537b84bc026ff02ac9",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/controllers/webhookController.js": {
+    "mtime": 1777637788.5831337,
+    "ast_hash": "a1eecf204569f73baa04173c0f95e9ed",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/CartItem.js": {
+    "mtime": 1777637788.5831337,
+    "ast_hash": "d43e9262e41d7ead2bcee3fc5fb70e91",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/CashDrawer.js": {
+    "mtime": 1777637788.5831337,
+    "ast_hash": "318707dd442f68fd5d894d9271eebef8",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/CatApp.js": {
+    "mtime": 1777637788.5831337,
+    "ast_hash": "052ba920814e109f505e507f935380d6",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Category.js": {
+    "mtime": 1777637788.5907629,
+    "ast_hash": "9dbc366f09b1aad047226b39bbcc5f26",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Config.js": {
+    "mtime": 1777637788.5907629,
+    "ast_hash": "64a4fead967dcfe1358f7176363697ce",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/DataChange.js": {
+    "mtime": 1777637788.5907629,
+    "ast_hash": "94fba3dced7607ec36a3e77f7d1be231",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/DataReceive.js": {
+    "mtime": 1777637788.5907629,
+    "ast_hash": "648ddec3f498fc59bee4f2ecd0531258",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Failed_job.js": {
+    "mtime": 1777637788.5907629,
+    "ast_hash": "4dd205c008164100b9c0cf4ff3f412c3",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Grade.js": {
+    "mtime": 1777637788.5941553,
+    "ast_hash": "62912a9320c9953bfe7edc89b43343f5",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/HasPermit.js": {
+    "mtime": 1777637788.5941553,
+    "ast_hash": "3a2209173ca8cbd39c411958e376c405",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Member.js": {
+    "mtime": 1777637788.5941553,
+    "ast_hash": "e03875e8a9a193c125b7c89844c51918",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Notification.js": {
+    "mtime": 1777637788.5941553,
+    "ast_hash": "4735f74cb9410de0af1c4a9a7fbc7338",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Permission.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "b124f3c98495be11eb795564948fac90",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/PeymentMethod.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "217c920b15da172a46306f2bd427618c",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Price.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "36c100459b2621e394aa8c0fdbcae1f6",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Product.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "6d2b73262690feeb9162a055916bb4f5",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Profile.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "12fac3ebc7ab9fbee843ae7f84c63dd9",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Purchase.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "c5c61c6d116eb68b86c89196212ddf2b",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Reject.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "28d29ad6a1111830974ab681d91fb63d",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Role.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "7f5c1c56f324848bd953ef70264121d6",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Selling.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "00754945e11d80bf4ad06cdbd9dd8e87",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/SellingProductDetail.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "f0343aef39af90a5628861c0831fba62",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/SellingServiceDetail.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "01f5a44198f5f835388c6f5b9f53689a",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Service.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "545afa448f83ae21e9b76f0b58f36ecd",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Session.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "c6348b3a230f16df91e6787e30be2008",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Size.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "33b4b9aa61116b169ec67ae843c4607e",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Stock.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "2316084043e2db5209e277b2fdcb23d6",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/StockOpname.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "04bd200535e94dd2976805cfc544f711",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/StockOpnameDetail.js": {
+    "mtime": 1777637788.5965507,
+    "ast_hash": "30a19881ff4ce7772f57d30391946c83",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/StockTransfer.js": {
+    "mtime": 1778483059.5400329,
+    "ast_hash": "62f4dee7936f2b9d38d67f707cb4bf69",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Supplier.js": {
+    "mtime": 1777637788.6068232,
+    "ast_hash": "a660a4fefccba301137b3ad1446a097e",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/SyncExport.js": {
+    "mtime": 1777637788.6073337,
+    "ast_hash": "6f46d045eede364efdb4e109e0a2f5dc",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/SyncImport.js": {
+    "mtime": 1777637788.6073337,
+    "ast_hash": "cab25ef76186d50a6844c04414850fb8",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/User.js": {
+    "mtime": 1777637788.6073337,
+    "ast_hash": "db56ffdd7f3cc49997e5276cd8546e80",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/Voucher.js": {
+    "mtime": 1777637788.6073337,
+    "ast_hash": "cb269a89d98d31fef6373451fbd4d751",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/entities/WeightScale.js": {
+    "mtime": 1777637788.6073337,
+    "ast_hash": "eb6e96063af2228d322a9f03bf49e69a",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1763195334011-initMaster.js": {
+    "mtime": 1777637644.9483209,
+    "ast_hash": "c2c58536a7990823aff36045962afdc4",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1763964563135-updateCatApp.js": {
+    "mtime": 1777637644.9483209,
+    "ast_hash": "c82d89aeb59a4fd4a738d31106836f38",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1764125737780-seedRole.js": {
+    "mtime": 1777637788.6073337,
+    "ast_hash": "3f980f053f0d85a047b9d0085b227ff9",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1764126951306-seedUser.js": {
+    "mtime": 1777637788.6073337,
+    "ast_hash": "c99833ce003dad89d35ad2c04fcc62b0",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1764127951306-seedSizeCat.js": {
+    "mtime": 1777637788.6073337,
+    "ast_hash": "8ae99303f0891809a8eabcbd390b1c44",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1764128951306-seedProduct.js": {
+    "mtime": 1777637788.6073337,
+    "ast_hash": "71d65115248f4f0cbed2e1802a85cbaa",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1764951304463-priceUpdate.js": {
+    "mtime": 1777637644.9510674,
+    "ast_hash": "753f5fb030fb3f5f0d80bc6220ad47d9",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1764955659627-opnameUpdate.js": {
+    "mtime": 1777637644.9510674,
+    "ast_hash": "a43288c5b3dda967c6f3caa1e458483f",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1765009578207-sessionUpdate.js": {
+    "mtime": 1777637644.9510674,
+    "ast_hash": "81d1c9c8d72a26d3bbd01c564604c308",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1765210696633-sessionUpdate.js": {
+    "mtime": 1777637644.9555044,
+    "ast_hash": "e6ac4f0babde0d861bb87ef1f543620c",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1765275484978-updateDataSync.js": {
+    "mtime": 1777637644.9555044,
+    "ast_hash": "7fe0839f4431a8b02ae8d1c403799292",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1765278458027-configUpdate.js": {
+    "mtime": 1777637644.9555044,
+    "ast_hash": "3f351e3cc4839c83c2dc557efe5d8a07",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1765287959902-updateLagi.js": {
+    "mtime": 1777637644.9555044,
+    "ast_hash": "7fb0c549609d246b2515e085c29cc50d",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1767970449738-priceUpdate.js": {
+    "mtime": 1777637644.9555044,
+    "ast_hash": "404384abca82a3d4783545887bccfad0",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1770295861469-AddProductPermissions.js": {
+    "mtime": 1777637644.9555044,
+    "ast_hash": "20c0ed19e03c96299f46d99aa1afff5b",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1771570598000-AddKasirRoleAndUser.js": {
+    "mtime": 1777637788.6073337,
+    "ast_hash": "89041b5cf136343ae52c8520bdea113d",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1771600000000-SeedPaymentMethods.js": {
+    "mtime": 1777637788.6122456,
+    "ast_hash": "7528c42077dee4ff7249a0b01f1d2af6",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1771700000000-UniqueProductBarcode.js": {
+    "mtime": 1777637788.6122456,
+    "ast_hash": "fbc76cb26ce5cd197322f3260124f48d",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1771908000000-AddBarcodeToMasterData.js": {
+    "mtime": 1777637788.6122456,
+    "ast_hash": "304e28bb2b416c7929d190873ca9f0c3",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1771910000000-BarcodeConstraintAndReseed.js": {
+    "mtime": 1777637788.6135364,
+    "ast_hash": "9205453b7a9861c5f2e4b6f78f01486a",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1772647543567-AddNewRoles.js": {
+    "mtime": 1777637788.6135364,
+    "ast_hash": "1bc01c1e3edcb4517f5a77b9479bef67",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1772800000000-AddSupervisorRoleAndUserMarket.js": {
+    "mtime": 1777637788.6135364,
+    "ast_hash": "2a0a3fc1d67d66f33327fac5036cb633",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1773251035368-AddApprovalToReject.js": {
+    "mtime": 1777637788.6150224,
+    "ast_hash": "9448adcb73c7d1ce9c3f7e6a9110b6d7",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1773533211000-SeedNewRoleUsers.js": {
+    "mtime": 1777637788.6150224,
+    "ast_hash": "87117e06f486cdb3c77a34bc6fac9f9b",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1773619200000-AddUserPermissionsColumn.js": {
+    "mtime": 1777637788.6160867,
+    "ast_hash": "5144ddfe967dd81da8215ede109f2af0",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1773700000000-AddSizeToPrice.js": {
+    "mtime": 1777637788.6160867,
+    "ast_hash": "f69626ebb9b2784ceea193cee0127937",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1773800000000-AddSupplierToPurchase.js": {
+    "mtime": 1777637788.617207,
+    "ast_hash": "848c0d3613f831d354ef41dbefcf4660",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1773900000000-AddUserImageColumn.js": {
+    "mtime": 1777637788.617207,
+    "ast_hash": "00053c41b3cb13ed3989393099d5483b",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1774054854000-AddTotalWeightToSellingProductDetail.js": {
+    "mtime": 1777637788.617207,
+    "ast_hash": "ed732dd94c5d7817cb6d96ce6b93eab7",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1774054854001-AddSellingPermissions.js": {
+    "mtime": 1777637788.6183856,
+    "ast_hash": "1881e3934b7264934f951a78c42b1cc3",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1774100000000-AddStockTransfer.js": {
+    "mtime": 1777637788.6183856,
+    "ast_hash": "ddf4fa93776853e9b76b1fac1dbb9c2a",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1774100000001-AddImageProofToStockTransfer.js": {
+    "mtime": 1778568256.7546773,
+    "ast_hash": "00f5194312f5b939d1cf5d9d955f8222",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1777100000000-AssignSupervisorToLelongOutlet.js": {
+    "mtime": 1777637788.6183856,
+    "ast_hash": "394b0f9622b051b106fcb62c4626667d",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1777200000000-AddProfileType.js": {
+    "mtime": 1777637788.6183856,
+    "ast_hash": "7882e7277bfa8c118ae6b3fe70759be1",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1777586220709-AddWarehousePermissions.js": {
+    "mtime": 1777637788.6183856,
+    "ast_hash": "68770c1a5dd9f94ac012c3d4e8cfda83",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1777586556252-FixWarehouseTypo.js": {
+    "mtime": 1777637788.6183856,
+    "ast_hash": "9fce18f3317a28a44fa9c718582e75af",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1777587233798-AddProofToPurchase.js": {
+    "mtime": 1777637788.6183856,
+    "ast_hash": "88efad4c47340dd06188cbb21621f35e",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1778000000000-AddKasirPermissions.js": {
+    "mtime": 1778376051.041358,
+    "ast_hash": "6042124f69956541b76a4e0124f9df1a",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/migrations/1778300000000-AddTransferGroup.js": {
+    "mtime": 1778471532.2726133,
+    "ast_hash": "1dc0fc0575e72621f6ae9b32917bc35b",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/seeder/1777254000000-seedRoleAndPermission.js": {
+    "mtime": 1778928636.143161,
+    "ast_hash": "4d35422527b9e681c6b72174b91f2348",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/seeder/1777254902574-seedGrade.js": {
+    "mtime": 1777637788.6223855,
+    "ast_hash": "a257447a8d4fe638b9a8eb2558adb020",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/seeder/1777254950000-seedSettings.js": {
+    "mtime": 1778930582.5644193,
+    "ast_hash": "8800c1c5cd31fae104bccacdec41ff35",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/seeder/1777255000000-seedCategory.js": {
+    "mtime": 1778928642.4497771,
+    "ast_hash": "07693cab9933c1f9000d3dd54bed46cd",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/seeder/1777255748790-seedMarket.js": {
+    "mtime": 1778382752.3476143,
+    "ast_hash": "1f0f18f207bfebfda2497809948f5217",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/seeder/1777255750000-seedConfig.js": {
+    "mtime": 1778930588.8171322,
+    "ast_hash": "adcbef54e2e5519c760db2a556bca074",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/seeder/1777255890000-seedMember.js": {
+    "mtime": 1778946850.5939386,
+    "ast_hash": "46406606c45cc564e962badcef2920b9",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/seeder/1777255899434-seedSupplier.js": {
+    "mtime": 1777637788.6223855,
+    "ast_hash": "7f1a655ce660598efce2f653baacb0bc",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/seeder/1777255986731-seedProduct.js": {
+    "mtime": 1778947860.5241177,
+    "ast_hash": "852a7b458de25cbae35b06726fe42bd1",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/seeder/1777255987528-seedService.js": {
+    "mtime": 1777637788.6223855,
+    "ast_hash": "092fefe69bd934157e45d13b61973dc7",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/seeder/1777255988000-seedPrice.js": {
+    "mtime": 1778947875.0185587,
+    "ast_hash": "fa2ceb26611bba820ad60a474029812f",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/seeder/1777255989000-seedStock.js": {
+    "mtime": 1778947279.0822275,
+    "ast_hash": "96906105792f785990c095eacc12cf00",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/seeder/1777255990000-seedUser.js": {
+    "mtime": 1778928649.7088752,
+    "ast_hash": "5d5514c7de9700d9c8dace665fdd84fa",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/jest.config.js": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "72f0d46c0f6f78e3e0cda2b21a01860f",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/logs/.27dd626474fac02a7c6d50b250f3ab31bb19ef12-audit.json": {
+    "mtime": 1781297054.3147554,
+    "ast_hash": "508ff63c6e5ccf8c2c2f1d82ba374fd3",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/logs/.5f0cca370b8c455427201f81975ea417ee8b6b50-audit.json": {
+    "mtime": 1781297051.0844655,
+    "ast_hash": "5ea7322e0b0c503ae94051a06d9a15eb",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/middleware/auth.js": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "7f26734211678c2a336b88a429013567",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/middleware/dataChange.js": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "e2707e10104350cfb98532a2fe39daa1",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/middleware/errorHandler.js": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "e44345a8999f5d134ec8dc736d9fbba5",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/middleware/generateId.js": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "f4ef216fd9ec5010abf6ab996301e0dc",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/middleware/uploadFile.js": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "0c24db1a75a47b4750d7777885e79849",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/package.json": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "bc3d79e4cc595a03b0dcb698ff0fb899",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/routes/feature.js": {
+    "mtime": 1777637644.9687207,
+    "ast_hash": "f6db0d38580f82f48e8c49efb66aa47f",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/routes/index.js": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "452bf3b5b0bdfded25be43f9169a0460",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/routes/outlet.js": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "1740f18d78bb6cce3ddf06d507297c49",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/routes/product.js": {
+    "mtime": 1778483067.432501,
+    "ast_hash": "305d11db0f1424cecc65286f969a4dab",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/routes/transaction.js": {
+    "mtime": 1777637788.63821,
+    "ast_hash": "8a7a0907d2248506cc7ceb93874dc1da",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/routes/user.js": {
+    "mtime": 1777637788.63821,
+    "ast_hash": "83fa0d76876315474b4cc18538c5dbfe",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/routes/warehouse.js": {
+    "mtime": 1777637788.63821,
+    "ast_hash": "7e0175f2012fccd42e86ddd5642f26e8",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/routes/webhook.js": {
+    "mtime": 1777637788.63821,
+    "ast_hash": "42a037f81b526efaedf9c5b8b0edaacb",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/scratch/check_db.js": {
+    "mtime": 1777637788.6399565,
+    "ast_hash": "a3d38d24cde4a0dbacca7ecef92651ac",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/scripts/add-stock-list-permission.js": {
+    "mtime": 1777637788.6399565,
+    "ast_hash": "60d3da2b70d04de47bacd73b9b6a8c88",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/scripts/check-db.js": {
+    "mtime": 1777637788.6399565,
+    "ast_hash": "7dce342e4aa90a3afb550a4040310351",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/scripts/cleanup-and-migrate.js": {
+    "mtime": 1777637788.6399565,
+    "ast_hash": "af0355e44145a64fac64746f2fe877f8",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/scripts/cleanup-barcode-duplicates.js": {
+    "mtime": 1777637788.6419663,
+    "ast_hash": "8d5fb6ebbdfb41fe31286b94a356a464",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/scripts/dump_diagnostic.js": {
+    "mtime": 1777637788.6419663,
+    "ast_hash": "86f11b627cd6c2f12e964e3f0f7af595",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/scripts/dump_schema_to_md.js": {
+    "mtime": 1777637788.6419663,
+    "ast_hash": "d60755ec5f3e67cab17b0ad3c9f6c4c7",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/scripts/fix-constraint.js": {
+    "mtime": 1777637788.6419663,
+    "ast_hash": "c2d1fc329d60453dbb09d0522e8e41b7",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/scripts/fix-supervisor-market.sql": {
+    "mtime": 1777637788.6419663,
+    "ast_hash": "ec841ad9ce775d63389b3e901589c809",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/scripts/seed-playwright.mjs": {
+    "mtime": 1777637788.6419663,
+    "ast_hash": "8c18a6c2d81859d51b0507e542cc4084",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/scripts/test-inventory.js": {
+    "mtime": 1777637788.6419663,
+    "ast_hash": "bb15d37251b0abb428b8b75ef76f15a5",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/scripts/test-supervisor-stock.js": {
+    "mtime": 1777637788.6419663,
+    "ast_hash": "69f8bc66d763758b06c6b197cbdc0799",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/tests/inventoryController.spec.js": {
+    "mtime": 1777637788.6459925,
+    "ast_hash": "d0bc2557f53552deccc3db4826df07a6",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/tests/inventoryController.test.js": {
+    "mtime": 1777637788.6459925,
+    "ast_hash": "99b680687427db2ccfe338ff2c3a1170",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/websocket/index.js": {
+    "mtime": 1777637788.6492128,
+    "ast_hash": "f0da54b47f3daa55542d2b65fa96efa2",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/components.json": {
+    "mtime": 1777637798.8893852,
+    "ast_hash": "1c788a9facc57590db3f7c029356d2e7",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/eslint.config.js": {
+    "mtime": 1777637760.8018665,
+    "ast_hash": "957218024dbfdaaccd46c509d5e3089f",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/package.json": {
+    "mtime": 1777637798.8933997,
+    "ast_hash": "76fcca89608facd4e840d4f0d2bf6ba4",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/postman_collection.json": {
+    "mtime": 1777637798.895406,
+    "ast_hash": "ccdc50fc91c4a4df5c37cb58b5623094",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/App.tsx": {
+    "mtime": 1777637798.895406,
+    "ast_hash": "960068fc035259ca4860d0811100b529",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/AppHeader.tsx": {
+    "mtime": 1777637798.8974123,
+    "ast_hash": "02e9123de9b9c3db60346b944e055c1e",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/CartSidebar.tsx": {
+    "mtime": 1778485749.6201658,
+    "ast_hash": "5716b9c6b7242d354a4fbdfadbe994c3",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/DebugLogs.tsx": {
+    "mtime": 1777637798.8974123,
+    "ast_hash": "98a478cbf0adef704f00076460ff9cac",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/Forbidden.tsx": {
+    "mtime": 1777637798.8994207,
+    "ast_hash": "cf424ba70ec90732c820bede339e67a2",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/PosHeader.tsx": {
+    "mtime": 1777637798.8994207,
+    "ast_hash": "51f567fe5c8cd97da8acbe9dec72630d",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ProductCatalog.tsx": {
+    "mtime": 1778390244.1634488,
+    "ast_hash": "cc1dd61a374a27a7250e4eb50c926b66",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ScaleListener.tsx": {
+    "mtime": 1781298400.1196122,
+    "ast_hash": "9b0e7ba39e1c269fc279e1bf6baaf570",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/SearchBar.tsx": {
+    "mtime": 1777637798.9014494,
+    "ast_hash": "47ac00b36ceef7d09e420ac50f4ceabf",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/Sidebar.tsx": {
+    "mtime": 1777738836.0607548,
+    "ast_hash": "6d21e8ed91daaceceea9a54fdf46ad84",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/SidebarLogout.tsx": {
+    "mtime": 1777637798.9024613,
+    "ast_hash": "f1463011b4314677dc00def365e54a31",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/auth/PermissionGuard.tsx": {
+    "mtime": 1777637798.9024613,
+    "ast_hash": "083c0d8ae114022d8c90804296ee531b",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/brand/Brand.tsx": {
+    "mtime": 1777637798.9024613,
+    "ast_hash": "28ececbf8ae9f1c8fee1d1782afd349c",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/brand/BrandLogo.tsx": {
+    "mtime": 1777637798.9024613,
+    "ast_hash": "4a3bb5529340446c07577badbd6f410a",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/charts/AreaLineChart.tsx": {
+    "mtime": 1777637798.9024613,
+    "ast_hash": "2ee491d68f519407444ef163d3dd790e",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/charts/DynamicBarChart.tsx": {
+    "mtime": 1777637798.9024613,
+    "ast_hash": "d77ef3a877115020046bb11804e04cab",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/charts/HorizontalBarChart.tsx": {
+    "mtime": 1777637798.9024613,
+    "ast_hash": "001eba822eb9980aa17a891d80a4dbb3",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/charts/OrderTypeChart.tsx": {
+    "mtime": 1777637798.9024613,
+    "ast_hash": "0410df477602971309762a8452df80ee",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/charts/PaymentMethodChart.tsx": {
+    "mtime": 1777637798.9024613,
+    "ast_hash": "c4747b8698ba51409ab6465c10caa7af",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/charts/PaymentRatioChart.tsx": {
+    "mtime": 1777637798.9024613,
+    "ast_hash": "a2e6e4d72012d402a14cc308c0f7b501",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/charts/PaymentStatusChart.tsx": {
+    "mtime": 1777637798.9024613,
+    "ast_hash": "6f74be45917a809c197423603d3c0e22",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/charts/SummaryCards.tsx": {
+    "mtime": 1777637798.9024613,
+    "ast_hash": "5ce083513b3fcb4f1f6be4ae80f4c6de",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/dashboard/AdminStats.tsx": {
+    "mtime": 1777637798.9024613,
+    "ast_hash": "fb89ef24dc3c30ee869206b94ecc604a",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/dashboard/CashierStats.tsx": {
+    "mtime": 1777637798.909301,
+    "ast_hash": "5f43e675a3b1b0c521e40b326f535d9b",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/dashboard/RecentTransactions.tsx": {
+    "mtime": 1777637798.909301,
+    "ast_hash": "bc17678790cb81930c77aaf0f7a5bca8",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/dashboard/StatCard.tsx": {
+    "mtime": 1777637798.909301,
+    "ast_hash": "dd6892450ca860a99b9e4198dc0e512c",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/inventory/IntakeChart.tsx": {
+    "mtime": 1777637798.909301,
+    "ast_hash": "fcb9526f572d05d8bed9548bfa0403a7",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/inventory/InventoryMain.tsx": {
+    "mtime": 1778208874.3147514,
+    "ast_hash": "cabf0249ec227e82e236348b25275f9f",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/inventory/LocationSwitcher.tsx": {
+    "mtime": 1777637798.911314,
+    "ast_hash": "1abcd24bddf34331c87710535a5e2459",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/inventory/SupervisorStockView.tsx": {
+    "mtime": 1778485771.94531,
+    "ast_hash": "d3f502d4bf85082bbf9864f526e69f7c",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/invoice/InvoiceHistory.tsx": {
+    "mtime": 1778401229.9210935,
+    "ast_hash": "ad9302fd133e0c7eb50fed613c94b43a",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/invoice/InvoiceModal.tsx": {
+    "mtime": 1778401193.166133,
+    "ast_hash": "6a7f024f7d7d09198127640a26bc52c3",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/invoice/InvoicePrintTemplate.tsx": {
+    "mtime": 1778429450.5733137,
+    "ast_hash": "87b7efcc345e9928a703d726ca51091d",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/invoice/index.ts": {
+    "mtime": 1778401407.90019,
+    "ast_hash": "b8c0c5843721e94ae60a0f59c7930aff",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/kelolagudang/PurchaseDetailModal.tsx": {
+    "mtime": 1778485649.3085554,
+    "ast_hash": "c87be57120af783a6c0ab2dbac687e64",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/kelolagudang/PurchaseHistoryTable.tsx": {
+    "mtime": 1778482486.9230943,
+    "ast_hash": "9f5ff8d65e06b118f6ce5ad5969bd8ba",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/kelolagudang/ReceiveItemModal.tsx": {
+    "mtime": 1778485744.6280725,
+    "ast_hash": "811fe66d8f18e5bfefea29ced1e7a73d",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/layouts/MainLayout.tsx": {
+    "mtime": 1777637798.9126625,
+    "ast_hash": "766ce83591323f3756d63ac07b5379f6",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/layouts/MainLayoutContext.tsx": {
+    "mtime": 1777637798.9126625,
+    "ast_hash": "84cddad344fd65f511d80d5d9ee08e99",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/markets/AdminGudangSelector.tsx": {
+    "mtime": 1777770016.1426408,
+    "ast_hash": "572eb05281fb20a74dfec970eed7b33e",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/markets/AdminOutletSelector.tsx": {
+    "mtime": 1777770471.0919292,
+    "ast_hash": "c1a48c192ab8a5ccf6b2e213bd210c29",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/markets/GudangView.tsx": {
+    "mtime": 1778485987.2379189,
+    "ast_hash": "846cda617c2b0d2d2f9d4893352a9612",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/markets/LoadingSkeleton.tsx": {
+    "mtime": 1777637798.9126625,
+    "ast_hash": "2492396f00586209d9e82a5569548a58",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/markets/OutletDetailOverlay.tsx": {
+    "mtime": 1778485718.1145873,
+    "ast_hash": "cc9b023a2fa3df21e1aa48fc50076fec",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/markets/OutletView.tsx": {
+    "mtime": 1778485756.1707666,
+    "ast_hash": "f71a8850d2dcf085049205c39cef093f",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/markets/RejectModal.tsx": {
+    "mtime": 1777637798.9173424,
+    "ast_hash": "4d595de17d7194958b09fae3b55f5b93",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/markets/StockDetailModal.tsx": {
+    "mtime": 1778485712.4112182,
+    "ast_hash": "c2999049c22da09b05282861352050d3",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/markets/SummaryCard.tsx": {
+    "mtime": 1777637798.9173424,
+    "ast_hash": "fd48707313173abb1e34f553ae631a2b",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/markets/TransferOrderList.tsx": {
+    "mtime": 1778485599.166376,
+    "ast_hash": "5059bbd45044f7b67700bebdcb050b60",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/markets/TransferPrintView.tsx": {
+    "mtime": 1778485767.6745803,
+    "ast_hash": "baf29ef73c0d20b7796b703daf382ca7",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/markets/VerifyModal.tsx": {
+    "mtime": 1778485914.4023516,
+    "ast_hash": "cd8852f2870793beaf8b368b7fc6b1d0",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/payment/CashPayment.tsx": {
+    "mtime": 1778432307.3636744,
+    "ast_hash": "73a764d67321af38ebced1912fbe5cac",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/payment/PaymentSummary.tsx": {
+    "mtime": 1777637798.919653,
+    "ast_hash": "87485a747923bacdfd2228991b52c967",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/payment/QRISPayment.tsx": {
+    "mtime": 1777637798.919653,
+    "ast_hash": "90730e993762f79e06af10df7f346342",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/reports/SalesDashboard.tsx": {
+    "mtime": 1777637798.919653,
+    "ast_hash": "0b54c32fb943f7d52d4dd0ea09d34496",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/transaction/TransactionDetailSidebar.tsx": {
+    "mtime": 1778485917.3556728,
+    "ast_hash": "ca9883ff39975ee6352c1466a21c354c",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/transaction/TransactionEditModal.tsx": {
+    "mtime": 1777637798.9223578,
+    "ast_hash": "8c927ce9f7ca08aa536c3d3e189a14b3",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/transaction/TransactionListTable.tsx": {
+    "mtime": 1777637798.9223578,
+    "ast_hash": "c7020de688e0c3a3fc63e58b54468917",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/transaction/TransactionSummaryCards.tsx": {
+    "mtime": 1777637798.9223578,
+    "ast_hash": "556450fb3e703f4d0fc3383633ceffdb",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/transaction/columns.tsx": {
+    "mtime": 1777637798.9223578,
+    "ast_hash": "23898524a7e389d62a5a4e864258c289",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/DateInput.old.tsx": {
+    "mtime": 1777637798.9223578,
+    "ast_hash": "27271291c18ee797f0b99b68018f1c59",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/DateRangePicker.old.tsx": {
+    "mtime": 1777637798.9223578,
+    "ast_hash": "6d54883df3502290ff29200ebfcf7fae",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/MasterDataCard.tsx": {
+    "mtime": 1777637798.9223578,
+    "ast_hash": "ed27aab7b96b38b7687c85ba40dfe242",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/PaymentStatusBadge.old.tsx": {
+    "mtime": 1777637798.9223578,
+    "ast_hash": "49bd55af8588db58ee2a9f3078e2189b",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/ProductImage.tsx": {
+    "mtime": 1778155019.6100597,
+    "ast_hash": "963ee3a0e168f6d608c67ff6693a0239",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/alert.tsx": {
+    "mtime": 1777637798.9223578,
+    "ast_hash": "213393b9d246e51060933002999f336d",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/badge.tsx": {
+    "mtime": 1777637798.9223578,
+    "ast_hash": "5e62e5bbc884817db4a3acfb833c5b69",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/badges/GradeBadge.tsx": {
+    "mtime": 1777637798.92823,
+    "ast_hash": "ce7b4a50c6d02d26d366a3414e120a49",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/badges/SizeBadge.tsx": {
+    "mtime": 1777637798.92823,
+    "ast_hash": "50d8f470c451e5897e56bd77469e5805",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/button.tsx": {
+    "mtime": 1777637798.92823,
+    "ast_hash": "be61008945ea0044f357f0a52d0f298d",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/calendar.tsx": {
+    "mtime": 1777637798.92823,
+    "ast_hash": "06a433b0498634acc7faa96d50b70470",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/card.tsx": {
+    "mtime": 1777637798.92823,
+    "ast_hash": "8e3fbcc5e783b9bdaa9e7eaa79b2d773",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/cards/Card.tsx": {
+    "mtime": 1777637798.92823,
+    "ast_hash": "39f4796e5e84871e05ecf342dc2f3be0",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/cards/ProductCard.tsx": {
+    "mtime": 1778485982.7771854,
+    "ast_hash": "974bb9dc8d7c2b63cc9fd4d2123358d3",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/chart.tsx": {
+    "mtime": 1777637798.92823,
+    "ast_hash": "d87668e6ad70e7cef5aa678700d8a977",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/checkbox.tsx": {
+    "mtime": 1777637798.92823,
+    "ast_hash": "2507a6d35dcbce725b0704ed862bedb0",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/combobox.tsx": {
+    "mtime": 1777637798.92823,
+    "ast_hash": "955cfe7bca693267e01f9807c2fe5d96",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/command.tsx": {
+    "mtime": 1777637798.92823,
+    "ast_hash": "2517594a3c0531258d42dbd1bd124951",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/data-table.tsx": {
+    "mtime": 1777637798.92823,
+    "ast_hash": "61b34d3b8fe76a5111cdd32b4522fa2c",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/dialog.tsx": {
+    "mtime": 1777637798.92823,
+    "ast_hash": "5caa218733f9c9686f41c1ef91c106f6",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/input.tsx": {
+    "mtime": 1777637798.9333558,
+    "ast_hash": "c25fbddc6b3eb16a9d6901138a4d547d",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/label.tsx": {
+    "mtime": 1777637798.9333558,
+    "ast_hash": "3c345a7390e02cde845611c2cf8e6b2f",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/ImageCropModal.tsx": {
+    "mtime": 1777637798.9343648,
+    "ast_hash": "a139a6cf1857881ce6d4cb5e23224cf2",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/LogoutModal.tsx": {
+    "mtime": 1777637798.9343648,
+    "ast_hash": "ad9be381d1a24cc4d410614cdec55860",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/ManageMarketModal.tsx": {
+    "mtime": 1778569113.1822684,
+    "ast_hash": "3f1beccb673887e3e7c3f5baa6b0cc32",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/MarketFormModal.tsx": {
+    "mtime": 1778155019.6121633,
+    "ast_hash": "bf122ad1e16b0f3f455073b3531cdba3",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/MasterDataModal.tsx": {
+    "mtime": 1777637798.9354115,
+    "ast_hash": "b55a3bbb8f07313b49b7c7959815bee3",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/Modal.tsx": {
+    "mtime": 1777637798.9354115,
+    "ast_hash": "d4f11f1123c9035a507850b58ba211f4",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/OutletFormModal.tsx": {
+    "mtime": 1778155019.6133683,
+    "ast_hash": "2d5d08d16a17093069a24ee1944f6ac6",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/PaymentModal.tsx": {
+    "mtime": 1778432738.6889865,
+    "ast_hash": "b5b3ccba8365406511f003c81b63c3b1",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/PriceVariantModal.tsx": {
+    "mtime": 1778155019.615327,
+    "ast_hash": "805cbda6c02f540742339cafec5c054c",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/ProductFormModal.tsx": {
+    "mtime": 1778397627.0201538,
+    "ast_hash": "2a8ec964584dc96ca7397677efbd8c00",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/ProductForm/BasicInfoTab.tsx": {
+    "mtime": 1777637798.9372578,
+    "ast_hash": "881656c27da2bf9d719467c0012e0dfe",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/ProductForm/SettingsTab.tsx": {
+    "mtime": 1777637798.9372578,
+    "ast_hash": "c7cea7d8149a5e0b0bb5159b3f3035ef",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/ProductForm/VariantsTab.tsx": {
+    "mtime": 1778397386.0145912,
+    "ast_hash": "7cfb9035401ed2a7c1556c4d5077f6b6",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/RoleFormModal.tsx": {
+    "mtime": 1777637798.9392645,
+    "ast_hash": "5899b06a3daa98b1fdc14f96bb438e0c",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/ScaleAlertModal.tsx": {
+    "mtime": 1777637798.9392645,
+    "ast_hash": "e379aa6ef86da016a26dc7b19e3dc89e",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/SerialSettingsModal.tsx": {
+    "mtime": 1777637798.9412801,
+    "ast_hash": "d6106f5fddf8668a21a9abb55b56dacb",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/ServiceFormModal.tsx": {
+    "mtime": 1777637798.9412801,
+    "ast_hash": "4d248c601c565a27e9f8337e11f1e774",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/SupervisorAssignModal.tsx": {
+    "mtime": 1777637798.943287,
+    "ast_hash": "0645cf178983495cdbeb63bfcf2d0f45",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/SupplierFormModal.tsx": {
+    "mtime": 1778155019.6163366,
+    "ast_hash": "3480e680af7d0064dbe4657749b3340f",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/modals/UserFormModal.tsx": {
+    "mtime": 1778375126.2861023,
+    "ast_hash": "8c418b7a28d7675cd653d7b87214e22d",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/pagination.tsx": {
+    "mtime": 1777637798.945296,
+    "ast_hash": "d03d976da285f6244e3d7bc103446ebb",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/popover.tsx": {
+    "mtime": 1777637798.945296,
+    "ast_hash": "9ae101ada64efc3ea37b20b0c284c3e1",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/scroll-area.tsx": {
+    "mtime": 1777637798.945296,
+    "ast_hash": "2579c0de081329a03c8b5b8bad1a6696",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/select.tsx": {
+    "mtime": 1777637798.9468062,
+    "ast_hash": "371535c9ec78fabd6ac4282cfc93c9d2",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/separator.tsx": {
+    "mtime": 1777637798.9468062,
+    "ast_hash": "a32d0aee8e294654ca11d8893a41e943",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/slider.tsx": {
+    "mtime": 1777637798.9468062,
+    "ast_hash": "18c325f438c3f2ad8e122ce68376b0a0",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/sonner.tsx": {
+    "mtime": 1777637798.948884,
+    "ast_hash": "289b1a8d68ededefef9007703a48c9a7",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/table.tsx": {
+    "mtime": 1777637798.9494305,
+    "ast_hash": "9538103e54bd1653342bda5d8cebca78",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/tabs.tsx": {
+    "mtime": 1777637798.9494305,
+    "ast_hash": "177b10a915f3f5797f518b20dd9c8c78",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/textarea.tsx": {
+    "mtime": 1777637798.9494305,
+    "ast_hash": "72e3d255d7ff7591565cb261d28b9b1a",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/ui/tooltip.tsx": {
+    "mtime": 1777637798.9514537,
+    "ast_hash": "8ad44a685d61be0679f258028e6b0786",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/widgets/MarketSalesWidget.tsx": {
+    "mtime": 1777637798.9514537,
+    "ast_hash": "8d0d5dc8b498c3ded0f735436967fc74",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/widgets/SalesWidget.tsx": {
+    "mtime": 1777637798.952961,
+    "ast_hash": "ce8bd712dfc49e767418e53e4310f7ef",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/components/widgets/TopCashierWidget.tsx": {
+    "mtime": 1777637798.952961,
+    "ast_hash": "80b188fa88cc6e15c621095b42b1b8da",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/config.ts": {
+    "mtime": 1777637798.952961,
+    "ast_hash": "21347930b0604d53c768313d659f6e4d",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/config/roles.ts": {
+    "mtime": 1777637798.952961,
+    "ast_hash": "2650ec77b83d6d05798630f6ed8fd983",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/context/AuthContext.tsx": {
+    "mtime": 1777637798.952961,
+    "ast_hash": "77e1976f1fce9525bbdf9e23a3766a45",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/context/AuthContextDef.ts": {
+    "mtime": 1777637798.952961,
+    "ast_hash": "be574ff69fe64f09c2a2ba456aa4d80c",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/context/PaymentContext.tsx": {
+    "mtime": 1777637798.952961,
+    "ast_hash": "0d7683003f661487bedb0e5143bbc318",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/context/SerialContext.ts": {
+    "mtime": 1778212460.444216,
+    "ast_hash": "e26473cb9a71b9b0917cbf3ee9e9342e",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/context/SerialProvider.tsx": {
+    "mtime": 1781298404.6330066,
+    "ast_hash": "c034aa03bfbc3d04e9315b775d8a5187",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/charts/useMarketSalesMetrics.ts": {
+    "mtime": 1777637798.952961,
+    "ast_hash": "4585b03248eb5a048ac3938bea5d9de0",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/charts/useOrderTypeMetrics.ts": {
+    "mtime": 1777637798.9574747,
+    "ast_hash": "04ca011c2b0d55013f63ede4b79b4647",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/charts/usePaymentStatusMetrics.ts": {
+    "mtime": 1777637798.9574747,
+    "ast_hash": "8fb4a58583de90f8bab0f708ab877ae3",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/charts/useSalesMetrics.ts": {
+    "mtime": 1777637798.9574747,
+    "ast_hash": "6f65e3ca83dc2b5986ddb43332f76ca8",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/charts/useTopCashierMetrics.ts": {
+    "mtime": 1777637798.9587915,
+    "ast_hash": "ebd545d34d797fa5f57b071a5bfdd5cd",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useAuth.ts": {
+    "mtime": 1777637798.9587915,
+    "ast_hash": "fcbb24c1e8ef9a3ad74f920cef084172",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useCart.ts": {
+    "mtime": 1778461067.4360948,
+    "ast_hash": "54fba17c44e4f23870768d574c8f5d3b",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useCatalogFormModal.ts": {
+    "mtime": 1777637798.9587915,
+    "ast_hash": "c3bf65e3daa9c12cb457e4f990e96467",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useDateRangeFilter.ts": {
+    "mtime": 1777637798.9587915,
+    "ast_hash": "5a24ba0cabccde6dae84ecf4d4c0b0a2",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useImageEditor.ts": {
+    "mtime": 1777637798.9608111,
+    "ast_hash": "a40c7bf513509609ef10c9fc6d21e9ed",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useInvoice.ts": {
+    "mtime": 1778401419.2231863,
+    "ast_hash": "95664ce2efaa0ba3d4cd3b421dc2c911",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useLogout.ts": {
+    "mtime": 1777637798.9608111,
+    "ast_hash": "837cc2cf3421bc5a87efebcc49ca1574",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useMarkets.ts": {
+    "mtime": 1777637798.9608111,
+    "ast_hash": "4b79b5ab1532635f8a12ade52d554029",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/usePayment.ts": {
+    "mtime": 1777637798.9608111,
+    "ast_hash": "73566ccaf9c6bd99f025a077006ba69d",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/usePaymentMethod.ts": {
+    "mtime": 1777637798.9628253,
+    "ast_hash": "50fcf743482767dfcb91a882a51553fe",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/usePermission.ts": {
+    "mtime": 1777637798.9628253,
+    "ast_hash": "80e5372ace791dffd6361952b2e1f21c",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useProductFilter.ts": {
+    "mtime": 1777637798.9628253,
+    "ast_hash": "e0291eef28aeaca74ac138a544d4b71c",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useRole.ts": {
+    "mtime": 1777637798.9628253,
+    "ast_hash": "8dc5ead66e829cad954b41f533515a2a",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useRoleAndPermission.ts": {
+    "mtime": 1777637798.9628253,
+    "ast_hash": "5e4ec145928517e0958a416c07d557d1",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useSerial.ts": {
+    "mtime": 1777637798.9645803,
+    "ast_hash": "c717ac4e1606f4848efbb204f33b0d2f",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useSetupStatus.ts": {
+    "mtime": 1777637798.9651632,
+    "ast_hash": "51b2bae7c6b1d0eae20074cab35ebbcb",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useStorage.ts": {
+    "mtime": 1777637798.9651632,
+    "ast_hash": "7daa13047bb6b60af21ffe41410434cc",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useTransactions.ts": {
+    "mtime": 1777637798.9651632,
+    "ast_hash": "e8071c5d59bf02c7af158ab52bb982ad",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useVoucher.ts": {
+    "mtime": 1777637798.9651632,
+    "ast_hash": "ad2aab1f6f9496d4f52557aa87505e32",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/hooks/useYesterdayTransactions.ts": {
+    "mtime": 1777637798.9651632,
+    "ast_hash": "682bdbe84a9c197e3ab9549274efee95",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/lib/invoice.ts": {
+    "mtime": 1778431303.5747075,
+    "ast_hash": "13d5adfc4df065814e4b50242d12c788",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/lib/invoicePrintTemplate.ts": {
+    "mtime": 1778429494.6524067,
+    "ast_hash": "e4e25cc585ac05c62f8b07a364d7d480",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/lib/invoiceStore.ts": {
+    "mtime": 1778401207.9828653,
+    "ast_hash": "650bfef097212d94fbf1b3b8d87b16af",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/lib/receiptPrintTemplate.ts": {
+    "mtime": 1778429756.6210086,
+    "ast_hash": "6c96d11328d2b228c901e7e325a0a979",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/lib/reportPrintTemplate.ts": {
+    "mtime": 1778486032.0653553,
+    "ast_hash": "a581e426b9498c07a493a80d7ab25085",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/lib/serial.ts": {
+    "mtime": 1781298389.4056,
+    "ast_hash": "26964bfa2200d074fee3eeee974a88dc",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/lib/utils.ts": {
+    "mtime": 1777637798.9671729,
+    "ast_hash": "1d8011eb18769078bf77502b220daa5e",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/main.tsx": {
+    "mtime": 1777637798.9691854,
+    "ast_hash": "e3013bfb195e5aeca3dccd2a1a553b9d",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routeTree.gen.ts": {
+    "mtime": 1778196386.450781,
+    "ast_hash": "4e362272687b1254f9df7f90d8c3e866",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/__root.tsx": {
+    "mtime": 1777637798.9691854,
+    "ast_hash": "610d619a8ac4c33c1e44a963584fbcf3",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_guest.index.lazy.tsx": {
+    "mtime": 1777637798.9711974,
+    "ast_hash": "c61f86c16c1e8b26b5a6460cc9915671",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_guest.tsx": {
+    "mtime": 1777637798.9711974,
+    "ast_hash": "b119227fd4cc220d6f88d23cd74331ff",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._inventory_group.inventory-dashboard.lazy.tsx": {
+    "mtime": 1778485920.1983318,
+    "ast_hash": "6303caf842cf11557fda65d76643f78f",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._inventory_group.inventory-ops.tsx": {
+    "mtime": 1777637798.9711974,
+    "ast_hash": "50a76c18e9f12a4d105ec729b7aaa8dc",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._inventory_group.inventory-stock.tsx": {
+    "mtime": 1777637798.973209,
+    "ast_hash": "70144be37cce2e94d6eb9362db353eb9",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._inventory_group.inventory.index.tsx": {
+    "mtime": 1778196479.7886615,
+    "ast_hash": "ed17707eefaa96eda22b04e464e9f5ed",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._inventory_group.inventory.reject-requests.tsx": {
+    "mtime": 1778485706.0804768,
+    "ast_hash": "b5955e8527359355c2fb7b41eea783f6",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._inventory_group.inventory.tsx": {
+    "mtime": 1777637798.973209,
+    "ast_hash": "5d2556692f4f1bce0c4c56fcb333aa86",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._inventory_group.markets.tsx": {
+    "mtime": 1777637798.9752185,
+    "ast_hash": "61a9fda843deac5f691f9c212f65cd37",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._inventory_group.stock-management.lazy.tsx": {
+    "mtime": 1778485696.6879177,
+    "ast_hash": "a270aaec38b92f8c5bfdc1f0e490f27a",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._inventory_group.stock-opname.lazy.tsx": {
+    "mtime": 1778155019.6218772,
+    "ast_hash": "13010b8cef15c868ea069e2e20eae61b",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._inventory_group.tsx": {
+    "mtime": 1777637798.9752185,
+    "ast_hash": "a1935ac09a1dec844ba9c55c9d0e26e1",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.outletandgudang.lazy.tsx": {
+    "mtime": 1777637798.9772296,
+    "ast_hash": "41cb7bf747298e3be0a8dfd3c63eec80",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.outletandgudang.tsx": {
+    "mtime": 1777637798.9772296,
+    "ast_hash": "0c1e03b584e3da6053f08f153cde0879",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.product-attributes.lazy.tsx": {
+    "mtime": 1777637798.9772296,
+    "ast_hash": "9e04512dbaf60cd5ac1b657ee3814386",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.product-attributes.tsx": {
+    "mtime": 1777637798.9772296,
+    "ast_hash": "bcc1d3644eacec0c25ca57cafd763895",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.products.lazy.tsx": {
+    "mtime": 1778399743.595806,
+    "ast_hash": "c3943c29ba091437813fa7cf7500b373",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.products.tsx": {
+    "mtime": 1777637798.9772296,
+    "ast_hash": "57d7960dfc3e53fb37bb02d18986c0c5",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.report-item.lazy.tsx": {
+    "mtime": 1778485981.444524,
+    "ast_hash": "3a88793f41eae8333772fbb9fc2faa05",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.roles.lazy.tsx": {
+    "mtime": 1777637798.9804318,
+    "ast_hash": "f2c85b860ac86f04c4a85d7fad76cdcb",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.roles.tsx": {
+    "mtime": 1777637798.9804318,
+    "ast_hash": "9a09ce46b7cd383d2c1d3f8af8110f48",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.suppliers.lazy.tsx": {
+    "mtime": 1778157421.2455692,
+    "ast_hash": "c0d5b64be9e3ce8bcc3ecfb3a05cee66",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.suppliers.tsx": {
+    "mtime": 1777637798.9804318,
+    "ast_hash": "3e2620276086c7fdaff81d6e865f204d",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.tsx": {
+    "mtime": 1777637798.983099,
+    "ast_hash": "362be5c713607b18f767071496b911d4",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.users.lazy.tsx": {
+    "mtime": 1777637798.983099,
+    "ast_hash": "76cdc5b5aba14611730590782031c406",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected._management.users.tsx": {
+    "mtime": 1777637798.983099,
+    "ast_hash": "6af21d5a5b0534496a2fde12ee36c494",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.dashboard.lazy.tsx": {
+    "mtime": 1778485912.0764847,
+    "ast_hash": "08c398f238dd707eadba6a54a5ce7370",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.data-transaksi.lazy.tsx": {
+    "mtime": 1778381674.3193915,
+    "ast_hash": "3d0cc71612b2ef55c6490e22da1c51df",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.forbidden.tsx": {
+    "mtime": 1777637798.9851072,
+    "ast_hash": "d74b3cb26ac8f9c63065f0b191420f50",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.kelolagudang.purchases.lazy.tsx": {
+    "mtime": 1778480373.031685,
+    "ast_hash": "f115ca055630e6a893ac5ebb4e866575",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.kelolagudang.receive.lazy.tsx": {
+    "mtime": 1778485639.5387876,
+    "ast_hash": "12b8731659bf42689118222688693df8",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.kelolagudang.rejects.lazy.tsx": {
+    "mtime": 1778485774.799161,
+    "ast_hash": "8077dbab4d3906698bf61c8c41648602",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.kelolagudang.stock.lazy.tsx": {
+    "mtime": 1778485690.8366725,
+    "ast_hash": "9bef522700735a8909f09ca318457f64",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.kelolagudang.transfers.lazy.tsx": {
+    "mtime": 1778485661.857277,
+    "ast_hash": "28b72903b4ae4c5f06f43439f152462b",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.kelolagudang.tsx": {
+    "mtime": 1777637798.9891262,
+    "ast_hash": "47008eca0969ca7cfa652fe101431ff6",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.kelolaoutlet.receive.lazy.tsx": {
+    "mtime": 1778504405.597477,
+    "ast_hash": "2fa7d90ab05adca3f68337dd6e5d060e",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.kelolaoutlet.rejects.lazy.tsx": {
+    "mtime": 1777637798.9891262,
+    "ast_hash": "22b572ee6e6b46024775fb96a13f31b2",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.kelolaoutlet.stock.lazy.tsx": {
+    "mtime": 1778485683.0797246,
+    "ast_hash": "d1e3d7d7d6f2b3ac8857ab9c5cb023f2",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.kelolaoutlet.transfers.lazy.tsx": {
+    "mtime": 1778485590.8138325,
+    "ast_hash": "a0109329b8394f9c24c0c190561ffad5",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.kelolaoutlet.tsx": {
+    "mtime": 1777637798.993143,
+    "ast_hash": "c53f657fe105d704713bb0e44ee4f7cc",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.pos.lazy.tsx": {
+    "mtime": 1778570073.4861186,
+    "ast_hash": "7a5daab6e9fe04b09ecfaf53d8b7ff34",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.pos.tsx": {
+    "mtime": 1777637798.993143,
+    "ast_hash": "f88ba5968c4ef5531826540f1a5b72b1",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.settings.lazy.tsx": {
+    "mtime": 1778569105.9042454,
+    "ast_hash": "2a2d700b0184cb77105178e5838b24e5",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.transactions.lazy.tsx": {
+    "mtime": 1777637798.993143,
+    "ast_hash": "7bb44b86e01c7db5368d44819cb11468",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/_protected.tsx": {
+    "mtime": 1777637798.9965508,
+    "ast_hash": "b277a4d0724f793b747898a53807b983",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/routes/design.lazy.tsx": {
+    "mtime": 1777637798.9965508,
+    "ast_hash": "8a68dfa6ac473b996953ed4f7c04cca2",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/auth.service.ts": {
+    "mtime": 1777637798.9965508,
+    "ast_hash": "8b7d8e65d2345419a3ac6f52649edf0b",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/inventory.service.ts": {
+    "mtime": 1778483168.869317,
+    "ast_hash": "da4e4e747bcc00080a71e0816c54d383",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/invoice.service.ts": {
+    "mtime": 1778401431.8252964,
+    "ast_hash": "b99960c225f6c4d71f9b75fcf188f8b9",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/logger.service.ts": {
+    "mtime": 1777637798.9982567,
+    "ast_hash": "74a14c59f73812dde3b6c460538c9a21",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/print.service.ts": {
+    "mtime": 1778457232.291482,
+    "ast_hash": "dc5ef38a4804bc123e35bb108d1a5514",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/product.service.ts": {
+    "mtime": 1778398081.8091717,
+    "ast_hash": "638ffc3306f37bd97e1161b54d05fc72",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/product.utils.ts": {
+    "mtime": 1778398050.6154351,
+    "ast_hash": "37154d8a2297f30ce800725ef089d2e1",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/profile.service.ts": {
+    "mtime": 1777637798.9982567,
+    "ast_hash": "f55045f62eddfaf4fca41a8f6fc390cb",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/report.service.ts": {
+    "mtime": 1778458566.6622548,
+    "ast_hash": "762bcea956f1d96a0064ba82b7abdd9f",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/supplier.service.ts": {
+    "mtime": 1777637799.0011456,
+    "ast_hash": "865c670da01102683f1ac1c85c1b8b4d",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/transaction.service.ts": {
+    "mtime": 1777637799.0011456,
+    "ast_hash": "8a52482803d6e9bdfc9ab184c3a77985",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/user.service.ts": {
+    "mtime": 1777637799.0011456,
+    "ast_hash": "ba579e933a202cec6723045740d66365",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/voucher.service.ts": {
+    "mtime": 1777637799.0031571,
+    "ast_hash": "2a91b1d925d5be74be49b85d1cdf5b99",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/services/xendit.service.ts": {
+    "mtime": 1777637799.0031571,
+    "ast_hash": "cb7093be481332e380f9cb350eb2914a",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/test/services/auth.service.test.ts": {
+    "mtime": 1777637799.0031571,
+    "ast_hash": "f78008e402b446312962df118de85f55",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/test/services/voucher-strategy.test.ts": {
+    "mtime": 1777637799.0051699,
+    "ast_hash": "e2d2d02791f0bf88e94c2c2fdd4adf7c",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/test/services/voucher.service.test.ts": {
+    "mtime": 1777637799.0051699,
+    "ast_hash": "589664b04c0a8ab192d7407feeb7bc83",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/test/setup.ts": {
+    "mtime": 1777637799.0051699,
+    "ast_hash": "935551333a1cf3555c78ba18f0d4b08f",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/test/utils/format.test.ts": {
+    "mtime": 1777637799.0051699,
+    "ast_hash": "e66f12915c44fa3bfc245b8d75a9bbe6",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/test/utils/grading.test.ts": {
+    "mtime": 1777637799.0051699,
+    "ast_hash": "32b79a649e3a229ec2a496de934fe8c8",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/test/utils/storage.test.ts": {
+    "mtime": 1777637799.0051699,
+    "ast_hash": "80326567b9042641d50a92cd7036e615",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/types/index.ts": {
+    "mtime": 1778483133.5485933,
+    "ast_hash": "37a0c72eb8eb5fd617b47ddf20ed71d0",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/types/invoice.ts": {
+    "mtime": 1778429372.7987714,
+    "ast_hash": "22088b0e5bf6bb56eab66f3ec6726c68",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/types/master.ts": {
+    "mtime": 1777637799.0051699,
+    "ast_hash": "fefeeca5d882e298b03935668a7b09a0",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/types/payment.ts": {
+    "mtime": 1777637799.0051699,
+    "ast_hash": "0fd26d866add754eec0b36edac713bfd",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/utils/api.ts": {
+    "mtime": 1777637799.0051699,
+    "ast_hash": "f3c3744a7ba20b0b5567262ef12b989c",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/utils/format.ts": {
+    "mtime": 1778485047.447341,
+    "ast_hash": "a84ab05c7de20d15af89694cfb2f37f6",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/utils/grading.ts": {
+    "mtime": 1777637799.0126054,
+    "ast_hash": "3609c671c09de2ed9539b62f6428402f",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/utils/index.ts": {
+    "mtime": 1777774462.8061357,
+    "ast_hash": "f320e2bf4e94b4a7db9be786478fefc0",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/utils/payment.ts": {
+    "mtime": 1778432769.447416,
+    "ast_hash": "0c3bb2464a3924fbac187475970ea9fc",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/utils/stats-utils.ts": {
+    "mtime": 1777637799.0126054,
+    "ast_hash": "504da917ea87c7368da01cb49fea3234",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/utils/storage.ts": {
+    "mtime": 1777637799.0142014,
+    "ast_hash": "5506748a143699aeccce20bfb9f27d7c",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/tsconfig.app.json": {
+    "mtime": 1777637799.015249,
+    "ast_hash": "686f831f84329d1f01468179a9908171",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/tsconfig.json": {
+    "mtime": 1777637799.015249,
+    "ast_hash": "3d17b309bd8cc909dff2dbfe46c787a2",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/tsconfig.node.json": {
+    "mtime": 1777637760.829126,
+    "ast_hash": "c5c9cdf8e005158c0b05c527b5634360",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/vite.config.ts": {
+    "mtime": 1777637799.015249,
+    "ast_hash": "38d43eb392c0874c3c718965499e4b02",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/vitest.config.ts": {
+    "mtime": 1777637799.015249,
+    "ast_hash": "8799dd408e489ec975cf6268a3fd9995",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1777637531.3905933,
+    "ast_hash": "68dbc0ff1314d5c4923689ba4f6b4cb2",
+    "semantic_hash": ""
+  },
+  "playwright/.auth/admin.json": {
+    "mtime": 1780554222.4682112,
+    "ast_hash": "ec46bc0ac87b39f3f763b5f63a8b1cd2",
+    "semantic_hash": ""
+  },
+  "playwright/.auth/gudang.json": {
+    "mtime": 1780554222.5142417,
+    "ast_hash": "ffa539dc4e7ffb08b37b672b43ce1f23",
+    "semantic_hash": ""
+  },
+  "playwright/.auth/kasir.json": {
+    "mtime": 1780554222.82556,
+    "ast_hash": "d4a76a7eba944f4714acdfd0328245ca",
+    "semantic_hash": ""
+  },
+  "reset-and-dev.sh": {
+    "mtime": 1780545889.0476334,
+    "ast_hash": "0f3934a458ac3ffda0af7e9b932867a1",
+    "semantic_hash": ""
+  },
+  "reset-and-prod.sh": {
+    "mtime": 1780545889.0509694,
+    "ast_hash": "48d86aa5cc0c53fc5e2f8c3cca9aad84",
+    "semantic_hash": ""
+  },
+  "reset-db.sh": {
+    "mtime": 1780545889.05158,
+    "ast_hash": "56f9961be124e857d907e778fcc31aad",
+    "semantic_hash": ""
+  },
+  "reset-docker.sh": {
+    "mtime": 1780545889.054594,
+    "ast_hash": "680b850883a3555b06788c93743a6650",
+    "semantic_hash": ""
+  },
+  "start-dev.sh": {
+    "mtime": 1781296826.2697527,
+    "ast_hash": "3881d96a893a585fe3357b971a73b8ed",
+    "semantic_hash": ""
+  },
+  "start-prod.sh": {
+    "mtime": 1781291450.3987362,
+    "ast_hash": "d0014cc53624413a00f8683fd2d08443",
+    "semantic_hash": ""
+  },
+  ".agents/README.md": {
+    "mtime": 1777637531.3486333,
+    "ast_hash": "ff74ae40fdea1d8fac1d77293c1f86f4",
+    "semantic_hash": ""
+  },
+  ".agents/agents/api-docs-engineer.md": {
+    "mtime": 1777637531.3499517,
+    "ast_hash": "6783548abb148e6b031f5de772443f2b",
+    "semantic_hash": ""
+  },
+  ".agents/agents/backend-engineer.md": {
+    "mtime": 1777637531.3517063,
+    "ast_hash": "f01088c665558ebe66aa3d5641eb700b",
+    "semantic_hash": ""
+  },
+  ".agents/agents/db-engineer.md": {
+    "mtime": 1777637531.3535395,
+    "ast_hash": "7d3bb2278ea21aed75c9e57d8f05f43e",
+    "semantic_hash": ""
+  },
+  ".agents/agents/frontend-engineer.md": {
+    "mtime": 1777637531.355552,
+    "ast_hash": "9153d3f864b92b88653cba9b6e3e5b4f",
+    "semantic_hash": ""
+  },
+  ".agents/agents/orchestrator.md": {
+    "mtime": 1777637531.355552,
+    "ast_hash": "12f7bd2b4af7d3754e0855e428c86392",
+    "semantic_hash": ""
+  },
+  ".agents/agents/reviewer.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "d5e53208f91dc9da4451d0debcaef63a",
+    "semantic_hash": ""
+  },
+  ".agents/agents/tester.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "30c4eaeee5bbb42de0a212e6dd4ff0c9",
+    "semantic_hash": ""
+  },
+  ".agents/context/constraints.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "9ceb476dbdd267b2902d1f517cab4095",
+    "semantic_hash": ""
+  },
+  ".agents/context/conventions.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "8e9fc751cd275c09e1a496cfc553e791",
+    "semantic_hash": ""
+  },
+  ".agents/context/project-overview.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "8be44812763d460162f0152697de2995",
+    "semantic_hash": ""
+  },
+  ".agents/context/tech-stack.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "fce2481b61063d0139d90f2d5c2e36d6",
+    "semantic_hash": ""
+  },
+  ".agents/tasks/_template.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "d2ec271307861e691a28f77847d317f6",
+    "semantic_hash": ""
+  },
+  ".agents/tasks/active/2026-04-30-ST-01-gudang-outlet-crud.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "6cc2a0f08038b0a937b921ce89b124b4",
+    "semantic_hash": ""
+  },
+  ".agents/tasks/active/2026-04-30-ST-02-supplier-receive.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "65bd000263ac6b9f74611afcb8156921",
+    "semantic_hash": ""
+  },
+  ".agents/tasks/active/2026-04-30-ST-03-stock-transfer.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "646270d0e67e46a10d9b7e7eb625da4a",
+    "semantic_hash": ""
+  },
+  ".agents/tasks/active/2026-04-30-ST-04-rbac-visibility.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "2440bfbee4de728a0b238b223b96949d",
+    "semantic_hash": ""
+  },
+  ".agents/tasks/active/2026-04-30-stock-management-full-flow.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "bb311f50113580dca35514587833a26a",
+    "semantic_hash": ""
+  },
+  ".agents/tasks/active/README.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "b49b283556d53cf21d46c60b06da3edf",
+    "semantic_hash": ""
+  },
+  ".agents/tasks/done/README.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "331a8291955ccc080a02bc5fbe7d3253",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/bug-fix.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "26d50cb04a1060475fc339fc885fdf47",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/code-review.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "c1c3e9323a90702435d624b1e005806d",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/db-migration.md": {
+    "mtime": 1777637531.3698223,
+    "ast_hash": "0fa6c8eca1b091a6ef260274ad1eb07a",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/new-feature.md": {
+    "mtime": 1777637531.3698223,
+    "ast_hash": "e2d9b1db9c1a2197e4208d6059ecef6d",
+    "semantic_hash": ""
+  },
+  ".codex/skills/graphify/SKILL.md": {
+    "mtime": 1781297629.0490336,
+    "ast_hash": "387caca7fe66d3151e67c512bc93dd25",
+    "semantic_hash": ""
+  },
+  ".codex/skills/graphify/references/add-watch.md": {
+    "mtime": 1781191274.247913,
+    "ast_hash": "0df0589623217ca38a12bdcabfb42f4c",
+    "semantic_hash": ""
+  },
+  ".codex/skills/graphify/references/exports.md": {
+    "mtime": 1781191274.264737,
+    "ast_hash": "7fb1a81aca17a462db70684a324fcfb0",
+    "semantic_hash": ""
+  },
+  ".codex/skills/graphify/references/extraction-spec.md": {
+    "mtime": 1781191274.2698896,
+    "ast_hash": "a86a7321597b23cc2b22e011b3dc6e1d",
+    "semantic_hash": ""
+  },
+  ".codex/skills/graphify/references/github-and-merge.md": {
+    "mtime": 1781191274.274132,
+    "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
+    "semantic_hash": ""
+  },
+  ".codex/skills/graphify/references/hooks.md": {
+    "mtime": 1781191274.2775772,
+    "ast_hash": "3f545db6ce646650bb9de588f5512a27",
+    "semantic_hash": ""
+  },
+  ".codex/skills/graphify/references/query.md": {
+    "mtime": 1781191274.2796245,
+    "ast_hash": "c2a8e798674a81b02aa9975f43023819",
+    "semantic_hash": ""
+  },
+  ".codex/skills/graphify/references/transcribe.md": {
+    "mtime": 1781191274.2836735,
+    "ast_hash": "70f6aa30d6211f3a2c7e9fc45479f50c",
+    "semantic_hash": ""
+  },
+  ".codex/skills/graphify/references/update.md": {
+    "mtime": 1781191274.2920594,
+    "ast_hash": "0dad167a95bdb389f02fecffb60b1bc8",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/1778162339185-quick-tiger.md": {
+    "mtime": 1778162556.9704778,
+    "ast_hash": "04a12f37b0a69c8c0fddb5d6f71ae1c3",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1781297629.0683737,
+    "ast_hash": "752aa83aa64361ac32860f882dcff932",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/APP_LAYOUT.md": {
+    "mtime": 1777637531.37166,
+    "ast_hash": "9490ee970aedac15566f7940e0fd2f6a",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/AUTH_FLOW.md": {
+    "mtime": 1777637531.3722284,
+    "ast_hash": "b9e5959489bd9ab7177f9a4ea471ff0b",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/DATABASE_SCHEMA.md": {
+    "mtime": 1777637531.3722284,
+    "ast_hash": "0616a9f4f6951717e1b8ed6d3a561190",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/IMPLEMENTATION_STATUS.md": {
+    "mtime": 1777637531.3722284,
+    "ast_hash": "5b252c716948162a914965df7a2ab449",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/LATER.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "46975e66b1a15b709cf770a40fb2269b",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/LOFISH OWNER_REVISION.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "431b44b2c32b2e816ef7b00d1ec80b57",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/PERMISSIONS.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "76868847a8cd8e0fc3f7e6e9e1075f89",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/PLAN.md": {
+    "mtime": 1778457697.1078336,
+    "ast_hash": "5665f81a74b6b8e4ea95ddf05f70dfec",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/PROJECT_SPEC.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "f7284e97662003797252258c58368b3a",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/SERIAL_API_SPEC.md": {
+    "mtime": 1778366665.9585085,
+    "ast_hash": "3189ee7238c2e9127ea3daa688b631bb",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/SUPERVISOR_STOCK_UI_FIX.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "9a88d06fe3c76015ff0b5a143e215b58",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/TIMEZONE_MANAGEMENT.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "7f70fbd16021ad42ac5e395505f8f8a1",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/TRANSACTION_FLOW.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "02be5629879b50ad0c19df2861d7ba24",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/feature/stock-management.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "ec010b2ce704061e321ef7ed03826491",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/feature/stock-opname.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "7b61808a45747bf5b76c74ed7847745c",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/frontend/GEMINI.md": {
+    "mtime": 1777637531.380761,
+    "ast_hash": "4cb407729a8e5cec20753ffaf67639df",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/frontend/PROJECT_SPEC.md": {
+    "mtime": 1777637531.380761,
+    "ast_hash": "9b81311915925be56c27517be1987220",
+    "semantic_hash": ""
+  },
+  "APP_DOCUMENTATION/frontend/docs.md": {
+    "mtime": 1777637531.3819885,
+    "ast_hash": "ed7ec3fbd2434e1f7b11d29477f3acb6",
+    "semantic_hash": ""
+  },
+  "DESIGN.md": {
+    "mtime": 1778154801.5500143,
+    "ast_hash": "b706ed758b509ff10f167bcf70c4459c",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1781227768.7601528,
+    "ast_hash": "874029a1417d17d866d8e28423a8e5f3",
+    "semantic_hash": ""
+  },
+  "docker-compose.dev.yml": {
+    "mtime": 1780500134.838708,
+    "ast_hash": "18ffe5612ea31481c40d13d37acd85e4",
+    "semantic_hash": ""
+  },
+  "docker-compose.prod.yml": {
+    "mtime": 1780550177.880328,
+    "ast_hash": "eff947c4368601751abd97a632efe652",
+    "semantic_hash": ""
+  },
+  "docker-compose.yml": {
+    "mtime": 1781296776.184666,
+    "ast_hash": "18ffe5612ea31481c40d13d37acd85e4",
+    "semantic_hash": ""
+  },
+  "e2e/playwright-report/index.html": {
+    "mtime": 1780562953.3000033,
+    "ast_hash": "041258658c9380b56a1ece1d11bf60a8",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/README.md": {
+    "mtime": 1777637788.5791183,
+    "ast_hash": "d38bcbe9989c25ec7ef66bc64b78397b",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/db/README.txt": {
+    "mtime": 1777637788.5831337,
+    "ast_hash": "63f4be2cea864fb03abd3fa8b481c43d",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/docs/API_DOCUMENTATION.md": {
+    "mtime": 1777637788.6256917,
+    "ast_hash": "2cd2726a4dae183ffe0a377d64f46fcd",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/docs/DATABASE_SCHEMA.md": {
+    "mtime": 1777637788.6256917,
+    "ast_hash": "2434d66ca479271a50db0e4218f7f0eb",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/docs/REFERENCES.md": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "87610aeda60f3de961411f6e647b3564",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/docs/RULES.md": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "e36b84a7fecd8b071c39f29ad6c8481b",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/docs/TRANSACTION_HISTORY_API.md": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "ec43c8cffbcbc6e65dd1d90ed2d46ce1",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/docs/WEBSOCKET_WEBHOOK.md": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "1df7ef5c3949955e297d47fa28fe76d5",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/openapi.yaml": {
+    "mtime": 1777637788.6276991,
+    "ast_hash": "c9864fe41508f7117c7f89a59479e6ce",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/tests/IMPLEMENTATION_SUMMARY.md": {
+    "mtime": 1777637788.6419663,
+    "ast_hash": "2240d14736b15f37b66c473c15df2e12",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/tests/README.md": {
+    "mtime": 1777637788.6459925,
+    "ast_hash": "7a3c4b9c8fbf3ea427193a9a6cf0fff7",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/AUTO_REKAP.md": {
+    "mtime": 1778459933.9581232,
+    "ast_hash": "d6e144a92c22eec6e93afa0fd2ff15b8",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/LAPORAN_PENJUALAN.md": {
+    "mtime": 1778457069.568463,
+    "ast_hash": "da9474dde7519b3bd25e03633f4c22e6",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/README.md": {
+    "mtime": 1777637798.8873777,
+    "ast_hash": "eafa853b758ebd0cea3d2b5a7100ba11",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/RULES.md": {
+    "mtime": 1777770906.3224733,
+    "ast_hash": "2cf3d05b480f81997df108392a444f95",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/index.html": {
+    "mtime": 1780499167.0768971,
+    "ast_hash": "e28e91134fce1c1aed0e4a35fc7e185d",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/wiki/Architecture.md": {
+    "mtime": 1777637799.015249,
+    "ast_hash": "8f6e623129759cf992989b8c4d2ca0b8",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/wiki/Components.md": {
+    "mtime": 1777637799.015249,
+    "ast_hash": "b6d94fd8bd4e6b5978d55bfb4161d247",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/wiki/Getting-Started.md": {
+    "mtime": 1777637799.015249,
+    "ast_hash": "2bfa1ad7c0035157574e9e16be8ef96f",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/wiki/Home.md": {
+    "mtime": 1777637799.015249,
+    "ast_hash": "edead670e5aa0c6bce58f355199b874b",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/wiki/Services.md": {
+    "mtime": 1777637799.015249,
+    "ast_hash": "24506adc08e9d2e351eb256687860300",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/wiki/State-Management.md": {
+    "mtime": 1777637799.015249,
+    "ast_hash": "6bbe9124c8058c597e84812cda9e2d14",
+    "semantic_hash": ""
+  },
+  "tmp/login.html": {
+    "mtime": 1777637531.395378,
+    "ast_hash": "781bc4f58ad194e6537ef8a0b3f3316a",
+    "semantic_hash": ""
+  },
+  "tmp/spvr_token_final.txt": {
+    "mtime": 1777637531.395378,
+    "ast_hash": "a6f6d3fbfdc2c76908b90f406402f8eb",
+    "semantic_hash": ""
+  },
+  "default_product.png": {
+    "mtime": 1777637531.3879151,
+    "ast_hash": "275452d4a22600db5b147680fd700d22",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/bin/upload/product/3PizLTZ6.jpg": {
+    "mtime": 1777637644.918622,
+    "ast_hash": "1d5adac7ce46923ddc38b7a7925dcdb2",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/bin/upload/product/o4VmUKKf.jpg": {
+    "mtime": 1777637644.9206307,
+    "ast_hash": "1d5adac7ce46923ddc38b7a7925dcdb2",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/upload/attachment/8tJHVtmqofCc9kZC.jpg": {
+    "mtime": 1777637644.971786,
+    "ast_hash": "83e539c3807dbfcddb18943753fc09be",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/upload/product/1geU4-_E.jpg": {
+    "mtime": 1777637788.6459925,
+    "ast_hash": "df5f9b4d3dcdee0627a8517dc3b9dcbb",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/upload/product/5PVcGE0-.jpg": {
+    "mtime": 1777637788.6459925,
+    "ast_hash": "f22b251c0ab104129bb3d9fe6ac22032",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/upload/product/PRD01.jpg": {
+    "mtime": 1778399192.945066,
+    "ast_hash": "40bcf0bed9fbeeab5d031f4ebbe03a85",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/upload/product/WZ7VXUAQ.jpg": {
+    "mtime": 1777637644.971786,
+    "ast_hash": "a0af4c562406b47cdbf2e9ab7e300a8c",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/upload/product/b-xTcKns.jpg": {
+    "mtime": 1777637788.6492128,
+    "ast_hash": "779121f1fc9a625bb7ee5b6dd624a313",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/upload/product/dpolx_cz.jpg": {
+    "mtime": 1777637644.971786,
+    "ast_hash": "1d5adac7ce46923ddc38b7a7925dcdb2",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/upload/product/lbeGCxlj.jpg": {
+    "mtime": 1777637644.971786,
+    "ast_hash": "1d5adac7ce46923ddc38b7a7925dcdb2",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/upload/product/zh_MVRIu.jpg": {
+    "mtime": 1777637788.6492128,
+    "ast_hash": "4ed193ad81f8d15fb97fce32b7631923",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/upload/purchase/purchase-bulk-proof-1777778785231.png": {
+    "mtime": 1777778785.2315996,
+    "ast_hash": "8e66000021c62e68fafb7ebf1e94623d",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/upload/purchase/purchase-bulk-proof-1778466594909.png": {
+    "mtime": 1778466594.9104493,
+    "ast_hash": "8e66000021c62e68fafb7ebf1e94623d",
+    "semantic_hash": ""
+  },
+  "lofishmart-backend/upload/service/mnuEas.jpg": {
+    "mtime": 1777637788.6492128,
+    "ast_hash": "cb605b927fe0225ddcdcc26c84aa3bc1",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/default_product.png": {
+    "mtime": 1778155019.6060545,
+    "ast_hash": "275452d4a22600db5b147680fd700d22",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/public/default_product.png": {
+    "mtime": 1778155019.6060545,
+    "ast_hash": "275452d4a22600db5b147680fd700d22",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/public/lofish.svg": {
+    "mtime": 1777637798.895406,
+    "ast_hash": "6b26da081a3310e4fcb622578f6a7750",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/public/vite.svg": {
+    "mtime": 1777637760.8069127,
+    "ast_hash": "8e3a10e157f75ada21ab742c022d5430",
+    "semantic_hash": ""
+  },
+  "lofishmart-frontend/src/assets/react.svg": {
+    "mtime": 1777637760.8097203,
+    "ast_hash": "f0402b67b6ce880f65666bb49e841696",
+    "semantic_hash": ""
+  },
+  "tmp/dummy.jpg": {
+    "mtime": 1777637531.3925009,
+    "ast_hash": "8e608f75edca4901a0eae981865568f2",
+    "semantic_hash": ""
+  }
+}
