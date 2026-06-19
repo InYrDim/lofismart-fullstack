@@ -1,0 +1,7 @@
+C:\code\lofismart-fullstack\docs\frontend\GEMINI.md
+C:\code\lofismart-fullstack\docs\frontend\PROJECT_SPEC.md
+C:\code\lofismart-fullstack\docs\frontend\docs.md
+C:\code\lofismart-fullstack\e2e\playwright-report\data\2c5c64eced1c61e0a34795d320fe2ee68b80bbd3.md
+C:\code\lofismart-fullstack\e2e\playwright-report\index.html
+C:\code\lofismart-fullstack\e2e\test-results\pos.kasir-POS-Flow-User-ca-594f7-yment-and-see-success-modal-kasir\error-context.md
+C:\code\lofismart-fullstack\default_product.png

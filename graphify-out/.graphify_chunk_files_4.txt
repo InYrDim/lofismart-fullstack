@@ -1,0 +1,22 @@
+C:\code\lofismart-fullstack\DESIGN.md
+C:\code\lofismart-fullstack\README.md
+C:\code\lofismart-fullstack\docker-compose.dev.yml
+C:\code\lofismart-fullstack\docker-compose.prod.yml
+C:\code\lofismart-fullstack\docker-compose.yml
+C:\code\lofismart-fullstack\docs\APP_DOCUMENTATION\APP_LAYOUT.md
+C:\code\lofismart-fullstack\docs\APP_DOCUMENTATION\AUTH_FLOW.md
+C:\code\lofismart-fullstack\docs\APP_DOCUMENTATION\DATABASE_SCHEMA.md
+C:\code\lofismart-fullstack\docs\APP_DOCUMENTATION\IMPLEMENTATION_STATUS.md
+C:\code\lofismart-fullstack\docs\APP_DOCUMENTATION\LATER.md
+C:\code\lofismart-fullstack\docs\APP_DOCUMENTATION\LOFISH OWNER_REVISION.md
+C:\code\lofismart-fullstack\docs\APP_DOCUMENTATION\PERMISSIONS.md
+C:\code\lofismart-fullstack\docs\APP_DOCUMENTATION\PLAN.md
+C:\code\lofismart-fullstack\docs\APP_DOCUMENTATION\PROJECT_SPEC.md
+C:\code\lofismart-fullstack\docs\APP_DOCUMENTATION\SERIAL_API_SPEC.md
+C:\code\lofismart-fullstack\docs\APP_DOCUMENTATION\SUPERVISOR_STOCK_UI_FIX.md
+C:\code\lofismart-fullstack\docs\APP_DOCUMENTATION\TIMEZONE_MANAGEMENT.md
+C:\code\lofismart-fullstack\docs\APP_DOCUMENTATION\TRANSACTION_FLOW.md
+C:\code\lofismart-fullstack\docs\AUTO_REKAP.md
+C:\code\lofismart-fullstack\docs\LAPORAN_PENJUALAN.md
+C:\code\lofismart-fullstack\docs\feature\stock-management.md
+C:\code\lofismart-fullstack\docs\feature\stock-opname.md

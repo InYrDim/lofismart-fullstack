@@ -2214,96 +2214,6 @@
     "ast_hash": "752aa83aa64361ac32860f882dcff932",
     "semantic_hash": ""
   },
-  "APP_DOCUMENTATION/APP_LAYOUT.md": {
-    "mtime": 1777637531.37166,
-    "ast_hash": "9490ee970aedac15566f7940e0fd2f6a",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/AUTH_FLOW.md": {
-    "mtime": 1777637531.3722284,
-    "ast_hash": "b9e5959489bd9ab7177f9a4ea471ff0b",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/DATABASE_SCHEMA.md": {
-    "mtime": 1777637531.3722284,
-    "ast_hash": "0616a9f4f6951717e1b8ed6d3a561190",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/IMPLEMENTATION_STATUS.md": {
-    "mtime": 1777637531.3722284,
-    "ast_hash": "5b252c716948162a914965df7a2ab449",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/LATER.md": {
-    "mtime": 1777637531.3746808,
-    "ast_hash": "46975e66b1a15b709cf770a40fb2269b",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/LOFISH OWNER_REVISION.md": {
-    "mtime": 1777637531.3746808,
-    "ast_hash": "431b44b2c32b2e816ef7b00d1ec80b57",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/PERMISSIONS.md": {
-    "mtime": 1777637531.3746808,
-    "ast_hash": "76868847a8cd8e0fc3f7e6e9e1075f89",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/PLAN.md": {
-    "mtime": 1778457697.1078336,
-    "ast_hash": "5665f81a74b6b8e4ea95ddf05f70dfec",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/PROJECT_SPEC.md": {
-    "mtime": 1777637531.3746808,
-    "ast_hash": "f7284e97662003797252258c58368b3a",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/SERIAL_API_SPEC.md": {
-    "mtime": 1778366665.9585085,
-    "ast_hash": "3189ee7238c2e9127ea3daa688b631bb",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/SUPERVISOR_STOCK_UI_FIX.md": {
-    "mtime": 1777637531.3746808,
-    "ast_hash": "9a88d06fe3c76015ff0b5a143e215b58",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/TIMEZONE_MANAGEMENT.md": {
-    "mtime": 1777637531.3746808,
-    "ast_hash": "7f70fbd16021ad42ac5e395505f8f8a1",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/TRANSACTION_FLOW.md": {
-    "mtime": 1777637531.3746808,
-    "ast_hash": "02be5629879b50ad0c19df2861d7ba24",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/feature/stock-management.md": {
-    "mtime": 1777637531.3746808,
-    "ast_hash": "ec010b2ce704061e321ef7ed03826491",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/feature/stock-opname.md": {
-    "mtime": 1777637531.3746808,
-    "ast_hash": "7b61808a45747bf5b76c74ed7847745c",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/frontend/GEMINI.md": {
-    "mtime": 1777637531.380761,
-    "ast_hash": "4cb407729a8e5cec20753ffaf67639df",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/frontend/PROJECT_SPEC.md": {
-    "mtime": 1777637531.380761,
-    "ast_hash": "9b81311915925be56c27517be1987220",
-    "semantic_hash": ""
-  },
-  "APP_DOCUMENTATION/frontend/docs.md": {
-    "mtime": 1777637531.3819885,
-    "ast_hash": "ed7ec3fbd2434e1f7b11d29477f3acb6",
-    "semantic_hash": ""
-  },
   "DESIGN.md": {
     "mtime": 1778154801.5500143,
     "ast_hash": "b706ed758b509ff10f167bcf70c4459c",
@@ -2344,36 +2254,6 @@
     "ast_hash": "63f4be2cea864fb03abd3fa8b481c43d",
     "semantic_hash": ""
   },
-  "lofishmart-backend/docs/API_DOCUMENTATION.md": {
-    "mtime": 1777637788.6256917,
-    "ast_hash": "2cd2726a4dae183ffe0a377d64f46fcd",
-    "semantic_hash": ""
-  },
-  "lofishmart-backend/docs/DATABASE_SCHEMA.md": {
-    "mtime": 1777637788.6256917,
-    "ast_hash": "2434d66ca479271a50db0e4218f7f0eb",
-    "semantic_hash": ""
-  },
-  "lofishmart-backend/docs/REFERENCES.md": {
-    "mtime": 1777637788.6276991,
-    "ast_hash": "87610aeda60f3de961411f6e647b3564",
-    "semantic_hash": ""
-  },
-  "lofishmart-backend/docs/RULES.md": {
-    "mtime": 1777637788.6276991,
-    "ast_hash": "e36b84a7fecd8b071c39f29ad6c8481b",
-    "semantic_hash": ""
-  },
-  "lofishmart-backend/docs/TRANSACTION_HISTORY_API.md": {
-    "mtime": 1777637788.6276991,
-    "ast_hash": "ec43c8cffbcbc6e65dd1d90ed2d46ce1",
-    "semantic_hash": ""
-  },
-  "lofishmart-backend/docs/WEBSOCKET_WEBHOOK.md": {
-    "mtime": 1777637788.6276991,
-    "ast_hash": "1df7ef5c3949955e297d47fa28fe76d5",
-    "semantic_hash": ""
-  },
   "lofishmart-backend/openapi.yaml": {
     "mtime": 1777637788.6276991,
     "ast_hash": "c9864fe41508f7117c7f89a59479e6ce",
@@ -2387,16 +2267,6 @@
   "lofishmart-backend/tests/README.md": {
     "mtime": 1777637788.6459925,
     "ast_hash": "7a3c4b9c8fbf3ea427193a9a6cf0fff7",
-    "semantic_hash": ""
-  },
-  "lofishmart-frontend/AUTO_REKAP.md": {
-    "mtime": 1778459933.9581232,
-    "ast_hash": "d6e144a92c22eec6e93afa0fd2ff15b8",
-    "semantic_hash": ""
-  },
-  "lofishmart-frontend/LAPORAN_PENJUALAN.md": {
-    "mtime": 1778457069.568463,
-    "ast_hash": "da9474dde7519b3bd25e03633f4c22e6",
     "semantic_hash": ""
   },
   "lofishmart-frontend/README.md": {
@@ -2442,16 +2312,6 @@
   "lofishmart-frontend/wiki/State-Management.md": {
     "mtime": 1777637799.015249,
     "ast_hash": "6bbe9124c8058c597e84812cda9e2d14",
-    "semantic_hash": ""
-  },
-  "tmp/login.html": {
-    "mtime": 1777637531.395378,
-    "ast_hash": "781bc4f58ad194e6537ef8a0b3f3316a",
-    "semantic_hash": ""
-  },
-  "tmp/spvr_token_final.txt": {
-    "mtime": 1777637531.395378,
-    "ast_hash": "a6f6d3fbfdc2c76908b90f406402f8eb",
     "semantic_hash": ""
   },
   "default_product.png": {
@@ -2554,9 +2414,479 @@
     "ast_hash": "f0402b67b6ce880f65666bb49e841696",
     "semantic_hash": ""
   },
-  "tmp/dummy.jpg": {
-    "mtime": 1777637531.3925009,
-    "ast_hash": "8e608f75edca4901a0eae981865568f2",
-    "semantic_hash": ""
+  "C:\\code\\lofismart-fullstack\\.claude\\settings.local.json": {
+    "mtime": 1781515852.1464958,
+    "ast_hash": "21e2aaf4b8b0db1c0e89007d8c1e3268",
+    "semantic_hash": "21e2aaf4b8b0db1c0e89007d8c1e3268"
+  },
+  "C:\\code\\lofismart-fullstack\\.codex\\hooks.json": {
+    "mtime": 1781297629.0736616,
+    "ast_hash": "553beed8792d7902ee8d2f02c61153a5",
+    "semantic_hash": "553beed8792d7902ee8d2f02c61153a5"
+  },
+  "C:\\code\\lofismart-fullstack\\.kilo\\package.json": {
+    "mtime": 1778161638.708154,
+    "ast_hash": "8f13e142484d681d644cd2a54a949e16",
+    "semantic_hash": "8f13e142484d681d644cd2a54a949e16"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\package.json": {
+    "mtime": 1778470951.1148224,
+    "ast_hash": "b3961e482e792aa4272f3d6afdf2daf4",
+    "semantic_hash": "b3961e482e792aa4272f3d6afdf2daf4"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\playwright.config.ts": {
+    "mtime": 1780556896.4690847,
+    "ast_hash": "d17b2aa284fade4a62569e2da6f14d01",
+    "semantic_hash": "d17b2aa284fade4a62569e2da6f14d01"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\playwright\\.auth\\admin.json": {
+    "mtime": 1781442729.6864572,
+    "ast_hash": "69b8dd171fc24ffcf8dcd8923d42daa9",
+    "semantic_hash": "69b8dd171fc24ffcf8dcd8923d42daa9"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\playwright\\.auth\\gudang.json": {
+    "mtime": 1781442734.925929,
+    "ast_hash": "e40eb27b31e7b8d162ef3caaff811ec1",
+    "semantic_hash": "e40eb27b31e7b8d162ef3caaff811ec1"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\playwright\\.auth\\kasir.json": {
+    "mtime": 1781442732.7899609,
+    "ast_hash": "e1818d6bde64d041cb5ad6bbe4ed64c6",
+    "semantic_hash": "e1818d6bde64d041cb5ad6bbe4ed64c6"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\playwright\\.auth\\user.json": {
+    "mtime": 1778471613.8851042,
+    "ast_hash": "7bda918d8a69d8fbf3567ed1f5afa170",
+    "semantic_hash": "7bda918d8a69d8fbf3567ed1f5afa170"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\test-results\\.last-run.json": {
+    "mtime": 1781442781.5580182,
+    "ast_hash": "25e7d259a09f422333e921f2b42d7c9d",
+    "semantic_hash": "25e7d259a09f422333e921f2b42d7c9d"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\tests\\auth.setup.ts": {
+    "mtime": 1778473012.8026643,
+    "ast_hash": "c5ef98eeae43623d353bb10709ad16a8",
+    "semantic_hash": "c5ef98eeae43623d353bb10709ad16a8"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\tests\\dashboard.admin.spec.ts": {
+    "mtime": 1780555391.1252422,
+    "ast_hash": "42037dd1feab1618460f3d83005b49e3",
+    "semantic_hash": "42037dd1feab1618460f3d83005b49e3"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\tests\\data-transaksi.admin.spec.ts": {
+    "mtime": 1780556026.690845,
+    "ast_hash": "5dec86b27b2a414bb98dc4052681913e",
+    "semantic_hash": "5dec86b27b2a414bb98dc4052681913e"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\tests\\management.admin.spec.ts": {
+    "mtime": 1780557408.7557416,
+    "ast_hash": "cfb26bae88731cad9e8c1174fc55e20f",
+    "semantic_hash": "cfb26bae88731cad9e8c1174fc55e20f"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\tests\\pos.kasir.spec.ts": {
+    "mtime": 1781443865.5489166,
+    "ast_hash": "2562594ddff2ab172755b73ab6a19421",
+    "semantic_hash": "2562594ddff2ab172755b73ab6a19421"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\tests\\products.admin.spec.ts": {
+    "mtime": 1781438988.080198,
+    "ast_hash": "eba1e0961d61bda77897d046df156fcb",
+    "semantic_hash": "eba1e0961d61bda77897d046df156fcb"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\tests\\stock.gudang.spec.ts": {
+    "mtime": 1780556028.59803,
+    "ast_hash": "ad696eee938ae23852aad297873f86a3",
+    "semantic_hash": "ad696eee938ae23852aad297873f86a3"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\tsconfig.json": {
+    "mtime": 1778470659.909167,
+    "ast_hash": "7b0179cb91b39e16c871638a4287d8f5",
+    "semantic_hash": "7b0179cb91b39e16c871638a4287d8f5"
+  },
+  "C:\\code\\lofismart-fullstack\\eslint.config.mjs": {
+    "mtime": 1777637531.3879151,
+    "ast_hash": "e3474893d156c6f5c80aa6f02eeb02cc",
+    "semantic_hash": "e3474893d156c6f5c80aa6f02eeb02cc"
+  },
+  "C:\\code\\lofismart-fullstack\\package.json": {
+    "mtime": 1777637531.3905933,
+    "ast_hash": "68dbc0ff1314d5c4923689ba4f6b4cb2",
+    "semantic_hash": "68dbc0ff1314d5c4923689ba4f6b4cb2"
+  },
+  "C:\\code\\lofismart-fullstack\\playwright\\.auth\\admin.json": {
+    "mtime": 1780554222.4682112,
+    "ast_hash": "ec46bc0ac87b39f3f763b5f63a8b1cd2",
+    "semantic_hash": "ec46bc0ac87b39f3f763b5f63a8b1cd2"
+  },
+  "C:\\code\\lofismart-fullstack\\playwright\\.auth\\gudang.json": {
+    "mtime": 1780554222.5142417,
+    "ast_hash": "ffa539dc4e7ffb08b37b672b43ce1f23",
+    "semantic_hash": "ffa539dc4e7ffb08b37b672b43ce1f23"
+  },
+  "C:\\code\\lofismart-fullstack\\playwright\\.auth\\kasir.json": {
+    "mtime": 1780554222.82556,
+    "ast_hash": "d4a76a7eba944f4714acdfd0328245ca",
+    "semantic_hash": "d4a76a7eba944f4714acdfd0328245ca"
+  },
+  "C:\\code\\lofismart-fullstack\\reset-and-dev.sh": {
+    "mtime": 1780545889.0476334,
+    "ast_hash": "0f3934a458ac3ffda0af7e9b932867a1",
+    "semantic_hash": "0f3934a458ac3ffda0af7e9b932867a1"
+  },
+  "C:\\code\\lofismart-fullstack\\reset-and-prod.sh": {
+    "mtime": 1780545889.0509694,
+    "ast_hash": "48d86aa5cc0c53fc5e2f8c3cca9aad84",
+    "semantic_hash": "48d86aa5cc0c53fc5e2f8c3cca9aad84"
+  },
+  "C:\\code\\lofismart-fullstack\\reset-db.sh": {
+    "mtime": 1780545889.05158,
+    "ast_hash": "56f9961be124e857d907e778fcc31aad",
+    "semantic_hash": "56f9961be124e857d907e778fcc31aad"
+  },
+  "C:\\code\\lofismart-fullstack\\reset-docker.sh": {
+    "mtime": 1780545889.054594,
+    "ast_hash": "680b850883a3555b06788c93743a6650",
+    "semantic_hash": "680b850883a3555b06788c93743a6650"
+  },
+  "C:\\code\\lofismart-fullstack\\run-tests.sh": {
+    "mtime": 1781436072.0901194,
+    "ast_hash": "0ef0783014a970e386b7f517bb6fdbaa",
+    "semantic_hash": "0ef0783014a970e386b7f517bb6fdbaa"
+  },
+  "C:\\code\\lofismart-fullstack\\start-dev.sh": {
+    "mtime": 1781296826.2697527,
+    "ast_hash": "3881d96a893a585fe3357b971a73b8ed",
+    "semantic_hash": "3881d96a893a585fe3357b971a73b8ed"
+  },
+  "C:\\code\\lofismart-fullstack\\start-prod.sh": {
+    "mtime": 1781291450.3987362,
+    "ast_hash": "d0014cc53624413a00f8683fd2d08443",
+    "semantic_hash": "d0014cc53624413a00f8683fd2d08443"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\README.md": {
+    "mtime": 1777637531.3486333,
+    "ast_hash": "ff74ae40fdea1d8fac1d77293c1f86f4",
+    "semantic_hash": "ff74ae40fdea1d8fac1d77293c1f86f4"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\agents\\api-docs-engineer.md": {
+    "mtime": 1777637531.3499517,
+    "ast_hash": "6783548abb148e6b031f5de772443f2b",
+    "semantic_hash": "6783548abb148e6b031f5de772443f2b"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\agents\\backend-engineer.md": {
+    "mtime": 1777637531.3517063,
+    "ast_hash": "f01088c665558ebe66aa3d5641eb700b",
+    "semantic_hash": "f01088c665558ebe66aa3d5641eb700b"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\agents\\db-engineer.md": {
+    "mtime": 1777637531.3535395,
+    "ast_hash": "7d3bb2278ea21aed75c9e57d8f05f43e",
+    "semantic_hash": "7d3bb2278ea21aed75c9e57d8f05f43e"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\agents\\frontend-engineer.md": {
+    "mtime": 1777637531.355552,
+    "ast_hash": "9153d3f864b92b88653cba9b6e3e5b4f",
+    "semantic_hash": "9153d3f864b92b88653cba9b6e3e5b4f"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\agents\\orchestrator.md": {
+    "mtime": 1777637531.355552,
+    "ast_hash": "12f7bd2b4af7d3754e0855e428c86392",
+    "semantic_hash": "12f7bd2b4af7d3754e0855e428c86392"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\agents\\reviewer.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "d5e53208f91dc9da4451d0debcaef63a",
+    "semantic_hash": "d5e53208f91dc9da4451d0debcaef63a"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\agents\\tester.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "30c4eaeee5bbb42de0a212e6dd4ff0c9",
+    "semantic_hash": "30c4eaeee5bbb42de0a212e6dd4ff0c9"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\context\\constraints.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "9ceb476dbdd267b2902d1f517cab4095",
+    "semantic_hash": "9ceb476dbdd267b2902d1f517cab4095"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\context\\conventions.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "8e9fc751cd275c09e1a496cfc553e791",
+    "semantic_hash": "8e9fc751cd275c09e1a496cfc553e791"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\context\\project-overview.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "8be44812763d460162f0152697de2995",
+    "semantic_hash": "8be44812763d460162f0152697de2995"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\context\\tech-stack.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "fce2481b61063d0139d90f2d5c2e36d6",
+    "semantic_hash": "fce2481b61063d0139d90f2d5c2e36d6"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\tasks\\_template.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "d2ec271307861e691a28f77847d317f6",
+    "semantic_hash": "d2ec271307861e691a28f77847d317f6"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\tasks\\active\\2026-04-30-ST-01-gudang-outlet-crud.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "6cc2a0f08038b0a937b921ce89b124b4",
+    "semantic_hash": "6cc2a0f08038b0a937b921ce89b124b4"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\tasks\\active\\2026-04-30-ST-02-supplier-receive.md": {
+    "mtime": 1777637531.3576298,
+    "ast_hash": "65bd000263ac6b9f74611afcb8156921",
+    "semantic_hash": "65bd000263ac6b9f74611afcb8156921"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\tasks\\active\\2026-04-30-ST-03-stock-transfer.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "646270d0e67e46a10d9b7e7eb625da4a",
+    "semantic_hash": "646270d0e67e46a10d9b7e7eb625da4a"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\tasks\\active\\2026-04-30-ST-04-rbac-visibility.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "2440bfbee4de728a0b238b223b96949d",
+    "semantic_hash": "2440bfbee4de728a0b238b223b96949d"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\tasks\\active\\2026-04-30-stock-management-full-flow.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "bb311f50113580dca35514587833a26a",
+    "semantic_hash": "bb311f50113580dca35514587833a26a"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\tasks\\active\\README.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "b49b283556d53cf21d46c60b06da3edf",
+    "semantic_hash": "b49b283556d53cf21d46c60b06da3edf"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\tasks\\done\\README.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "331a8291955ccc080a02bc5fbe7d3253",
+    "semantic_hash": "331a8291955ccc080a02bc5fbe7d3253"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\workflows\\bug-fix.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "26d50cb04a1060475fc339fc885fdf47",
+    "semantic_hash": "26d50cb04a1060475fc339fc885fdf47"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\workflows\\code-review.md": {
+    "mtime": 1777637531.364608,
+    "ast_hash": "c1c3e9323a90702435d624b1e005806d",
+    "semantic_hash": "c1c3e9323a90702435d624b1e005806d"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\workflows\\db-migration.md": {
+    "mtime": 1777637531.3698223,
+    "ast_hash": "0fa6c8eca1b091a6ef260274ad1eb07a",
+    "semantic_hash": "0fa6c8eca1b091a6ef260274ad1eb07a"
+  },
+  "C:\\code\\lofismart-fullstack\\.agents\\workflows\\new-feature.md": {
+    "mtime": 1777637531.3698223,
+    "ast_hash": "e2d9b1db9c1a2197e4208d6059ecef6d",
+    "semantic_hash": "e2d9b1db9c1a2197e4208d6059ecef6d"
+  },
+  "C:\\code\\lofismart-fullstack\\.codex\\skills\\graphify\\SKILL.md": {
+    "mtime": 1781297629.0490336,
+    "ast_hash": "387caca7fe66d3151e67c512bc93dd25",
+    "semantic_hash": "387caca7fe66d3151e67c512bc93dd25"
+  },
+  "C:\\code\\lofismart-fullstack\\.codex\\skills\\graphify\\references\\add-watch.md": {
+    "mtime": 1781191274.247913,
+    "ast_hash": "0df0589623217ca38a12bdcabfb42f4c",
+    "semantic_hash": "0df0589623217ca38a12bdcabfb42f4c"
+  },
+  "C:\\code\\lofismart-fullstack\\.codex\\skills\\graphify\\references\\exports.md": {
+    "mtime": 1781191274.264737,
+    "ast_hash": "7fb1a81aca17a462db70684a324fcfb0",
+    "semantic_hash": "7fb1a81aca17a462db70684a324fcfb0"
+  },
+  "C:\\code\\lofismart-fullstack\\.codex\\skills\\graphify\\references\\extraction-spec.md": {
+    "mtime": 1781191274.2698896,
+    "ast_hash": "a86a7321597b23cc2b22e011b3dc6e1d",
+    "semantic_hash": "a86a7321597b23cc2b22e011b3dc6e1d"
+  },
+  "C:\\code\\lofismart-fullstack\\.codex\\skills\\graphify\\references\\github-and-merge.md": {
+    "mtime": 1781191274.274132,
+    "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
+    "semantic_hash": "cde13df085e4c492aeb7ba298a996d0d"
+  },
+  "C:\\code\\lofismart-fullstack\\.codex\\skills\\graphify\\references\\hooks.md": {
+    "mtime": 1781191274.2775772,
+    "ast_hash": "3f545db6ce646650bb9de588f5512a27",
+    "semantic_hash": "3f545db6ce646650bb9de588f5512a27"
+  },
+  "C:\\code\\lofismart-fullstack\\.codex\\skills\\graphify\\references\\query.md": {
+    "mtime": 1781191274.2796245,
+    "ast_hash": "c2a8e798674a81b02aa9975f43023819",
+    "semantic_hash": "c2a8e798674a81b02aa9975f43023819"
+  },
+  "C:\\code\\lofismart-fullstack\\.codex\\skills\\graphify\\references\\transcribe.md": {
+    "mtime": 1781191274.2836735,
+    "ast_hash": "70f6aa30d6211f3a2c7e9fc45479f50c",
+    "semantic_hash": "70f6aa30d6211f3a2c7e9fc45479f50c"
+  },
+  "C:\\code\\lofismart-fullstack\\.codex\\skills\\graphify\\references\\update.md": {
+    "mtime": 1781191274.2920594,
+    "ast_hash": "0dad167a95bdb389f02fecffb60b1bc8",
+    "semantic_hash": "0dad167a95bdb389f02fecffb60b1bc8"
+  },
+  "C:\\code\\lofismart-fullstack\\.kilo\\plans\\1778162339185-quick-tiger.md": {
+    "mtime": 1778162556.9704778,
+    "ast_hash": "04a12f37b0a69c8c0fddb5d6f71ae1c3",
+    "semantic_hash": "04a12f37b0a69c8c0fddb5d6f71ae1c3"
+  },
+  "C:\\code\\lofismart-fullstack\\AGENTS.md": {
+    "mtime": 1781887743.432248,
+    "ast_hash": "53f1c8e8efb4cbe65639d9ba865dca2f",
+    "semantic_hash": "53f1c8e8efb4cbe65639d9ba865dca2f"
+  },
+  "C:\\code\\lofismart-fullstack\\CLAUDE.md": {
+    "mtime": 1781886093.1400156,
+    "ast_hash": "e337da40c96f27dc4d90ff2aacb3b4aa",
+    "semantic_hash": "e337da40c96f27dc4d90ff2aacb3b4aa"
+  },
+  "C:\\code\\lofismart-fullstack\\DESIGN.md": {
+    "mtime": 1778154801.5500143,
+    "ast_hash": "b706ed758b509ff10f167bcf70c4459c",
+    "semantic_hash": "b706ed758b509ff10f167bcf70c4459c"
+  },
+  "C:\\code\\lofismart-fullstack\\README.md": {
+    "mtime": 1781436100.895826,
+    "ast_hash": "c39e5c2345b1f12bcffa7a9f4aa305e6",
+    "semantic_hash": "c39e5c2345b1f12bcffa7a9f4aa305e6"
+  },
+  "C:\\code\\lofismart-fullstack\\docker-compose.dev.yml": {
+    "mtime": 1780500134.838708,
+    "ast_hash": "18ffe5612ea31481c40d13d37acd85e4",
+    "semantic_hash": "18ffe5612ea31481c40d13d37acd85e4"
+  },
+  "C:\\code\\lofismart-fullstack\\docker-compose.prod.yml": {
+    "mtime": 1780550177.880328,
+    "ast_hash": "eff947c4368601751abd97a632efe652",
+    "semantic_hash": "eff947c4368601751abd97a632efe652"
+  },
+  "C:\\code\\lofismart-fullstack\\docker-compose.yml": {
+    "mtime": 1781885482.7602606,
+    "ast_hash": "18ffe5612ea31481c40d13d37acd85e4",
+    "semantic_hash": "18ffe5612ea31481c40d13d37acd85e4"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\APP_DOCUMENTATION\\APP_LAYOUT.md": {
+    "mtime": 1777637531.37166,
+    "ast_hash": "9490ee970aedac15566f7940e0fd2f6a",
+    "semantic_hash": "9490ee970aedac15566f7940e0fd2f6a"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\APP_DOCUMENTATION\\AUTH_FLOW.md": {
+    "mtime": 1777637531.3722284,
+    "ast_hash": "b9e5959489bd9ab7177f9a4ea471ff0b",
+    "semantic_hash": "b9e5959489bd9ab7177f9a4ea471ff0b"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\APP_DOCUMENTATION\\DATABASE_SCHEMA.md": {
+    "mtime": 1777637531.3722284,
+    "ast_hash": "0616a9f4f6951717e1b8ed6d3a561190",
+    "semantic_hash": "0616a9f4f6951717e1b8ed6d3a561190"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\APP_DOCUMENTATION\\IMPLEMENTATION_STATUS.md": {
+    "mtime": 1777637531.3722284,
+    "ast_hash": "5b252c716948162a914965df7a2ab449",
+    "semantic_hash": "5b252c716948162a914965df7a2ab449"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\APP_DOCUMENTATION\\LATER.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "46975e66b1a15b709cf770a40fb2269b",
+    "semantic_hash": "46975e66b1a15b709cf770a40fb2269b"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\APP_DOCUMENTATION\\LOFISH OWNER_REVISION.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "431b44b2c32b2e816ef7b00d1ec80b57",
+    "semantic_hash": "431b44b2c32b2e816ef7b00d1ec80b57"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\APP_DOCUMENTATION\\PERMISSIONS.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "76868847a8cd8e0fc3f7e6e9e1075f89",
+    "semantic_hash": "76868847a8cd8e0fc3f7e6e9e1075f89"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\APP_DOCUMENTATION\\PLAN.md": {
+    "mtime": 1778457697.1078336,
+    "ast_hash": "5665f81a74b6b8e4ea95ddf05f70dfec",
+    "semantic_hash": "5665f81a74b6b8e4ea95ddf05f70dfec"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\APP_DOCUMENTATION\\PROJECT_SPEC.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "f7284e97662003797252258c58368b3a",
+    "semantic_hash": "f7284e97662003797252258c58368b3a"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\APP_DOCUMENTATION\\SERIAL_API_SPEC.md": {
+    "mtime": 1778366665.9585085,
+    "ast_hash": "3189ee7238c2e9127ea3daa688b631bb",
+    "semantic_hash": "3189ee7238c2e9127ea3daa688b631bb"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\APP_DOCUMENTATION\\SUPERVISOR_STOCK_UI_FIX.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "9a88d06fe3c76015ff0b5a143e215b58",
+    "semantic_hash": "9a88d06fe3c76015ff0b5a143e215b58"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\APP_DOCUMENTATION\\TIMEZONE_MANAGEMENT.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "7f70fbd16021ad42ac5e395505f8f8a1",
+    "semantic_hash": "7f70fbd16021ad42ac5e395505f8f8a1"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\APP_DOCUMENTATION\\TRANSACTION_FLOW.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "02be5629879b50ad0c19df2861d7ba24",
+    "semantic_hash": "02be5629879b50ad0c19df2861d7ba24"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\AUTO_REKAP.md": {
+    "mtime": 1778459933.9581232,
+    "ast_hash": "d6e144a92c22eec6e93afa0fd2ff15b8",
+    "semantic_hash": "d6e144a92c22eec6e93afa0fd2ff15b8"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\LAPORAN_PENJUALAN.md": {
+    "mtime": 1778457069.568463,
+    "ast_hash": "da9474dde7519b3bd25e03633f4c22e6",
+    "semantic_hash": "da9474dde7519b3bd25e03633f4c22e6"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\feature\\stock-management.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "ec010b2ce704061e321ef7ed03826491",
+    "semantic_hash": "ec010b2ce704061e321ef7ed03826491"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\feature\\stock-opname.md": {
+    "mtime": 1777637531.3746808,
+    "ast_hash": "7b61808a45747bf5b76c74ed7847745c",
+    "semantic_hash": "7b61808a45747bf5b76c74ed7847745c"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\frontend\\GEMINI.md": {
+    "mtime": 1777637531.380761,
+    "ast_hash": "4cb407729a8e5cec20753ffaf67639df",
+    "semantic_hash": "4cb407729a8e5cec20753ffaf67639df"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\frontend\\PROJECT_SPEC.md": {
+    "mtime": 1777637531.380761,
+    "ast_hash": "9b81311915925be56c27517be1987220",
+    "semantic_hash": "9b81311915925be56c27517be1987220"
+  },
+  "C:\\code\\lofismart-fullstack\\docs\\frontend\\docs.md": {
+    "mtime": 1777637531.3819885,
+    "ast_hash": "ed7ec3fbd2434e1f7b11d29477f3acb6",
+    "semantic_hash": "ed7ec3fbd2434e1f7b11d29477f3acb6"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\playwright-report\\data\\2c5c64eced1c61e0a34795d320fe2ee68b80bbd3.md": {
+    "mtime": 1781442781.5151875,
+    "ast_hash": "49f9701ac2bea9e403422c3b17a7f2fe",
+    "semantic_hash": "49f9701ac2bea9e403422c3b17a7f2fe"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\playwright-report\\index.html": {
+    "mtime": 1781442781.5553317,
+    "ast_hash": "ecc5c8dcce5f642f76a1ef8041fd0d67",
+    "semantic_hash": "ecc5c8dcce5f642f76a1ef8041fd0d67"
+  },
+  "C:\\code\\lofismart-fullstack\\e2e\\test-results\\pos.kasir-POS-Flow-User-ca-594f7-yment-and-see-success-modal-kasir\\error-context.md": {
+    "mtime": 1781442781.2899396,
+    "ast_hash": "49f9701ac2bea9e403422c3b17a7f2fe",
+    "semantic_hash": "49f9701ac2bea9e403422c3b17a7f2fe"
+  },
+  "C:\\code\\lofismart-fullstack\\default_product.png": {
+    "mtime": 1777637531.3879151,
+    "ast_hash": "275452d4a22600db5b147680fd700d22",
+    "semantic_hash": "275452d4a22600db5b147680fd700d22"
   }
 }
