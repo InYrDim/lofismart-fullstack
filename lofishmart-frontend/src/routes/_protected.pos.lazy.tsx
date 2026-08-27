@@ -30,7 +30,17 @@ import { useSerial } from "@/hooks/useSerial";
 import { useMarkets } from "@/hooks/useMarkets";
 import { Plug, Loader2, Scale } from "lucide-react";
 
-function NoDeviceScreen({ onConnect }: { onConnect: () => void }) {
+function NoDeviceScreen({
+	onConnect,
+	onReconnect,
+	hasAuthorizedPort,
+	isReconnecting,
+}: {
+	onConnect: () => void;
+	onReconnect: () => void;
+	hasAuthorizedPort: boolean;
+	isReconnecting: boolean;
+}) {
 	return (
 		<div className="flex-1 flex items-center justify-center bg-gray-100">
 			<div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-10 max-w-md w-full text-center flex flex-col items-center gap-4">
@@ -42,14 +52,37 @@ function NoDeviceScreen({ onConnect }: { onConnect: () => void }) {
 					Halaman POS tidak dapat diakses karena belum ada perangkat timbangan yang
 					terhubung. Hubungkan perangkat terlebih dahulu untuk melanjutkan transaksi.
 				</p>
-				<Button
-					onClick={onConnect}
-					variant="primary"
-					className="gap-2 mt-2 w-full"
-				>
-					<Plug className="w-4 h-4" />
-					Hubungkan Perangkat
-				</Button>
+
+				{hasAuthorizedPort ? (
+					<>
+						<Button
+							onClick={onReconnect}
+							variant="primary"
+							disabled={isReconnecting}
+							className="gap-2 mt-2 w-full"
+						>
+							{isReconnecting ? (
+								<Loader2 className="w-4 h-4 animate-spin" />
+							) : (
+								<Plug className="w-4 h-4" />
+							)}
+							{isReconnecting ? "Menyambungkan Ulang..." : "Sambungkan Ulang Perangkat"}
+						</Button>
+						<p className="text-xs text-gray-400">
+							Perangkat terdeteksi dari koneksi sebelumnya. Klik sekali untuk
+							menyambungkan ulang tanpa memilih port lagi.
+						</p>
+					</>
+				) : (
+					<Button
+						onClick={onConnect}
+						variant="primary"
+						className="gap-2 mt-2 w-full"
+					>
+						<Plug className="w-4 h-4" />
+						Hubungkan Perangkat
+					</Button>
+				)}
 			</div>
 		</div>
 	);
@@ -70,7 +103,7 @@ function POSPage() {
 	const { isSidebarOpen, setIsSidebarOpen } = useMainLayout();
 
 	// ═══ Device connection gate: block POS when no scale device is connected ═══
-	const { isConnected, isConnecting } = useSerial();
+	const { isConnected, isConnecting, hasAuthorizedPort, connectToAuthorizedPort } = useSerial();
 	const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
 	const [searchQuery, setSearchQuery] = useState("");
@@ -188,7 +221,12 @@ function POSPage() {
 	if (!isConnected) {
 		return (
 			<>
-				<NoDeviceScreen onConnect={() => setIsSettingsOpen(true)} />
+				<NoDeviceScreen
+					onConnect={() => setIsSettingsOpen(true)}
+					onReconnect={() => void connectToAuthorizedPort()}
+					hasAuthorizedPort={hasAuthorizedPort}
+					isReconnecting={isConnecting}
+				/>
 				<SerialSettingsModal
 					isOpen={isSettingsOpen}
 					onClose={() => setIsSettingsOpen(false)}

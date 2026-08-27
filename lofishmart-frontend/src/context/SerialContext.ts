@@ -16,7 +16,18 @@ export interface SerialContextType {
 	lastData: string;
 	scaleData: ScaleData | null;
 	error: string | null;
+	/**
+	 * True when a serial port has been previously authorized for this origin
+	 * (via navigator.serial.getPorts()), so we can reconnect without re-prompting
+	 * the OS chooser. Helps recover after a page reload.
+	 */
+	hasAuthorizedPort: boolean;
 	connect: () => Promise<void>;
+	/**
+	 * Reconnect to an already-authorized port returned by getPorts(), without
+	 * showing the OS chooser. Resolves true on success.
+	 */
+	connectToAuthorizedPort: () => Promise<boolean>;
 	disconnect: () => Promise<void>;
 	send: (data: string | number) => Promise<void>;
 	clearData: () => void;

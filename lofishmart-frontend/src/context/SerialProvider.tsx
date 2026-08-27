@@ -1,17 +1,37 @@
-import React, { useState, useCallback, useRef } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import { SerialContext, type SerialPort } from "./SerialContext";
 import { logger } from "@/services/logger.service";
 import type { ScaleData } from "@/types";
-import { processSerialChunk } from "@/lib/serial";
+import { processSerialChunk, SerialAPI } from "@/lib/serial";
 
 interface SerialProviderProps {
 	children: React.ReactNode;
 }
 
+/** Minimal metadata surface for a Web Serial port. */
+interface SerialPortInfoLike {
+	usbVendorId?: number;
+	usbProductId?: number;
+	serialNumber?: string;
+}
+
+function getPortInfo(port: any): SerialPortInfoLike {
+	return {
+		usbVendorId: port?.getInfo?.()?.usbVendorId,
+		usbProductId: port?.getInfo?.()?.usbProductId,
+		serialNumber: port?.getInfo?.()?.serialNumber,
+	};
+}
+
 export const SerialProvider: React.FC<SerialProviderProps> = ({ children }) => {
 	const [isConnected, setIsConnected] = useState(false);
 	const [isConnecting, setIsConnecting] = useState(false);
-	const [baudRate, setBaudRate] = useState(115200);
+	const [baudRate, setBaudRate] = useState<number>(() => {
+		// Restore persisted baud rate across reloads
+		const stored = SerialAPI.getStoredConnectionState().baudRate;
+		return stored || 115200;
+	});
+	const [hasAuthorizedPort, setHasAuthorizedPort] = useState(false);
 	const [lastData, setLastData] = useState("");
 	const [scaleData, setScaleData] = useState<ScaleData | null>(null);
 	const [error, setError] = useState<string | null>(null);
@@ -89,6 +109,93 @@ export const SerialProvider: React.FC<SerialProviderProps> = ({ children }) => {
 		[processBuffer]
 	);
 
+	/**
+	 * Open a given port, store its handle and start the read loop.
+	 * Shared by the manual chooser flow and the authorized-port reconnect.
+	 */
+	const openPort = useCallback(
+		async (port: any) => {
+			logger.info("[SerialProvider] Opening port with baudRate:", baudRate);
+			await port.open({ baudRate });
+
+			portRef.current = port;
+			setIsConnected(true);
+			keepReadingRef.current = true;
+			bufferRef.current = "";
+			setError(null);
+
+			readLoop(port as SerialPort);
+		},
+		[baudRate, readLoop]
+	);
+
+	/**
+	 * Discover ports previously authorized for this origin using getPorts().
+	 * Grants survive a reload, so this lets us reconnect without the OS chooser.
+	 */
+	const discoverPorts = useCallback(async (): Promise<any[]> => {
+		if (!("serial" in navigator)) return [];
+		try {
+			const ports = await (navigator as any).serial.getPorts();
+			setHasAuthorizedPort(ports.length > 0);
+			return ports || [];
+		} catch (err) {
+			logger.error("[SerialProvider] getPorts() failed:", err);
+			return [];
+		}
+	}, []);
+
+	/**
+	 * Reconnect to an already-authorized port without showing the OS chooser.
+	 * Returns true when the port opened successfully.
+	 */
+	const connectToAuthorizedPort = useCallback(async (): Promise<boolean> => {
+		setError(null);
+		setIsConnecting(true);
+		try {
+			const ports = await discoverPorts();
+			if (ports.length === 0) {
+				setIsConnecting(false);
+				return false;
+			}
+			const port = ports[0];
+			await openPort(port);
+			return true;
+		} catch (err) {
+			logger.error("[SerialProvider] Reconnect to authorized port failed:", err);
+			setError("Gagal menyambungkan ulang ke perangkat. Coba lepas dan hubungkan kembali.");
+			return false;
+		} finally {
+			setIsConnecting(false);
+		}
+	}, [discoverPorts, openPort]);
+
+	// ═══ Auto-reconnect attempt on load ═══
+	// Best-effort: if the user previously authorized a serial port for this
+	// origin, try to open it automatically. The Web Serial API generally still
+	// requires a user gesture to open a port, so if this fails we leave the
+	// authorized port discoverable for a one-click reconnect via the UI.
+	useEffect(() => {
+		let cancelled = false;
+		(async () => {
+			const ports = await discoverPorts();
+			if (cancelled || ports.length === 0) return;
+			try {
+				await openPort(ports[0]);
+			} catch (err) {
+				logger.warn("[SerialProvider] Auto-reconnect attempt failed (expected without user gesture):", err);
+			}
+		})();
+		return () => {
+			cancelled = true;
+		};
+	}, [discoverPorts, openPort]);
+
+	// Persist baud rate whenever it changes
+	useEffect(() => {
+		SerialAPI.saveConnectionState({ baudRate });
+	}, [baudRate]);
+
 	const connect = useCallback(async () => {
 		setError(null);
 		setIsConnecting(true);
@@ -102,15 +209,8 @@ export const SerialProvider: React.FC<SerialProviderProps> = ({ children }) => {
 		try {
 			logger.info("[SerialProvider] Requesting serial port...");
 			const port = await (navigator as any).serial.requestPort();
-			logger.info("[SerialProvider] Port selected, opening with baudRate:", baudRate);
-			await port.open({ baudRate });
-
-			portRef.current = port;
-			setIsConnected(true);
-			keepReadingRef.current = true;
-			bufferRef.current = "";
-
-			readLoop(port);
+			logger.info("[SerialProvider] Port selected (chooser):", getPortInfo(port));
+			await openPort(port);
 		} catch (err: unknown) {
 			logger.error("[SerialProvider] Failed to connect:", err);
 
@@ -166,7 +266,7 @@ export const SerialProvider: React.FC<SerialProviderProps> = ({ children }) => {
 		} finally {
 			setIsConnecting(false);
 		}
-	}, [baudRate, readLoop]);
+	}, [openPort]);
 
 	const disconnect = useCallback(async () => {
 		if (readerRef.current) {
@@ -208,7 +308,9 @@ export const SerialProvider: React.FC<SerialProviderProps> = ({ children }) => {
 				lastData,
 				scaleData,
 				error,
+				hasAuthorizedPort,
 				connect,
+				connectToAuthorizedPort,
 				disconnect,
 				send,
 				clearData,
