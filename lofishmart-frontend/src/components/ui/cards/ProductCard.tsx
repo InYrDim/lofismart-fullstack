@@ -96,7 +96,7 @@ export default function ProductCard({
 				)}
 
 				<ProductImage
-					src={product.image}
+					src={!hasStock ? "/default_product_stok_empty.jpg" : product.image}
 					alt={product.name}
 					className="group-hover:scale-105 transition-transform duration-500"
 				>
