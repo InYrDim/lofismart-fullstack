@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, RefreshCw, ShoppingCart, Settings } from "lucide-react";
+import { Menu, RefreshCw, ShoppingCart, Settings, Store } from "lucide-react";
 import { SerialSettingsModal } from "./ui/modals/SerialSettingsModal";
 import { useSerial } from "@/hooks/useSerial";
 import Brand from "./brand/Brand";
@@ -14,6 +14,7 @@ export default function PosHeader({
 	handleRefresh,
 	searchQuery,
 	setSearchQuery,
+	marketName,
 }: {
 	isSidebarOpen: boolean;
 	setIsSidebarOpen: (open: boolean) => void;
@@ -23,6 +24,7 @@ export default function PosHeader({
 	handleRefresh: () => void;
 	searchQuery: string;
 	setSearchQuery: (query: string) => void;
+	marketName?: string;
 }) {
 	// Local state for settings modal
 	const [isSettingsOpen, setIsSettingsOpen] = React.useState(false);
@@ -39,6 +41,15 @@ export default function PosHeader({
 						<Menu className="w-6 h-6" />
 					</button>
 					<Brand />
+					{marketName && (
+						<div
+							className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand-primary/10 border border-brand-primary/20 text-xs font-bold text-brand-primary"
+							title={marketName}
+						>
+							<Store className="w-3.5 h-3.5" />
+							<span className="max-w-[160px] truncate">{marketName}</span>
+						</div>
+					)}
 				</div>
 				<SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 				<div className="flex gap-2 opacity-100 hover:opacity-100 transition-opacity">

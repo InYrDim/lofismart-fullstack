@@ -25,9 +25,54 @@ import { ScaleListener } from "@/components/ScaleListener";
 import { Modal } from "@/components/ui/modals/Modal";
 import { PaymentModal } from "@/components/ui/modals/PaymentModal";
 import { UnassignedOutletModal } from "@/components/ui/modals/UnassignedOutletModal";
+import { SerialSettingsModal } from "@/components/ui/modals/SerialSettingsModal";
+import { useSerial } from "@/hooks/useSerial";
+import { useMarkets } from "@/hooks/useMarkets";
+import { Plug, Loader2, Scale } from "lucide-react";
+
+function NoDeviceScreen({ onConnect }: { onConnect: () => void }) {
+	return (
+		<div className="flex-1 flex items-center justify-center bg-gray-100">
+			<div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-10 max-w-md w-full text-center flex flex-col items-center gap-4">
+				<div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center">
+					<Scale className="w-8 h-8 text-red-500" />
+				</div>
+				<h2 className="text-xl font-bold text-gray-800">Tidak Ada Perangkat Terhubung</h2>
+				<p className="text-sm text-gray-500 leading-relaxed">
+					Halaman POS tidak dapat diakses karena belum ada perangkat timbangan yang
+					terhubung. Hubungkan perangkat terlebih dahulu untuk melanjutkan transaksi.
+				</p>
+				<Button
+					onClick={onConnect}
+					variant="primary"
+					className="gap-2 mt-2 w-full"
+				>
+					<Plug className="w-4 h-4" />
+					Hubungkan Perangkat
+				</Button>
+			</div>
+		</div>
+	);
+}
+
+function DeviceLoadingScreen() {
+	return (
+		<div className="flex-1 flex items-center justify-center bg-gray-100">
+			<div className="flex flex-col items-center gap-3 text-gray-500">
+				<Loader2 className="w-8 h-8 animate-spin" />
+				<div className="text-sm">Menghubungkan perangkat...</div>
+			</div>
+		</div>
+	);
+}
 
 function POSPage() {
 	const { isSidebarOpen, setIsSidebarOpen } = useMainLayout();
+
+	// ═══ Device connection gate: block POS when no scale device is connected ═══
+	const { isConnected, isConnecting } = useSerial();
+	const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+
 	const [searchQuery, setSearchQuery] = useState("");
 	const [isCartOpen, setIsCartOpen] = useState(true);
 
@@ -39,9 +84,22 @@ function POSPage() {
 	const [refreshTrigger, setRefreshTrigger] = useState(0);
 
 	// ═══ Outlet assignment check for KSR / SPVR ═══
-	const { marketId } = useAuth();
+	const { marketId, marketName } = useAuth();
 	const { isCashier, isSupervisor } = useRoleAndPermission();
 	const [showUnassignedModal, setShowUnassignedModal] = useState(false);
+
+	// ═══ Market display: resolve current market name ═══
+	// Prefer the market matching the currently-displayed products (stored ID),
+	// then fall back to the user's assigned market name from auth.
+	const { markets } = useMarkets();
+	const displayMarketName = useMemo(() => {
+		const storedMarketId = storage.getMarketId();
+		if (storedMarketId) {
+			const found = markets.find((m) => m.id === storedMarketId);
+			if (found) return found.name;
+		}
+		return marketName || undefined;
+	}, [marketName, markets]);
 
 	useEffect(() => {
 		const isScopedRole = isCashier || isSupervisor;
@@ -122,6 +180,23 @@ function POSPage() {
 		return cart.reduce((acc, item) => acc + item.qty, 0);
 	}, [cart]);
 
+	// ═══ Device gate: render blocked/loading screen before POS UI ═══
+	if (isConnecting) {
+		return <DeviceLoadingScreen />;
+	}
+
+	if (!isConnected) {
+		return (
+			<>
+				<NoDeviceScreen onConnect={() => setIsSettingsOpen(true)} />
+				<SerialSettingsModal
+					isOpen={isSettingsOpen}
+					onClose={() => setIsSettingsOpen(false)}
+				/>
+			</>
+		);
+	}
+
 	return (
 		<>
 			<ScaleListener products={products} onAddScaleItem={addScaleItem} />
@@ -138,6 +213,7 @@ function POSPage() {
 					handleRefresh={handleRefresh}
 					searchQuery={searchQuery}
 					setSearchQuery={setSearchQuery}
+					marketName={displayMarketName}
 				/>
 
 				{isLoadingProducts ? (
