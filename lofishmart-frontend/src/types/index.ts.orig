@@ -1,0 +1,326 @@
+export interface User {
+	id: string;
+	name: string;
+	username: string;
+	email: string;
+	login: boolean;
+	hasPermit: string[];
+	role_id?: string;
+	role?: string;
+}
+
+export interface LoginResponse {
+	message: string;
+	token: string;
+	user: User;
+}
+
+export interface FishType {
+	code: string;
+	name: string;
+}
+
+// UI Product Interface
+export interface Product {
+	id: string; // This will map to the Price List ID
+	productId: string;
+	barcode: string;
+	productBarcode: string;
+	name: string;
+	basePrice: number; // Changed from price to basePrice to match ProductCard
+	category: string;
+	image: string;
+	stock: number;
+	unit: string; // Added unit
+	hasVariants: boolean; // Added hasVariants
+	variants?: { grade: string; price: number }[]; // Added variants for legacy support or future use
+	size?: string; // Added for display
+	grade?: string; // Added for display
+	useGradingSystem?: boolean; // For legacy or specific calculation logic
+	type: "PRODUCT" | "SERVICE"; // Added type
+	is_non_stock?: string; // Added is_non_stock
+	disc?: number; // Added disc
+	initialPrice?: number; // Added initialPrice
+	isShow?: boolean; // Added isShow
+}
+
+export interface CartItem extends Product {
+	qty: number;
+	discount: number;
+	subtotal: number;
+	selectedGrade?: string;
+	selectedSize?: string;
+	selectedQuality?: string;
+	measuredWeight?: number; // Weight from scale
+	source?: "manual" | "serial"; // Added source to distinguish
+	cartId: string; // Unique ID in cart
+}
+
+// API Response Interfaces
+export interface ApiProductCategory {
+	id: string;
+	name: string;
+	id: string;
+	name: string;
+	created_at: string;
+	updated_at: string;
+}
+
+export interface ApiProductSize {
+	id: string;
+	name: string;
+	created_at: string;
+	updated_at: string;
+}
+
+export interface ApiProductGrade {
+	id: string;
+	name: string;
+	created_at: string;
+	updated_at: string;
+}
+
+export interface ApiProductDetail {
+	id: string;
+	name: string;
+	barcode: string;
+	unit: string;
+	is_non_stock: string;
+	is_show: string;
+	image: string;
+	created_at: string;
+	updated_at: string;
+	deleted_at: string | null;
+	size: ApiProductSize;
+	category: ApiProductCategory;
+}
+
+export interface ProductResponse {
+	id: string;
+	barcode: string;
+	initial: number;
+	selling: number;
+	disc: number;
+	created_at: string;
+	updated_at: string;
+	product: ApiProductDetail;
+	grade: ApiProductGrade;
+}
+
+export interface ServiceResponse {
+	id: string;
+	name: string;
+	barcode: string;
+	unit: string;
+	price: number;
+	disc: number;
+	image: string;
+	created_at: string;
+	updated_at: string;
+	deleted_at: string | null;
+}
+
+export type PaymentMethod = "CASH" | "QRIS" | "OTHER";
+
+export interface ScaleData {
+	itemCode: string;
+	weight: number;
+	price: number;
+	status: boolean;
+	scaleId: string;
+}
+
+export interface CartSummary {
+	grossTotal: number;
+	totalItemDiscount: number;
+	subTotalNet: number;
+	tax: number;
+	voucherDiscount: number;
+	total: number;
+}
+
+export interface XenditQRResponse {
+	id: string;
+	external_id: string;
+	reference_id: string;
+	amount: number;
+	qr_string: string;
+	status: string;
+	created: string;
+	updated: string;
+	expires_at?: string;
+}
+
+export interface Profile {
+	id: string;
+	market_name: string;
+	address: string;
+	contact: string;
+	logo: string;
+	// Add other fields as necessary
+}
+
+export interface MarketProfile {
+	id: string;
+	name: string;
+	address: string;
+	maps: string;
+	city: string;
+	pos: string;
+	timezone: string;
+	time_dif: number;
+	phone_number: string;
+	created_at: string;
+	updated_at: string;
+	deleted_at: string | null;
+}
+
+export interface TransactionItem {
+	id: string;
+	product_name: string;
+	qty: number;
+	price: number;
+	subtotal: number;
+}
+
+export interface Transaction {
+	id: string;
+	code: string;
+	total_weight_qty: number;
+	total_pcs_qty: number;
+	price: number;
+	per_item_disc: number;
+	voucher_disc: number;
+	total_disc: number;
+	tax_price: number;
+	total_price: number;
+	payed_money: number;
+	change_money: number;
+	is_paid: string;
+	online_order: string;
+	note: string | null;
+	transaction_date: string;
+	payment_method: string;
+	cashier_name: string;
+	market_name: string;
+	customer_name: string;
+}
+
+// Selling Product Detail - items sold within a selling transaction
+export interface SellingProductDetail {
+	id: string;
+	selling_id: string;
+	qty: number;
+	mod_price: number;
+	total_price: number;
+	note: string | null;
+	created_at: string;
+	updated_at: string;
+	// Nested selling info
+	selling_user_name: string;
+	selling_market_name: string;
+	selling_payment_name: string;
+	selling_is_paid: string;
+	// Stock/price info (can be null)
+	stock_name: string | null;
+	price_value: number | null;
+	// Pre-constructed parent transaction (from embedded selling data)
+	_transaction?: Transaction;
+	// New fields for details
+	total_weight?: number;
+	grade?: string;
+	size?: string;
+}
+
+// Selling Service Detail - services rendered within a selling transaction
+export interface SellingServiceDetail {
+	id: string;
+	selling_id: string;
+	qty: number;
+	mod_price: number;
+	total_price: number;
+	note: string | null;
+	created_at: string;
+	updated_at: string;
+	// Nested selling info
+	selling_user_name: string;
+	selling_market_name: string;
+	selling_payment_name: string;
+	selling_is_paid: string;
+	// Pre-constructed parent transaction (from embedded selling data)
+	_transaction?: Transaction;
+}
+
+export interface CreateTransactionItem {
+	stock_id?: string; // TODO: stock_id is required by backend but not yet available in frontend product data
+	stock?: string; // Legacy/Alternative field name
+	qty: number;
+	price?: number;
+	price_id?: string;
+	total_price: number;
+	mod_price: number; // usually same as price if no modification
+	note: string;
+	total_weight?: number; // Added total_weight
+}
+
+export interface ApiSellingProductDetail {
+	id: string;
+	qty: number;
+	mod_price: number;
+	total_price: number;
+	note: string;
+	created_at: string;
+	updated_at: string;
+	total_weight?: string | number; // Added total_weight from API
+	selling: {
+		id: string;
+		is_paid: string;
+		user: { name: string };
+		market: { name: string };
+		payment: { name: string } | null;
+	}; // Simplified
+	stock: {
+		id: string;
+		product: {
+			id: string;
+			name: string;
+		};
+	} | null;
+	price: {
+		id: string;
+		selling: number;
+		grade?: { name: string }; // Added grade relation
+		product: {
+			id: string;
+			name: string;
+			image: string;
+			size?: { name: string }; // Added size relation via product
+		};
+	} | null;
+}
+
+export interface CreateTransactionRequest {
+	date: string; // YYYY-MM-DD
+	total_price: number;
+	payed_money: number;
+	change_money: number;
+	is_paid: string; // "1" or "0"
+	payment_method_id?: string; // Optional if using payment_id
+	market_id: string;
+	user_id: string;
+	items: string; // JSON stringified array of CreateTransactionItem
+
+	// New fields
+	payment_id?: string;
+	total_weight_qty: number;
+	totol_pcs_qty: number; // typo in backend
+	price: number; // subtotal before tax/disc? or same as total?
+	per_item_disc: number;
+	voucher_disc: number;
+	total_disc: number;
+	tax_price: number;
+	online_order: string; // "1" or "0"
+	note: string;
+	member_id?: string;
+	voucher_id?: string;
+}
