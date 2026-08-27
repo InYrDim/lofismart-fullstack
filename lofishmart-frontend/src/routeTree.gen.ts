@@ -18,19 +18,12 @@ import { Route as ProtectedKelolaoutletRouteImport } from './routes/_protected.k
 import { Route as ProtectedKelolagudangRouteImport } from './routes/_protected.kelolagudang'
 import { Route as ProtectedForbiddenRouteImport } from './routes/_protected.forbidden'
 import { Route as ProtectedManagementRouteImport } from './routes/_protected._management'
-import { Route as ProtectedInventory_groupRouteImport } from './routes/_protected._inventory_group'
 import { Route as ProtectedManagementUsersRouteImport } from './routes/_protected._management.users'
 import { Route as ProtectedManagementSuppliersRouteImport } from './routes/_protected._management.suppliers'
 import { Route as ProtectedManagementRolesRouteImport } from './routes/_protected._management.roles'
 import { Route as ProtectedManagementProductsRouteImport } from './routes/_protected._management.products'
 import { Route as ProtectedManagementProductAttributesRouteImport } from './routes/_protected._management.product-attributes'
 import { Route as ProtectedManagementOutletandgudangRouteImport } from './routes/_protected._management.outletandgudang'
-import { Route as ProtectedInventory_groupMarketsRouteImport } from './routes/_protected._inventory_group.markets'
-import { Route as ProtectedInventory_groupInventoryStockRouteImport } from './routes/_protected._inventory_group.inventory-stock'
-import { Route as ProtectedInventory_groupInventoryOpsRouteImport } from './routes/_protected._inventory_group.inventory-ops'
-import { Route as ProtectedInventory_groupInventoryRouteImport } from './routes/_protected._inventory_group.inventory'
-import { Route as ProtectedInventory_groupInventoryIndexRouteImport } from './routes/_protected._inventory_group.inventory.index'
-import { Route as ProtectedInventory_groupInventoryRejectRequestsRouteImport } from './routes/_protected._inventory_group.inventory.reject-requests'
 
 const DesignLazyRouteImport = createFileRoute('/design')()
 const GuestIndexLazyRouteImport = createFileRoute('/_guest/')()
@@ -79,14 +72,6 @@ const ProtectedKelolagudangPurchasesLazyRouteImport = createFileRoute(
 const ProtectedManagementReportItemLazyRouteImport = createFileRoute(
   '/_protected/_management/report-item',
 )()
-const ProtectedInventory_groupStockOpnameLazyRouteImport = createFileRoute(
-  '/_protected/_inventory_group/stock-opname',
-)()
-const ProtectedInventory_groupStockManagementLazyRouteImport = createFileRoute(
-  '/_protected/_inventory_group/stock-management',
-)()
-const ProtectedInventory_groupInventoryDashboardLazyRouteImport =
-  createFileRoute('/_protected/_inventory_group/inventory-dashboard')()
 
 const DesignLazyRoute = DesignLazyRouteImport.update({
   id: '/design',
@@ -170,11 +155,6 @@ const ProtectedManagementRoute = ProtectedManagementRouteImport.update({
   id: '/_management',
   getParentRoute: () => ProtectedRoute,
 } as any)
-const ProtectedInventory_groupRoute =
-  ProtectedInventory_groupRouteImport.update({
-    id: '/_inventory_group',
-    getParentRoute: () => ProtectedRoute,
-  } as any)
 const ProtectedKelolaoutletTransfersLazyRoute =
   ProtectedKelolaoutletTransfersLazyRouteImport.update({
     id: '/transfers',
@@ -271,36 +251,6 @@ const ProtectedManagementReportItemLazyRoute =
       (d) => d.Route,
     ),
   )
-const ProtectedInventory_groupStockOpnameLazyRoute =
-  ProtectedInventory_groupStockOpnameLazyRouteImport.update({
-    id: '/stock-opname',
-    path: '/stock-opname',
-    getParentRoute: () => ProtectedInventory_groupRoute,
-  } as any).lazy(() =>
-    import('./routes/_protected._inventory_group.stock-opname.lazy').then(
-      (d) => d.Route,
-    ),
-  )
-const ProtectedInventory_groupStockManagementLazyRoute =
-  ProtectedInventory_groupStockManagementLazyRouteImport.update({
-    id: '/stock-management',
-    path: '/stock-management',
-    getParentRoute: () => ProtectedInventory_groupRoute,
-  } as any).lazy(() =>
-    import('./routes/_protected._inventory_group.stock-management.lazy').then(
-      (d) => d.Route,
-    ),
-  )
-const ProtectedInventory_groupInventoryDashboardLazyRoute =
-  ProtectedInventory_groupInventoryDashboardLazyRouteImport.update({
-    id: '/inventory-dashboard',
-    path: '/inventory-dashboard',
-    getParentRoute: () => ProtectedInventory_groupRoute,
-  } as any).lazy(() =>
-    import('./routes/_protected._inventory_group.inventory-dashboard.lazy').then(
-      (d) => d.Route,
-    ),
-  )
 const ProtectedManagementUsersRoute =
   ProtectedManagementUsersRouteImport.update({
     id: '/users',
@@ -357,42 +307,6 @@ const ProtectedManagementOutletandgudangRoute =
       (d) => d.Route,
     ),
   )
-const ProtectedInventory_groupMarketsRoute =
-  ProtectedInventory_groupMarketsRouteImport.update({
-    id: '/markets',
-    path: '/markets',
-    getParentRoute: () => ProtectedInventory_groupRoute,
-  } as any)
-const ProtectedInventory_groupInventoryStockRoute =
-  ProtectedInventory_groupInventoryStockRouteImport.update({
-    id: '/inventory-stock',
-    path: '/inventory-stock',
-    getParentRoute: () => ProtectedInventory_groupRoute,
-  } as any)
-const ProtectedInventory_groupInventoryOpsRoute =
-  ProtectedInventory_groupInventoryOpsRouteImport.update({
-    id: '/inventory-ops',
-    path: '/inventory-ops',
-    getParentRoute: () => ProtectedInventory_groupRoute,
-  } as any)
-const ProtectedInventory_groupInventoryRoute =
-  ProtectedInventory_groupInventoryRouteImport.update({
-    id: '/inventory',
-    path: '/inventory',
-    getParentRoute: () => ProtectedInventory_groupRoute,
-  } as any)
-const ProtectedInventory_groupInventoryIndexRoute =
-  ProtectedInventory_groupInventoryIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => ProtectedInventory_groupInventoryRoute,
-  } as any)
-const ProtectedInventory_groupInventoryRejectRequestsRoute =
-  ProtectedInventory_groupInventoryRejectRequestsRouteImport.update({
-    id: '/reject-requests',
-    path: '/reject-requests',
-    getParentRoute: () => ProtectedInventory_groupInventoryRoute,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof GuestIndexLazyRoute
@@ -406,19 +320,12 @@ export interface FileRoutesByFullPath {
   '/settings': typeof ProtectedSettingsLazyRoute
   '/test-remote-serial': typeof ProtectedTestRemoteSerialLazyRoute
   '/transactions': typeof ProtectedTransactionsLazyRoute
-  '/inventory': typeof ProtectedInventory_groupInventoryRouteWithChildren
-  '/inventory-ops': typeof ProtectedInventory_groupInventoryOpsRoute
-  '/inventory-stock': typeof ProtectedInventory_groupInventoryStockRoute
-  '/markets': typeof ProtectedInventory_groupMarketsRoute
   '/outletandgudang': typeof ProtectedManagementOutletandgudangRoute
   '/product-attributes': typeof ProtectedManagementProductAttributesRoute
   '/products': typeof ProtectedManagementProductsRoute
   '/roles': typeof ProtectedManagementRolesRoute
   '/suppliers': typeof ProtectedManagementSuppliersRoute
   '/users': typeof ProtectedManagementUsersRoute
-  '/inventory-dashboard': typeof ProtectedInventory_groupInventoryDashboardLazyRoute
-  '/stock-management': typeof ProtectedInventory_groupStockManagementLazyRoute
-  '/stock-opname': typeof ProtectedInventory_groupStockOpnameLazyRoute
   '/report-item': typeof ProtectedManagementReportItemLazyRoute
   '/kelolagudang/purchases': typeof ProtectedKelolagudangPurchasesLazyRoute
   '/kelolagudang/receive': typeof ProtectedKelolagudangReceiveLazyRoute
@@ -429,8 +336,6 @@ export interface FileRoutesByFullPath {
   '/kelolaoutlet/rejects': typeof ProtectedKelolaoutletRejectsLazyRoute
   '/kelolaoutlet/stock': typeof ProtectedKelolaoutletStockLazyRoute
   '/kelolaoutlet/transfers': typeof ProtectedKelolaoutletTransfersLazyRoute
-  '/inventory/reject-requests': typeof ProtectedInventory_groupInventoryRejectRequestsRoute
-  '/inventory/': typeof ProtectedInventory_groupInventoryIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof GuestIndexLazyRoute
@@ -444,18 +349,12 @@ export interface FileRoutesByTo {
   '/settings': typeof ProtectedSettingsLazyRoute
   '/test-remote-serial': typeof ProtectedTestRemoteSerialLazyRoute
   '/transactions': typeof ProtectedTransactionsLazyRoute
-  '/inventory-ops': typeof ProtectedInventory_groupInventoryOpsRoute
-  '/inventory-stock': typeof ProtectedInventory_groupInventoryStockRoute
-  '/markets': typeof ProtectedInventory_groupMarketsRoute
   '/outletandgudang': typeof ProtectedManagementOutletandgudangRoute
   '/product-attributes': typeof ProtectedManagementProductAttributesRoute
   '/products': typeof ProtectedManagementProductsRoute
   '/roles': typeof ProtectedManagementRolesRoute
   '/suppliers': typeof ProtectedManagementSuppliersRoute
   '/users': typeof ProtectedManagementUsersRoute
-  '/inventory-dashboard': typeof ProtectedInventory_groupInventoryDashboardLazyRoute
-  '/stock-management': typeof ProtectedInventory_groupStockManagementLazyRoute
-  '/stock-opname': typeof ProtectedInventory_groupStockOpnameLazyRoute
   '/report-item': typeof ProtectedManagementReportItemLazyRoute
   '/kelolagudang/purchases': typeof ProtectedKelolagudangPurchasesLazyRoute
   '/kelolagudang/receive': typeof ProtectedKelolagudangReceiveLazyRoute
@@ -466,15 +365,12 @@ export interface FileRoutesByTo {
   '/kelolaoutlet/rejects': typeof ProtectedKelolaoutletRejectsLazyRoute
   '/kelolaoutlet/stock': typeof ProtectedKelolaoutletStockLazyRoute
   '/kelolaoutlet/transfers': typeof ProtectedKelolaoutletTransfersLazyRoute
-  '/inventory/reject-requests': typeof ProtectedInventory_groupInventoryRejectRequestsRoute
-  '/inventory': typeof ProtectedInventory_groupInventoryIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_guest': typeof GuestRouteWithChildren
   '/_protected': typeof ProtectedRouteWithChildren
   '/design': typeof DesignLazyRoute
-  '/_protected/_inventory_group': typeof ProtectedInventory_groupRouteWithChildren
   '/_protected/_management': typeof ProtectedManagementRouteWithChildren
   '/_protected/forbidden': typeof ProtectedForbiddenRoute
   '/_protected/kelolagudang': typeof ProtectedKelolagudangRouteWithChildren
@@ -486,19 +382,12 @@ export interface FileRoutesById {
   '/_protected/test-remote-serial': typeof ProtectedTestRemoteSerialLazyRoute
   '/_protected/transactions': typeof ProtectedTransactionsLazyRoute
   '/_guest/': typeof GuestIndexLazyRoute
-  '/_protected/_inventory_group/inventory': typeof ProtectedInventory_groupInventoryRouteWithChildren
-  '/_protected/_inventory_group/inventory-ops': typeof ProtectedInventory_groupInventoryOpsRoute
-  '/_protected/_inventory_group/inventory-stock': typeof ProtectedInventory_groupInventoryStockRoute
-  '/_protected/_inventory_group/markets': typeof ProtectedInventory_groupMarketsRoute
   '/_protected/_management/outletandgudang': typeof ProtectedManagementOutletandgudangRoute
   '/_protected/_management/product-attributes': typeof ProtectedManagementProductAttributesRoute
   '/_protected/_management/products': typeof ProtectedManagementProductsRoute
   '/_protected/_management/roles': typeof ProtectedManagementRolesRoute
   '/_protected/_management/suppliers': typeof ProtectedManagementSuppliersRoute
   '/_protected/_management/users': typeof ProtectedManagementUsersRoute
-  '/_protected/_inventory_group/inventory-dashboard': typeof ProtectedInventory_groupInventoryDashboardLazyRoute
-  '/_protected/_inventory_group/stock-management': typeof ProtectedInventory_groupStockManagementLazyRoute
-  '/_protected/_inventory_group/stock-opname': typeof ProtectedInventory_groupStockOpnameLazyRoute
   '/_protected/_management/report-item': typeof ProtectedManagementReportItemLazyRoute
   '/_protected/kelolagudang/purchases': typeof ProtectedKelolagudangPurchasesLazyRoute
   '/_protected/kelolagudang/receive': typeof ProtectedKelolagudangReceiveLazyRoute
@@ -509,8 +398,6 @@ export interface FileRoutesById {
   '/_protected/kelolaoutlet/rejects': typeof ProtectedKelolaoutletRejectsLazyRoute
   '/_protected/kelolaoutlet/stock': typeof ProtectedKelolaoutletStockLazyRoute
   '/_protected/kelolaoutlet/transfers': typeof ProtectedKelolaoutletTransfersLazyRoute
-  '/_protected/_inventory_group/inventory/reject-requests': typeof ProtectedInventory_groupInventoryRejectRequestsRoute
-  '/_protected/_inventory_group/inventory/': typeof ProtectedInventory_groupInventoryIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -526,19 +413,12 @@ export interface FileRouteTypes {
     | '/settings'
     | '/test-remote-serial'
     | '/transactions'
-    | '/inventory'
-    | '/inventory-ops'
-    | '/inventory-stock'
-    | '/markets'
     | '/outletandgudang'
     | '/product-attributes'
     | '/products'
     | '/roles'
     | '/suppliers'
     | '/users'
-    | '/inventory-dashboard'
-    | '/stock-management'
-    | '/stock-opname'
     | '/report-item'
     | '/kelolagudang/purchases'
     | '/kelolagudang/receive'
@@ -549,8 +429,6 @@ export interface FileRouteTypes {
     | '/kelolaoutlet/rejects'
     | '/kelolaoutlet/stock'
     | '/kelolaoutlet/transfers'
-    | '/inventory/reject-requests'
-    | '/inventory/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -564,18 +442,12 @@ export interface FileRouteTypes {
     | '/settings'
     | '/test-remote-serial'
     | '/transactions'
-    | '/inventory-ops'
-    | '/inventory-stock'
-    | '/markets'
     | '/outletandgudang'
     | '/product-attributes'
     | '/products'
     | '/roles'
     | '/suppliers'
     | '/users'
-    | '/inventory-dashboard'
-    | '/stock-management'
-    | '/stock-opname'
     | '/report-item'
     | '/kelolagudang/purchases'
     | '/kelolagudang/receive'
@@ -586,14 +458,11 @@ export interface FileRouteTypes {
     | '/kelolaoutlet/rejects'
     | '/kelolaoutlet/stock'
     | '/kelolaoutlet/transfers'
-    | '/inventory/reject-requests'
-    | '/inventory'
   id:
     | '__root__'
     | '/_guest'
     | '/_protected'
     | '/design'
-    | '/_protected/_inventory_group'
     | '/_protected/_management'
     | '/_protected/forbidden'
     | '/_protected/kelolagudang'
@@ -605,19 +474,12 @@ export interface FileRouteTypes {
     | '/_protected/test-remote-serial'
     | '/_protected/transactions'
     | '/_guest/'
-    | '/_protected/_inventory_group/inventory'
-    | '/_protected/_inventory_group/inventory-ops'
-    | '/_protected/_inventory_group/inventory-stock'
-    | '/_protected/_inventory_group/markets'
     | '/_protected/_management/outletandgudang'
     | '/_protected/_management/product-attributes'
     | '/_protected/_management/products'
     | '/_protected/_management/roles'
     | '/_protected/_management/suppliers'
     | '/_protected/_management/users'
-    | '/_protected/_inventory_group/inventory-dashboard'
-    | '/_protected/_inventory_group/stock-management'
-    | '/_protected/_inventory_group/stock-opname'
     | '/_protected/_management/report-item'
     | '/_protected/kelolagudang/purchases'
     | '/_protected/kelolagudang/receive'
@@ -628,8 +490,6 @@ export interface FileRouteTypes {
     | '/_protected/kelolaoutlet/rejects'
     | '/_protected/kelolaoutlet/stock'
     | '/_protected/kelolaoutlet/transfers'
-    | '/_protected/_inventory_group/inventory/reject-requests'
-    | '/_protected/_inventory_group/inventory/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -738,13 +598,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProtectedManagementRouteImport
       parentRoute: typeof ProtectedRoute
     }
-    '/_protected/_inventory_group': {
-      id: '/_protected/_inventory_group'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof ProtectedInventory_groupRouteImport
-      parentRoute: typeof ProtectedRoute
-    }
     '/_protected/kelolaoutlet/transfers': {
       id: '/_protected/kelolaoutlet/transfers'
       path: '/transfers'
@@ -815,27 +668,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProtectedManagementReportItemLazyRouteImport
       parentRoute: typeof ProtectedManagementRoute
     }
-    '/_protected/_inventory_group/stock-opname': {
-      id: '/_protected/_inventory_group/stock-opname'
-      path: '/stock-opname'
-      fullPath: '/stock-opname'
-      preLoaderRoute: typeof ProtectedInventory_groupStockOpnameLazyRouteImport
-      parentRoute: typeof ProtectedInventory_groupRoute
-    }
-    '/_protected/_inventory_group/stock-management': {
-      id: '/_protected/_inventory_group/stock-management'
-      path: '/stock-management'
-      fullPath: '/stock-management'
-      preLoaderRoute: typeof ProtectedInventory_groupStockManagementLazyRouteImport
-      parentRoute: typeof ProtectedInventory_groupRoute
-    }
-    '/_protected/_inventory_group/inventory-dashboard': {
-      id: '/_protected/_inventory_group/inventory-dashboard'
-      path: '/inventory-dashboard'
-      fullPath: '/inventory-dashboard'
-      preLoaderRoute: typeof ProtectedInventory_groupInventoryDashboardLazyRouteImport
-      parentRoute: typeof ProtectedInventory_groupRoute
-    }
     '/_protected/_management/users': {
       id: '/_protected/_management/users'
       path: '/users'
@@ -878,48 +710,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProtectedManagementOutletandgudangRouteImport
       parentRoute: typeof ProtectedManagementRoute
     }
-    '/_protected/_inventory_group/markets': {
-      id: '/_protected/_inventory_group/markets'
-      path: '/markets'
-      fullPath: '/markets'
-      preLoaderRoute: typeof ProtectedInventory_groupMarketsRouteImport
-      parentRoute: typeof ProtectedInventory_groupRoute
-    }
-    '/_protected/_inventory_group/inventory-stock': {
-      id: '/_protected/_inventory_group/inventory-stock'
-      path: '/inventory-stock'
-      fullPath: '/inventory-stock'
-      preLoaderRoute: typeof ProtectedInventory_groupInventoryStockRouteImport
-      parentRoute: typeof ProtectedInventory_groupRoute
-    }
-    '/_protected/_inventory_group/inventory-ops': {
-      id: '/_protected/_inventory_group/inventory-ops'
-      path: '/inventory-ops'
-      fullPath: '/inventory-ops'
-      preLoaderRoute: typeof ProtectedInventory_groupInventoryOpsRouteImport
-      parentRoute: typeof ProtectedInventory_groupRoute
-    }
-    '/_protected/_inventory_group/inventory': {
-      id: '/_protected/_inventory_group/inventory'
-      path: '/inventory'
-      fullPath: '/inventory'
-      preLoaderRoute: typeof ProtectedInventory_groupInventoryRouteImport
-      parentRoute: typeof ProtectedInventory_groupRoute
-    }
-    '/_protected/_inventory_group/inventory/': {
-      id: '/_protected/_inventory_group/inventory/'
-      path: '/'
-      fullPath: '/inventory/'
-      preLoaderRoute: typeof ProtectedInventory_groupInventoryIndexRouteImport
-      parentRoute: typeof ProtectedInventory_groupInventoryRoute
-    }
-    '/_protected/_inventory_group/inventory/reject-requests': {
-      id: '/_protected/_inventory_group/inventory/reject-requests'
-      path: '/reject-requests'
-      fullPath: '/inventory/reject-requests'
-      preLoaderRoute: typeof ProtectedInventory_groupInventoryRejectRequestsRouteImport
-      parentRoute: typeof ProtectedInventory_groupInventoryRoute
-    }
   }
 }
 
@@ -932,56 +722,6 @@ const GuestRouteChildren: GuestRouteChildren = {
 }
 
 const GuestRouteWithChildren = GuestRoute._addFileChildren(GuestRouteChildren)
-
-interface ProtectedInventory_groupInventoryRouteChildren {
-  ProtectedInventory_groupInventoryRejectRequestsRoute: typeof ProtectedInventory_groupInventoryRejectRequestsRoute
-  ProtectedInventory_groupInventoryIndexRoute: typeof ProtectedInventory_groupInventoryIndexRoute
-}
-
-const ProtectedInventory_groupInventoryRouteChildren: ProtectedInventory_groupInventoryRouteChildren =
-  {
-    ProtectedInventory_groupInventoryRejectRequestsRoute:
-      ProtectedInventory_groupInventoryRejectRequestsRoute,
-    ProtectedInventory_groupInventoryIndexRoute:
-      ProtectedInventory_groupInventoryIndexRoute,
-  }
-
-const ProtectedInventory_groupInventoryRouteWithChildren =
-  ProtectedInventory_groupInventoryRoute._addFileChildren(
-    ProtectedInventory_groupInventoryRouteChildren,
-  )
-
-interface ProtectedInventory_groupRouteChildren {
-  ProtectedInventory_groupInventoryRoute: typeof ProtectedInventory_groupInventoryRouteWithChildren
-  ProtectedInventory_groupInventoryOpsRoute: typeof ProtectedInventory_groupInventoryOpsRoute
-  ProtectedInventory_groupInventoryStockRoute: typeof ProtectedInventory_groupInventoryStockRoute
-  ProtectedInventory_groupMarketsRoute: typeof ProtectedInventory_groupMarketsRoute
-  ProtectedInventory_groupInventoryDashboardLazyRoute: typeof ProtectedInventory_groupInventoryDashboardLazyRoute
-  ProtectedInventory_groupStockManagementLazyRoute: typeof ProtectedInventory_groupStockManagementLazyRoute
-  ProtectedInventory_groupStockOpnameLazyRoute: typeof ProtectedInventory_groupStockOpnameLazyRoute
-}
-
-const ProtectedInventory_groupRouteChildren: ProtectedInventory_groupRouteChildren =
-  {
-    ProtectedInventory_groupInventoryRoute:
-      ProtectedInventory_groupInventoryRouteWithChildren,
-    ProtectedInventory_groupInventoryOpsRoute:
-      ProtectedInventory_groupInventoryOpsRoute,
-    ProtectedInventory_groupInventoryStockRoute:
-      ProtectedInventory_groupInventoryStockRoute,
-    ProtectedInventory_groupMarketsRoute: ProtectedInventory_groupMarketsRoute,
-    ProtectedInventory_groupInventoryDashboardLazyRoute:
-      ProtectedInventory_groupInventoryDashboardLazyRoute,
-    ProtectedInventory_groupStockManagementLazyRoute:
-      ProtectedInventory_groupStockManagementLazyRoute,
-    ProtectedInventory_groupStockOpnameLazyRoute:
-      ProtectedInventory_groupStockOpnameLazyRoute,
-  }
-
-const ProtectedInventory_groupRouteWithChildren =
-  ProtectedInventory_groupRoute._addFileChildren(
-    ProtectedInventory_groupRouteChildren,
-  )
 
 interface ProtectedManagementRouteChildren {
   ProtectedManagementOutletandgudangRoute: typeof ProtectedManagementOutletandgudangRoute
@@ -1053,7 +793,6 @@ const ProtectedKelolaoutletRouteWithChildren =
   )
 
 interface ProtectedRouteChildren {
-  ProtectedInventory_groupRoute: typeof ProtectedInventory_groupRouteWithChildren
   ProtectedManagementRoute: typeof ProtectedManagementRouteWithChildren
   ProtectedForbiddenRoute: typeof ProtectedForbiddenRoute
   ProtectedKelolagudangRoute: typeof ProtectedKelolagudangRouteWithChildren
@@ -1067,7 +806,6 @@ interface ProtectedRouteChildren {
 }
 
 const ProtectedRouteChildren: ProtectedRouteChildren = {
-  ProtectedInventory_groupRoute: ProtectedInventory_groupRouteWithChildren,
   ProtectedManagementRoute: ProtectedManagementRouteWithChildren,
   ProtectedForbiddenRoute: ProtectedForbiddenRoute,
   ProtectedKelolagudangRoute: ProtectedKelolagudangRouteWithChildren,
