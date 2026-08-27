@@ -2,6 +2,7 @@
 import { Plug, Unplug, Trash2, Activity, ExternalLink } from "lucide-react";
 import { useSerial } from "@/hooks/useSerial";
 import { useRoleAndPermission } from "@/hooks/useRoleAndPermission";
+import { requestWebApiNotificationPermission } from "@/utils/webApiNotification";
 import { DebugLogs } from "@/components/DebugLogs";
 import { Modal } from "./Modal";
 import { Button } from "@/components/ui/button";
@@ -86,29 +87,33 @@ export const SerialSettingsModal: React.FC<SerialSettingsModalProps> = ({
 								fullWidth
 							/>
 
-							{/* Actions */}
-							{isConnected ? (
-								<Button
-									onClick={disconnect}
-									variant="danger"
-									className="gap-2"
-									fullWidth
-								>
-									<Unplug className="w-4 h-4" />
-									Putuskan Perangkat
-								</Button>
-							) : (
-								<Button
-									onClick={connect}
-									disabled={isConnecting}
-									isLoading={isConnecting}
-									className="gap-2"
-									fullWidth
-								>
-									{!isConnecting && <Plug className="w-4 h-4" />}
-									Hubungkan ke Port Serial
-								</Button>
-							)}
+						{/* Actions */}
+						{isConnected ? (
+							<Button
+								onClick={disconnect}
+								variant="danger"
+								className="gap-2"
+								fullWidth
+							>
+								<Unplug className="w-4 h-4" />
+								Putuskan Perangkat
+							</Button>
+						) : (
+							<Button
+								onClick={() => {
+									// Request OS notification permission on this user gesture
+									void requestWebApiNotificationPermission();
+									void connect();
+								}}
+								disabled={isConnecting}
+								isLoading={isConnecting}
+								className="gap-2"
+								fullWidth
+							>
+								{!isConnecting && <Plug className="w-4 h-4" />}
+								Hubungkan ke Port Serial
+							</Button>
+						)}
 						</div>
 					</div>
 

@@ -3,6 +3,7 @@ import { useSerial } from "@/hooks/useSerial";
 import { logger } from "@/services/logger.service";
 import type { Product } from "@/types";
 import { toast } from "sonner";
+import { sendWebApiNotification } from "@/utils/webApiNotification";
 import {
 	DEDUP_MS,
 	findProductByCode,
@@ -89,6 +90,11 @@ export const ScaleListener: React.FC<ScaleListenerProps> = ({
 
 		lastProcessedRef.current = { key: dataKey, time: now };
 		toast.success(`Berhasil menambahkan: ${product.name}`);
+		sendWebApiNotification({
+			title: "Pesanan Masuk",
+			body: `${product.name} — ${roundedWeight} kg ditambahkan ke keranjang`,
+			icon: "/default_product.png",
+		});
 	}, [scaleData]);
 
 	return null;
