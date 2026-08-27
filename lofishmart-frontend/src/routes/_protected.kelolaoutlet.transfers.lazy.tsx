@@ -113,7 +113,8 @@ function unitLabel(unit: string): string {
 	return unit === "1" ? "KG" : "Ekor";
 }
 
-function fmtDate(dateStr: string): string {
+function fmtDate(dateStr?: string | null): string {
+	if (!dateStr) return "-";
 	return new Date(dateStr).toLocaleDateString("id-ID", {
 		day: "numeric",
 		month: "short",

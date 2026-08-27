@@ -1,11 +1,10 @@
 import { useState } from "react";
 import {
   Truck, Clock, CheckCircle2, XCircle, RefreshCw,
-  AlertCircle, Printer, ChevronDown, ChevronUp, Package, Calendar
+  AlertCircle, Printer, ChevronDown, Package, Calendar
 } from "lucide-react";
 import { TransferOrderService, type StockTransfer } from "@/services/inventory.service";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { formatQty } from "@/utils/format";
 
@@ -13,7 +12,6 @@ interface TransferOrderListProps {
   transfers: StockTransfer[];
   userRole: string | undefined;
   onSuccess: () => void;
-  onPrint: (transfer: StockTransfer, type: "delivery" | "receipt") => void;
 }
 
 const STATUS_CONFIG = {
@@ -55,264 +53,6 @@ function StatusBadge({ status }: { status: StockTransfer["status"] }) {
   );
 }
 
-function TransferOrderRow({
-  transfer,
-  userRole,
-  onSuccess,
-  onPrint,
-}: {
-  transfer: StockTransfer;
-  userRole: string | undefined;
-  onSuccess: () => void;
-  onPrint: (transfer: StockTransfer, type: "delivery" | "receipt") => void;
-}) {
-  const [expanded, setExpanded] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [verifiedQty, setVerifiedQty] = useState<string>("");
-  const [verifiedNotes, setVerifiedNotes] = useState<string>("");
-  const [showVerifyForm, setShowVerifyForm] = useState(false);
-
-  const isManagement = userRole === "ADMN" || userRole === "MGR";
-  const isGudang = userRole === "GDNG" || isManagement;
-  const isSPVR = userRole === "SPVR";
-
-  const handleConfirmSend = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      await TransferOrderService.updateStatus(transfer.id, "WAITING_VERIFICATION");
-      toast.success("Pengiriman berhasil dikonfirmasi");
-      onSuccess();
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Gagal mengubah status");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleVerify = async () => {
-    const qty = Number(verifiedQty);
-    if (!qty || qty <= 0) {
-      setError("Masukkan jumlah yang diterima");
-      return;
-    }
-    setLoading(true);
-    setError(null);
-    try {
-      await TransferOrderService.updateStatus(transfer.id, "DONE", qty, verifiedNotes || undefined);
-      toast.success("Penerimaan berhasil diverifikasi");
-      onSuccess();
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Gagal verifikasi");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleCancel = async () => {
-    if (!confirm("Batalkan pengiriman ini? Stok gudang akan dikembalikan.")) return;
-    setLoading(true);
-    setError(null);
-    try {
-      await TransferOrderService.cancel(transfer.id);
-      toast.success("Pengiriman dibatalkan");
-      onSuccess();
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Gagal membatalkan");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const unit = transfer.unit === "1" ? "kg" : "ekor";
-  const productName = transfer.product?.name || "Unknown";
-  const outletName = transfer.target_market?.name || "Unknown";
-  const senderName = transfer.created_by?.name || "-";
-
-  return (
-    <div className="border border-gray-100 rounded-xl overflow-hidden hover:border-gray-200 transition-all">
-      {/* Header Row */}
-      <div
-        className="flex items-center gap-4 px-4 py-3 bg-white cursor-pointer hover:bg-gray-50 transition-colors"
-        onClick={() => setExpanded(!expanded)}
-      >
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="font-semibold text-gray-900 text-sm">{productName}</span>
-            <span className="text-gray-400 text-xs">→</span>
-            <span className="text-blue-600 font-medium text-sm">{outletName}</span>
-          </div>
-          <p className="text-xs text-gray-400 mt-0.5">
-            #{transfer.id.slice(-8).toUpperCase()} · {new Date(transfer.created_at).toLocaleDateString("id-ID")} · oleh {senderName}
-          </p>
-        </div>
-        <div className="flex items-center gap-3 shrink-0">
-          <span className="text-sm font-bold text-gray-700">
-            {formatQty(transfer.qty)} {unit}
-          </span>
-          <StatusBadge status={transfer.status} />
-          {expanded ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
-        </div>
-      </div>
-
-      {/* Expanded Detail */}
-      {expanded && (
-        <div className="px-4 pb-4 bg-gray-50/50 border-t border-gray-100 space-y-3">
-          {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-3 py-2 rounded-lg flex items-center gap-2 text-xs mt-3">
-              <AlertCircle className="w-4 h-4 shrink-0" />
-              {error}
-            </div>
-          )}
-
-          {/* Info Detail */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-3">
-            <div className="bg-white rounded-lg p-3 border border-gray-100">
-              <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Dikirim</p>
-              <p className="font-bold text-gray-800">{formatQty(transfer.qty)} {unit}</p>
-            </div>
-            {transfer.verified_qty != null && (
-              <div className="bg-white rounded-lg p-3 border border-gray-100">
-                <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Diterima</p>
-                <p className="font-bold text-emerald-700">{formatQty(transfer.verified_qty)} {unit}</p>
-              </div>
-            )}
-            {transfer.sent_at && (
-              <div className="bg-white rounded-lg p-3 border border-gray-100">
-                <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Tgl Kirim</p>
-                <p className="font-medium text-gray-700 text-sm">{new Date(transfer.sent_at).toLocaleDateString("id-ID")}</p>
-              </div>
-            )}
-            {transfer.verified_at && (
-              <div className="bg-white rounded-lg p-3 border border-gray-100">
-                <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Tgl Terima</p>
-                <p className="font-medium text-gray-700 text-sm">{new Date(transfer.verified_at).toLocaleDateString("id-ID")}</p>
-              </div>
-            )}
-          </div>
-
-          {transfer.notes && (
-            <p className="text-xs text-gray-500 bg-white px-3 py-2 rounded-lg border border-gray-100">
-              📝 <span className="font-medium">Catatan Pengirim:</span> {transfer.notes}
-            </p>
-          )}
-          {transfer.verified_notes && (
-            <p className="text-xs text-gray-500 bg-emerald-50 px-3 py-2 rounded-lg border border-emerald-100">
-              ✅ <span className="font-medium">Catatan Penerima:</span> {transfer.verified_notes}
-            </p>
-          )}
-
-          {/* Action Buttons */}
-          <div className="flex flex-wrap gap-2 pt-1">
-            {/* GDNG: Konfirmasi Sudah Dikirim */}
-            {isGudang && transfer.status === "SENDING" && (
-              <>
-                <Button
-                  size="sm"
-                  onClick={handleConfirmSend}
-                  disabled={loading}
-                  className="bg-amber-500 hover:bg-amber-600 text-white text-xs"
-                >
-                  {loading ? <RefreshCw className="w-3.5 h-3.5 animate-spin mr-1" /> : <Truck className="w-3.5 h-3.5 mr-1" />}
-                  Konfirmasi Sudah Dikirim
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={handleCancel}
-                  disabled={loading}
-                  className="text-red-600 border-red-200 hover:bg-red-50 text-xs"
-                >
-                  <XCircle className="w-3.5 h-3.5 mr-1" />
-                  Batalkan
-                </Button>
-              </>
-            )}
-
-            {/* Cetak Surat Jalan */}
-            {(transfer.status === "WAITING_VERIFICATION" || transfer.status === "DONE") && (isGudang || isManagement) && (
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={() => onPrint(transfer, "delivery")}
-                className="text-blue-600 border-blue-200 hover:bg-blue-50 text-xs"
-              >
-                <Printer className="w-3.5 h-3.5 mr-1" />
-                Cetak Surat Jalan
-              </Button>
-            )}
-
-            {/* SPVR: ACC & Verifikasi */}
-            {isSPVR && transfer.status === "WAITING_VERIFICATION" && (
-              <div className="w-full space-y-2">
-                {!showVerifyForm ? (
-                  <Button
-                    size="sm"
-                    onClick={() => { setShowVerifyForm(true); setVerifiedQty(String(transfer.qty)); }}
-                    className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs"
-                  >
-                    <CheckCircle2 className="w-3.5 h-3.5 mr-1" />
-                    ACC & Terima Barang
-                  </Button>
-                ) : (
-                  <div className="bg-white border border-emerald-200 rounded-xl p-4 space-y-3">
-                    <p className="text-xs font-bold text-emerald-800 uppercase tracking-wider">Konfirmasi Penerimaan</p>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div>
-                        <label className="block text-xs font-medium text-gray-600 mb-1">
-                          Qty Diterima ({unit}) <span className="text-red-500">*</span>
-                        </label>
-                        <Input
-                          type="number"
-                          step={transfer.unit === "2" ? "1" : "0.01"}
-                          value={verifiedQty}
-                          onChange={(e) => setVerifiedQty(e.target.value)}
-                          className="h-9 text-sm"
-                          placeholder={String(transfer.qty)}
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-medium text-gray-600 mb-1">Catatan</label>
-                        <Input
-                          value={verifiedNotes}
-                          onChange={(e) => setVerifiedNotes(e.target.value)}
-                          className="h-9 text-sm"
-                          placeholder="Kondisi barang..."
-                        />
-                      </div>
-                    </div>
-                    <div className="flex gap-2">
-                      <Button size="sm" onClick={handleVerify} disabled={loading} className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs">
-                        {loading ? <RefreshCw className="w-3.5 h-3.5 animate-spin mr-1" /> : <CheckCircle2 className="w-3.5 h-3.5 mr-1" />}
-                        Konfirmasi Terima
-                      </Button>
-                      <Button size="sm" variant="outline" onClick={() => setShowVerifyForm(false)} className="text-xs">Batal</Button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Cetak Bukti Terima */}
-            {transfer.status === "DONE" && (isSPVR || isManagement) && (
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={() => onPrint(transfer, "receipt")}
-                className="text-emerald-600 border-emerald-200 hover:bg-emerald-50 text-xs"
-              >
-                <Printer className="w-3.5 h-3.5 mr-1" />
-                Cetak Bukti Terima
-              </Button>
-            )}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
 function groupTransfers(transfers: StockTransfer[]): { groupId: string; isBatch: boolean; items: StockTransfer[] }[] {
   const groups: { groupId: string; isBatch: boolean; items: StockTransfer[] }[] = [];
   const batchMap = new Map<string, StockTransfer[]>();
@@ -342,11 +82,10 @@ function groupTransfers(transfers: StockTransfer[]): { groupId: string; isBatch:
   });
 }
 
-function BatchCard({ group, userRole, onSuccess, onPrint }: {
+function BatchCard({ group, userRole, onSuccess }: {
   group: { groupId: string; isBatch: boolean; items: StockTransfer[] };
   userRole: string | undefined;
   onSuccess: () => void;
-  onPrint: (transfer: StockTransfer, type: "delivery" | "receipt") => void;
 }) {
   const [confirming, setConfirming] = useState(false);
   const [cancelling, setCancelling] = useState(false);
@@ -594,7 +333,7 @@ function BatchCard({ group, userRole, onSuccess, onPrint }: {
   );
 }
 
-export function TransferOrderList({ transfers, userRole, onSuccess, onPrint }: TransferOrderListProps) {
+export function TransferOrderList({ transfers, userRole, onSuccess }: TransferOrderListProps) {
   const activeGroups = groupTransfers(transfers.filter((t) => t.status !== "CANCELLED" && t.status !== "DONE"));
   const doneGroups = groupTransfers(transfers.filter((t) => t.status === "DONE" || t.status === "CANCELLED"));
 
@@ -612,7 +351,7 @@ export function TransferOrderList({ transfers, userRole, onSuccess, onPrint }: T
       {activeGroups.length > 0 && (
         <div className="space-y-2">
           {activeGroups.map((g) => (
-            <BatchCard key={g.groupId} group={g} userRole={userRole} onSuccess={onSuccess} onPrint={onPrint} />
+            <BatchCard key={g.groupId} group={g} userRole={userRole} onSuccess={onSuccess} />
           ))}
         </div>
       )}
@@ -631,7 +370,7 @@ export function TransferOrderList({ transfers, userRole, onSuccess, onPrint }: T
             </div>
             <div className="space-y-2 opacity-70">
               {doneGroups.map((g) => (
-                <BatchCard key={g.groupId} group={g} userRole={userRole} onSuccess={onSuccess} onPrint={onPrint} />
+                <BatchCard key={g.groupId} group={g} userRole={userRole} onSuccess={onSuccess} />
               ))}
             </div>
           </div>
@@ -650,7 +389,7 @@ export function TransferOrderList({ transfers, userRole, onSuccess, onPrint }: T
             </summary>
             <div className="mt-2 space-y-2 opacity-75">
               {doneGroups.map((g) => (
-                <BatchCard key={g.groupId} group={g} userRole={userRole} onSuccess={onSuccess} onPrint={onPrint} />
+                <BatchCard key={g.groupId} group={g} userRole={userRole} onSuccess={onSuccess} />
               ))}
             </div>
           </details>

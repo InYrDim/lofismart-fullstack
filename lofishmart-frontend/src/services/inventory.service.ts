@@ -1,6 +1,10 @@
 import { api } from "@/utils/api";
 import type { Purchase, StockTransfer } from "@/types";
 
+// Re-export shared domain types so consumers can import them from here
+// (components currently import `StockTransfer` from this module).
+export type { Purchase, StockTransfer } from "@/types";
+
 /**
  * Inventory Service
  * 

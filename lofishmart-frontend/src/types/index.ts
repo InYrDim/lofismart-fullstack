@@ -398,6 +398,9 @@ export interface StockTransfer {
 	unit: UnitType;
 	status: TransferStatus;
 	notes?: string | null;
+	created_at?: string | null;
+	created_by?: { id?: string; name?: string } | null;
+	verified_by?: { id?: string; name?: string } | null;
 	verified_qty?: number | null;
 	verified_notes?: string | null;
 	sent_at?: string | null;
@@ -406,9 +409,16 @@ export interface StockTransfer {
 	image_proof?: string | null;
 	product?: { id: string; name: string } | null;
 	source_stock?: {
-		warehouse?: { id: string; name: string } | null;
+		warehouse?: { id: string; name: string; address?: string | null } | null;
+		/** Typo-variant of `warehouse` used across transfer-related views/backed API. */
+		werehouse?: { id: string; name: string; address?: string | null } | null;
 	} | null;
-	target_market?: { id: string; name: string } | null;
+	target_market?: {
+		id: string;
+		name: string;
+		address?: string | null;
+		type?: string | null;
+	} | null;
 }
 
 export interface GroupedPurchase {

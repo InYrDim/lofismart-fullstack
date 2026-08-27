@@ -26,7 +26,6 @@ import {
 } from "@/services/inventory.service";
 import { ProfileService } from "@/services/profile.service";
 import { TransferOrderList } from "@/components/markets/TransferOrderList";
-import { TransferPrintView } from "@/components/markets/TransferPrintView";
 import { useAuth } from "@/hooks/useAuth";
 import { ROLES } from "@/config/roles";
 import { formatQty } from "@/utils/format";
@@ -60,16 +59,6 @@ function GudangTransferPage() {
 	const [transfers, setTransfers] = useState<StockTransfer[]>([]);
 	const [selectedGudangId, setSelectedGudangId] = useState("");
 	const [loading, setLoading] = useState(true);
-
-	// Print state
-	const [printData, setPrintData] = useState<{
-		transfer: StockTransfer;
-		type: "delivery" | "receipt";
-	} | null>(null);
-
-	const handlePrint = (transfer: StockTransfer, type: "delivery" | "receipt") => {
-		setPrintData({ transfer, type });
-	};
 
 	// Create form
 	const [isCreateOpen, setIsCreateOpen] = useState(false);
@@ -307,7 +296,6 @@ function GudangTransferPage() {
 						transfers={transfers}
 						userRole={userRole}
 						onSuccess={loadTransfers}
-						onPrint={handlePrint}
 					/>
 				)}
 			</div>
@@ -593,15 +581,6 @@ function GudangTransferPage() {
 					</Button>
 				</ModalFooter>
 			</Modal>
-
-			{/* PRINT VIEW */}
-			{printData && (
-				<TransferPrintView
-					type={printData.type}
-					transfer={printData.transfer}
-					onClose={() => setPrintData(null)}
-				/>
-			)}
 		</div>
 	)
 }
