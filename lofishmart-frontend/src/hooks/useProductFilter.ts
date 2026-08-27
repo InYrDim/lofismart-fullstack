@@ -20,6 +20,18 @@ export const useProductFilter = (products: Product[]) => {
 		return Array.from(new Set(sizes)).sort();
 	}, [products]);
 
+	/**
+	 * A product is treated as "stok habis" (out of stock) when it is a real
+	 * product (not a service, not pre-order/non-stock) with zero available stock.
+	 * Consistent with the "Stok Habis" badge logic in ProductCard.
+	 */
+	const isOutOfStock = (p: Product): boolean => {
+		const isService = p.type === "SERVICE";
+		const isNonStock = p.is_non_stock === "2" || (p as Product & { isNonStock?: boolean }).isNonStock;
+		const stock = p.stock || 0;
+		return !isService && !isNonStock && stock <= 0;
+	};
+
 	const filteredData = useMemo(() => {
 		let data = products;
 
@@ -40,12 +52,25 @@ export const useProductFilter = (products: Product[]) => {
 			data = data.filter((p) => p.size === selectedSize);
 		}
 
-		if (isAvailableOnly) {
-			data = data.filter((p) => p.is_non_stock !== "2");
-		}
-
 		return data;
-	}, [products, activeFilter, selectedGrade, selectedSize, isAvailableOnly]);
+	}, [products, activeFilter, selectedGrade, selectedSize]);
+
+	/**
+	 * Products that are currently available (in stock): excludes out-of-stock
+	 * products. Pre-order/non-stock items are kept here.
+	 */
+	const availableData = useMemo(() => {
+		return filteredData.filter((p) => !isOutOfStock(p));
+	}, [filteredData]);
+
+	/**
+	 * Out-of-stock products, shown in a separate section.
+	 * Hidden entirely when "Tersedia Saja" is active.
+	 */
+	const outOfStockData = useMemo(() => {
+		if (isAvailableOnly) return [];
+		return filteredData.filter((p) => isOutOfStock(p));
+	}, [filteredData, isAvailableOnly]);
 
 	const clearFilters = () => {
 		setSelectedGrade("");
@@ -68,6 +93,8 @@ export const useProductFilter = (products: Product[]) => {
 		uniqueGrades,
 		uniqueSizes,
 		filteredData,
+		availableData,
+		outOfStockData,
 		clearFilters,
 		hasActiveSecondaryFilters,
 	};

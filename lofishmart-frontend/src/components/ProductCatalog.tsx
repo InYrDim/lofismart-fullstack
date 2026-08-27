@@ -1,5 +1,5 @@
 import React from "react";
-import { Package, Sparkles } from "lucide-react";
+import { Package, Sparkles, AlertTriangle } from "lucide-react";
 import type { Product, CartItem } from "@/types";
 import ProductCard from "./ui/cards/ProductCard";
 import { Button } from "./ui/button";
@@ -31,10 +31,51 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({
 		setIsAvailableOnly,
 		uniqueGrades,
 		uniqueSizes,
-		filteredData,
+		availableData,
+		outOfStockData,
 		clearFilters,
 		hasActiveSecondaryFilters,
 	} = useProductFilter(products);
+
+	function renderProductCard(product: Product) {
+		const qty = cart
+			.filter(
+				(item) => item.id === product.id && item.source === "manual"
+			)
+			.reduce((sum, item) => sum + item.qty, 0);
+
+		const serialQty = cart
+			.filter(
+				(item) => item.id === product.id && item.source === "serial"
+			)
+			.reduce((sum, item) => sum + item.qty, 0);
+
+		const reservedWeight = cart
+			.filter((item) => item.id === product.id)
+			.reduce(
+				(sum, item) => sum + (item.measuredWeight || 1) * item.qty,
+				0
+			);
+
+		return (
+			<ProductCard
+				key={product.id}
+				product={product}
+				qty={qty}
+				serialQty={serialQty}
+				reservedWeight={reservedWeight}
+				onAdd={() => onAddToCart(product)}
+				onUpdateQty={(delta) => {
+					const manualItem = cart.find(
+						(item) => item.id === product.id && item.source === "manual"
+					);
+					if (manualItem) {
+						onUpdateQuantity(manualItem.cartId, delta);
+					}
+				}}
+			/>
+		);
+	}
 
 	function renderSelectFilter() {
 		return (
@@ -144,48 +185,31 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
 			{/* Product Grid */}
 			<div className="flex-1 overflow-y-auto px-6 pb-6 scrollbar-thin scrollbar-thumb-gray-300">
+				{/* Available Products Section */}
 				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4">
-					{filteredData.map((product) => {
-						const qty = cart
-							.filter(
-								(item) => item.id === product.id && item.source === "manual"
-							)
-							.reduce((sum, item) => sum + item.qty, 0);
-
-						const serialQty = cart
-							.filter(
-								(item) => item.id === product.id && item.source === "serial"
-							)
-							.reduce((sum, item) => sum + item.qty, 0);
-
-						const reservedWeight = cart
-							.filter((item) => item.id === product.id)
-							.reduce(
-								(sum, item) => sum + (item.measuredWeight || 1) * item.qty,
-								0
-							);
-
-						return (
-							<ProductCard
-								key={product.id}
-								product={product}
-								qty={qty}
-								serialQty={serialQty}
-								reservedWeight={reservedWeight}
-								onAdd={() => onAddToCart(product)}
-								onUpdateQty={(delta) => {
-									const manualItem = cart.find(
-										(item) => item.id === product.id && item.source === "manual"
-									);
-									if (manualItem) {
-										onUpdateQuantity(manualItem.cartId, delta);
-									}
-								}}
-							/>
-						);
-					})}
+					{availableData.map((product) => renderProductCard(product))}
 				</div>
-				{filteredData.length === 0 && (
+
+				{/* Out of Stock Section */}
+				{outOfStockData.length > 0 && (
+					<>
+						<div className="flex items-center gap-2 mt-8 mb-3">
+							<AlertTriangle className="w-4 h-4 text-red-500" />
+							<h2 className="text-sm font-semibold text-gray-700">
+								Stok Habis
+							</h2>
+							<span className="text-xs text-gray-400">
+								({outOfStockData.length})
+							</span>
+							<div className="flex-1 h-px bg-gray-200" />
+						</div>
+						<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 opacity-80">
+							{outOfStockData.map((product) => renderProductCard(product))}
+						</div>
+					</>
+				)}
+
+				{availableData.length === 0 && outOfStockData.length === 0 && (
 					<div className="flex flex-col items-center justify-center h-40 text-gray-400">
 						<p>Tidak ada item ditemukan untuk filter ini.</p>
 						<button
