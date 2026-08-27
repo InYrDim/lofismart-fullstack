@@ -13,7 +13,6 @@ import { Button } from "@/components/ui/button";
 import CartSidebar from "@/components/CartSidebar";
 import { useCart } from "@/hooks/useCart";
 import { useAuth } from "@/hooks/useAuth";
-import { useRoleAndPermission } from "@/hooks/useRoleAndPermission";
 import PosHeader from "@/components/PosHeader";
 import { storage } from "@/utils/storage";
 import { PrintService } from "@/lib/print";
@@ -24,7 +23,6 @@ import { ScaleListener } from "@/components/ScaleListener";
 
 import { Modal } from "@/components/ui/modals/Modal";
 import { PaymentModal } from "@/components/ui/modals/PaymentModal";
-import { UnassignedOutletModal } from "@/components/ui/modals/UnassignedOutletModal";
 import { SerialSettingsModal } from "@/components/ui/modals/SerialSettingsModal";
 import { useSerial } from "@/hooks/useSerial";
 import { useMarkets } from "@/hooks/useMarkets";
@@ -116,14 +114,10 @@ function POSPage() {
 
 	const [refreshTrigger, setRefreshTrigger] = useState(0);
 
-	// ═══ Outlet assignment check for KSR / SPVR ═══
-	const { marketId, marketName } = useAuth();
-	const { isCashier, isSupervisor } = useRoleAndPermission();
-	const [showUnassignedModal, setShowUnassignedModal] = useState(false);
-
 	// ═══ Market display: resolve current market name ═══
 	// Prefer the market matching the currently-displayed products (stored ID),
 	// then fall back to the user's assigned market name from auth.
+	const { marketName } = useAuth();
 	const { markets } = useMarkets();
 	const displayMarketName = useMemo(() => {
 		const storedMarketId = storage.getMarketId();
@@ -133,15 +127,6 @@ function POSPage() {
 		}
 		return marketName || undefined;
 	}, [marketName, markets]);
-
-	useEffect(() => {
-		const isScopedRole = isCashier || isSupervisor;
-		if (isScopedRole && !marketId) {
-			setShowUnassignedModal(true);
-		} else {
-			setShowUnassignedModal(false);
-		}
-	}, [isCashier, isSupervisor, marketId]);
 
 	const {
 		cart,
@@ -291,12 +276,6 @@ function POSPage() {
 					/>
 				</div>
 			</div>
-
-			{/* ═══ Outlet Assignment Warning Modal ═══ */}
-			<UnassignedOutletModal
-				isOpen={showUnassignedModal}
-				onClose={() => setShowUnassignedModal(false)}
-			/>
 
 			{/* Modals */}
 			<PaymentModal

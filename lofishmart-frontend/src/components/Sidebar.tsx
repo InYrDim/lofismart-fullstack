@@ -118,6 +118,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
 		{
 			icon: History,
 			label: "Riwayat Transaksi",
+			// Gudang (GDNG) tidak perlu akses ke riwayat transaksi
+			allowedRoles: [ROLES.ADMIN, ROLES.MANAGER, ROLES.SUPERVISOR, ROLES.CASHIER, ROLES.USER],
 			children: [
 				{ label: "Penjualan", path: "/transactions" },
 				{ label: "Data Transaksi", path: "/data-transaksi" },
@@ -131,7 +133,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
 		},
 
 		{
-			icon: Settings,
+      icon: Settings,
+			allowedRoles: [ROLES.ADMIN, ROLES.MANAGER, ROLES.SUPERVISOR, ROLES.USER],
 			label: "Pengaturan",
 			path: "/settings",
 		},

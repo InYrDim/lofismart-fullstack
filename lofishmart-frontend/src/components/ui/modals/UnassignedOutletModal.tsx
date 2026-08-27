@@ -7,11 +7,14 @@ import { Button } from "@/components/ui/button";
 interface UnassignedOutletModalProps {
 	isOpen: boolean;
 	onClose: () => void;
+	/** Tampilkan indikator loading pada tombol saat data user sedang disinkronkan ulang. */
+	isLoading?: boolean;
 }
 
 export function UnassignedOutletModal({
 	isOpen,
 	onClose,
+	isLoading = false,
 }: UnassignedOutletModalProps) {
 	const { marketId } = useAuth();
 	const { isCashier, isSupervisor } = useRoleAndPermission();
@@ -70,7 +73,11 @@ export function UnassignedOutletModal({
 									<span className="font-semibold">{roleLabel}</span> Anda
 									melalui menu Manajemen User di sistem.
 								</li>
-								<li>Setelah outlet ditetapkan, logout dan login kembali.</li>
+								<li>
+								Setelah outlet ditetapkan, tekan tombol{" "}
+								<span className="font-semibold">"Saya Mengerti"</span> di
+								bawah untuk memuat data terbaru dan membuka akses.
+							</li>
 							</ol>
 						</div>
 					</div>
@@ -96,9 +103,10 @@ export function UnassignedOutletModal({
 					<Button
 						variant="primary"
 						onClick={onClose}
+						disabled={isLoading}
 						className="min-w-[140px]"
 					>
-						Saya Mengerti
+						{isLoading ? "Memeriksa..." : "Saya Mengerti"}
 					</Button>
 				</ModalFooter>
 			</div>

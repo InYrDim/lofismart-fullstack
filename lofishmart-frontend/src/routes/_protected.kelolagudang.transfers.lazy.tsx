@@ -75,7 +75,13 @@ function GudangTransferPage() {
 	const activeGudangId = userRole === ROLES.ADMIN ? selectedGudangId : userMarketId;
 
 	const loadTransfers = useCallback(async () => {
-		if (!activeGudangId) return;
+		// Tanpa gudang terdeteksi, jangan biarkan loading berhenti di "Memuat..."
+		// selamanya.
+		if (!activeGudangId) {
+			setTransfers([]);
+			setLoading(false);
+			return;
+		}
 		setLoading(true);
 		try {
 			const data = await TransferOrderService.list({

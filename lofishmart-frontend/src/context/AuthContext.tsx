@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AuthContext } from "./AuthContextDef";
 import type { User } from "@/types";
 import { storage } from "@/utils/storage";
@@ -8,6 +8,27 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 	children,
 }) => {
 	const [user, setUser] = useState<User | null>(storage.getUser());
+
+	// Saat app dimuat dan user sudah tersimpan, segarkan data user dari server
+	// (GET /me) agar perubahan yang dilakukan Admin (mis. penambahan market_id)
+	// langsung terlihat setelah halaman di-refresh, tanpa harus login ulang.
+	const initialUser = storage.getUser();
+
+	useEffect(() => {
+		if (!initialUser) return;
+		let cancelled = false;
+		AuthService.getProfile()
+			.then((fresh) => {
+				if (!cancelled) setUser(fresh);
+			})
+			.catch(() => {
+				// Token tidak valid / gagal sinkronisasi: biarkan data lama tetap berlaku.
+			});
+		return () => {
+			cancelled = true;
+		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	const login = (userData: User, token: string) => {
 		// Storage updates should happen in service/component calling this, but we force update state here

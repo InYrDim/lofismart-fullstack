@@ -63,7 +63,13 @@ function GudangStockPage() {
 		userRole === ROLES.ADMIN ? selectedGudangId : userMarketId;
 
 	const loadStocks = useCallback(async () => {
-		if (!activeGudangId) return;
+		// Tanpa gudang terdeteksi, jangan biarkan loading berhenti di "Memuat..."
+		// selamanya.
+		if (!activeGudangId) {
+			setStocks([]);
+			setLoading(false);
+			return;
+		}
 		setLoading(true);
 		try {
 			const res = await InventoryService.getStockList({

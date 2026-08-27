@@ -10,6 +10,7 @@ import {
 	ShoppingBag,
 	Package,
 	DollarSign,
+	AlertTriangle,
 } from "lucide-react";
 import { InventoryService } from "@/services/inventory.service";
 import { AdminGudangSelector } from "@/components/markets/AdminGudangSelector";
@@ -66,12 +67,21 @@ function GudangPurchasesPage() {
 	const [loading, setLoading] = useState(true);
 	const [searchQuery, setSearchQuery] = useState("");
 	const [selectedGudangId, setSelectedGudangId] = useState<string>("");
+	const [gudangNotDetected, setGudangNotDetected] = useState(false);
 	const [selectedItem, setSelectedItem] = useState<GroupedPurchase | Purchase | null>(null);
 
 	const activeGudangId = selectedGudangId || userMarketId || "";
 
 	const loadPurchases = useCallback(async () => {
-		if (!activeGudangId) return;
+		// Ketika tidak ada gudang terdeteksi, pastikan loading tidak berhenti di
+		// "Memuat..." selamanya. Data dikosongkan dan pengguna diberi tahu.
+		if (!activeGudangId) {
+			setPurchases([]);
+			setLoading(false);
+			setGudangNotDetected(true);
+			return;
+		}
+		setGudangNotDetected(false);
 		setLoading(true);
 		try {
 			const data = await InventoryService.getIntakeHistory(activeGudangId);
@@ -132,6 +142,19 @@ function GudangPurchasesPage() {
 					selectedGudangId={selectedGudangId}
 					onSelect={(id) => setSelectedGudangId(id)}
 				/>
+
+				{gudangNotDetected && (
+					<div className="mb-6 bg-amber-50 border border-amber-200 text-amber-700 px-4 py-3 rounded-xl flex items-start gap-2 text-sm">
+						<AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
+						<div>
+							<p className="font-semibold">Gudang tidak terdeteksi</p>
+							<p className="text-xs mt-0.5">
+								Akun Anda belum memiliki gudang yang ditetapkan. Hubungi Admin untuk
+								mengaitkan akun ini ke gudang yang benar.
+							</p>
+						</div>
+					</div>
+				)}
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
 					<div className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm">
