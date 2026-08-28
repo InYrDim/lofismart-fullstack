@@ -71,6 +71,8 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({
 					);
 					if (manualItem) {
 						onUpdateQuantity(manualItem.cartId, delta);
+					} else if (delta > 0) {
+						onAddToCart(product);
 					}
 				}}
 			/>

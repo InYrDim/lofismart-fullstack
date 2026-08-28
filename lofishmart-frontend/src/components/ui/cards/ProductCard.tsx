@@ -70,7 +70,7 @@ export default function ProductCard({
 	};
 
 	return (
-		<Card className="flex flex-col gap-2 p-3 hover:shadow-md transition-all duration-300 group justify-between h-full">
+		<Card className={`flex flex-col gap-2 p-3 hover:shadow-md transition-all duration-300 group justify-between h-full ${(qty + serialQty) > 0 ? "ring-2 ring-brand-primary border-brand-primary" : ""}`}>
 			{/* Image Section */}
 			<div className="relative w-full aspect-square">
 				{/* Badge Qty di Keranjang */}
@@ -159,13 +159,14 @@ export default function ProductCard({
 						>
 							Stok Habis
 						</Button>
-					) : qty > 0 ? (
+					) : (qty + serialQty) > 0 ? (
 						<>
 							<Button
 								onClick={(e) => {
 									e.stopPropagation();
 									onUpdateQty(-1);
 								}}
+								disabled={qty === 0}
 								variant="secondary"
 								size="sm"
 								className="h-8 w-8 p-0!"
@@ -173,7 +174,7 @@ export default function ProductCard({
 								<Minus className="w-4 h-4" />
 							</Button>
 							<span className="text-sm font-bold text-gray-900 min-w-[40px] text-center">
-								{formatQty(qty)}
+								{formatQty(qty + serialQty)}
 							</span>
 							<Button
 								onClick={(e) => {
