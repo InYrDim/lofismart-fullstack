@@ -20,7 +20,6 @@ import { TransactionSummaryCards } from "@/components/transaction/TransactionSum
 import { TransactionListTable } from "@/components/transaction/TransactionListTable";
 import { TransactionDetailSidebar } from "@/components/transaction/TransactionDetailSidebar";
 import { Select } from "@/components/ui/select";
-import { storage } from "@/utils/storage";
 import { useAuth } from "@/hooks/useAuth";
 import { useDateRangeFilter } from "@/hooks/useDateRangeFilter";
 
@@ -46,10 +45,16 @@ function TransactionHistoryPage() {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 	const [searchTerm, setSearchTerm] = useState("");
-	const [marketId, setMarketId] = useState<string | null>(null);
 	// User Role Check using hook
-	const { user } = useAuth();
+	const { user, marketId: userMarketId } = useAuth();
 	const { isCashier, isAdmin, isManager, isSupervisor } = useRoleAndPermission();
+
+	// Sumber market id: pakai data user yang segar dari /me (user.market_id /
+	// user.market.id). JANGAN fallback ke localStorage (lofish_market_id) karena
+	// nilainya bisa stale/tersisa dari sesi lama — backend untuk role KSR/SPVR
+	// selalu memaksa req.user.market_id (segar dari DB), jadi mengirim market_id
+	// stale di query hanya menyesatkan dan menghasilkan 403 yang membingungkan.
+	const marketId = userMarketId || null;
 
 	const [isRestricted, setIsRestricted] = useState(false);
 
@@ -61,9 +66,6 @@ function TransactionHistoryPage() {
 	useEffect(() => {
 		const loadData = async () => {
 			try {
-				const idMarket = storage.getMarketId();
-				setMarketId(idMarket);
-
 				if (isCashier) {
 					setIsRestricted(true);
 					// Force date to today for Cashier
@@ -113,20 +115,17 @@ function TransactionHistoryPage() {
 
 	// Fetch transactions whenever relevant state changes
 	useEffect(() => {
-		// If Admin/Manager, no need to wait for marketId
-		if (
-			(marketId || isAdmin || isManager) &&
-			(viewMode === "list" || viewMode === "dashboard")
-		) {
-			// Actually we need transactions for dashboard too
+		// Always fetch so cashiers/supervisors with a market get their data.
+		// Previously the guard `(marketId || isAdmin || isManager)` blocked the
+		// fetch when localStorage (lofish_market_id) was empty, even for users
+		// who DO have a market_id in their fresh user data — leaving the list empty.
+		if (viewMode === "list" || viewMode === "dashboard") {
 			fetchTransactions();
 		}
-	}, [marketId, viewMode, fetchTransactions, isAdmin, isManager]);
+	}, [viewMode, fetchTransactions]);
 
 	const handleRefresh = () => {
-		if (marketId || isAdmin || isManager) {
-			fetchTransactions();
-		}
+		fetchTransactions();
 	}
 
 	<TransactionDetailSidebar

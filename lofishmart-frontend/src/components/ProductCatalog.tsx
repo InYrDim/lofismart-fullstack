@@ -37,6 +37,16 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({
 		hasActiveSecondaryFilters,
 	} = useProductFilter(products);
 
+	const sortedAvailableData = React.useMemo(() => {
+		return [...availableData].sort((a, b) => {
+			const aInCart = cart.some(item => item.id === a.id);
+			const bInCart = cart.some(item => item.id === b.id);
+			if (aInCart && !bInCart) return -1;
+			if (!aInCart && bInCart) return 1;
+			return 0;
+		});
+	}, [availableData, cart]);
+
 	function renderProductCard(product: Product) {
 		const qty = cart
 			.filter(
@@ -189,7 +199,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({
 			<div className="flex-1 overflow-y-auto px-6 pb-6 scrollbar-thin scrollbar-thumb-gray-300">
 				{/* Available Products Section */}
 				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4">
-					{availableData.map((product) => renderProductCard(product))}
+					{sortedAvailableData.map((product) => renderProductCard(product))}
 				</div>
 
 				{/* Out of Stock Section */}

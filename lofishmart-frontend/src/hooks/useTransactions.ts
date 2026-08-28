@@ -3,7 +3,6 @@ import { TransactionService } from "@/services/transaction.service";
 import type { Transaction } from "@/types";
 import { useAuth } from "./useAuth";
 import { useRoleAndPermission } from "./useRoleAndPermission";
-import { storage } from "@/utils/storage";
 
 interface UseTransactionsOptions {
 	startDate?: string;
@@ -18,13 +17,19 @@ export const useTransactions = ({
 	startDate,
 	endDate,
 }: UseTransactionsOptions) => {
-	const { user } = useAuth();
+	const { user, marketId: userMarketId } = useAuth();
 	const { isCashier, isAdmin, isManager } = useRoleAndPermission();
 
 	const [transactions, setTransactions] = useState<Transaction[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
-	const [marketId] = useState<string | null>(() => storage.getMarketId());
+
+	// Sumber market id: pakai data user yang segar dari /me (user.market_id /
+	// user.market.id). JANGAN fallback ke localStorage (lofish_market_id) karena
+	// nilainya bisa stale/tersisa dari sesi lama — backend untuk role KSR/SPVR
+	// selalu memaksa req.user.market_id (segar dari DB), jadi mengirim market_id
+	// stale di query hanya menyesatkan dan menghasilkan 403 yang membingungkan.
+	const marketId = userMarketId || null;
 
 	const fetchTransactions = useCallback(async () => {
 		setLoading(true);

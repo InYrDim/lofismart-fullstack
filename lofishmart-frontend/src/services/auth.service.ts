@@ -24,6 +24,10 @@ export const AuthService = {
 			const marketId = user.market?.id || user.market_id;
 			if (marketId) {
 				storage.setMarketId(String(marketId), true);
+			} else {
+				// Hapus market id lama yang tersisa dari sesi sebelumnya agar
+				// localStorage tidak menyimpan nilai stale/menyesatkan.
+				storage.removeMarketId();
 			}
 
 			return user;
@@ -65,6 +69,10 @@ export const AuthService = {
 			const marketId = user.market?.id || user.market_id;
 			if (marketId) {
 				storage.setMarketId(String(marketId), true);
+			} else {
+				// Hapus market id lama yang tersisa dari sesi sebelumnya agar
+				// localStorage tidak menyimpan nilai stale/menyesatkan.
+				storage.removeMarketId();
 			}
 
 			return user;

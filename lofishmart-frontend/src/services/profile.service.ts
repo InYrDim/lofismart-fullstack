@@ -46,7 +46,12 @@ export const ProfileService = {
 
 	assignSupervisor: async (outletId: string, userId: string): Promise<void> => {
 		try {
-			await api.post(`/outlet/${outletId}/supervisor`, { userId });
+			// Backend contract: POST /outlet/assign-supervisor with { user_id, outlet_id }
+			// (menyimpan user.market_id = outlet_id)
+			await api.post("/outlet/assign-supervisor", {
+				user_id: userId,
+				outlet_id: outletId,
+			});
 		} catch (error) {
 			console.error("Failed to assign supervisor:", error);
 			throw error;
