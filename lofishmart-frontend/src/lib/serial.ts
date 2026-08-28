@@ -184,19 +184,21 @@ export function buildSerialResponse(
 }
 
 /**
- * Check if scale data is valid and active (status === true).
+ * Check if scale data is valid and active (status === true, "true", 1, or "1").
  */
 export function isScaleDataActive(
   data: ScaleData | null,
 ): data is ScaleData {
-  return data !== null && data.status === true;
+  if (!data) return false;
+  const s = data.status;
+  return s === true || s === "true" || s === 1 || s === "1";
 }
 
 /**
- * Check if weight is near zero (reset signal from scale).
+ * Check if weight is near zero (reset signal from scale, threshold 10g).
  */
 export function isWeightResetSignal(data: ScaleData): boolean {
-  return data.weight < 0.01;
+  return data.weight < 10;
 }
 
 /**

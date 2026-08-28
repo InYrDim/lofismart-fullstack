@@ -37,10 +37,21 @@ export const ScaleListener: React.FC<ScaleListenerProps> = ({
 	}, [products, onAddScaleItem, send]);
 
 	useEffect(() => {
+		if (!scaleData) return;
+
+		// 1. Check for weight reset signal (near zero)
+		if (isWeightResetSignal(scaleData)) {
+			lastProcessedRef.current = null;
+			return; // Never add near-zero weight to the cart
+		}
+
+		// 2. Prevent adding negative or zero weight
+		if (scaleData.weight <= 0) {
+			return;
+		}
+
+		// 3. Only process if the scale data is marked as active/stable
 		if (!isScaleDataActive(scaleData)) {
-			if (scaleData && isWeightResetSignal(scaleData)) {
-				lastProcessedRef.current = null;
-			}
 			return;
 		}
 
@@ -69,7 +80,9 @@ export const ScaleListener: React.FC<ScaleListenerProps> = ({
 			return;
 		}
 
-		const roundedWeight = Math.round(scaleData.weight * 100) / 100;
+		// Convert from grams to kg
+		const weightInKg = scaleData.weight / 1000;
+		const roundedWeight = Math.round(weightInKg * 100) / 100;
 
 		logger.info("[ScaleListener] Adding to cart:", {
 			name: product.name,
