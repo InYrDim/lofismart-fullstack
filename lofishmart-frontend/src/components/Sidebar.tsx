@@ -133,7 +133,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
 		},
 
 		{
-      icon: Settings,
+			icon: Settings,
 			allowedRoles: [ROLES.ADMIN, ROLES.MANAGER, ROLES.SUPERVISOR, ROLES.USER],
 			label: "Pengaturan",
 			path: "/settings",
@@ -163,31 +163,29 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
 			{/* Mobile Overlay */}
 			{isOpen && (
 				<div
-					className="fixed inset-0 bg-black/20 z-30 lg:hidden"
+					className="fixed inset-0 bg-black/20 z-30 md:hidden"
 					onClick={onToggle}
 				/>
 			)}
 
 			{/* Sidebar Container */}
 			<div
-				className={`fixed lg:static inset-y-0 left-0 z-40 flex flex-col bg-white border-r border-gray-100 transition-all duration-300 ease-in-out ${
-					isOpen
-						? "w-64 translate-x-0"
-						: "w-0 -translate-x-full lg:w-0 lg:translate-x-0 lg:overflow-hidden"
-				}`}
+				className={`fixed md:static inset-y-0 left-0 z-40 flex flex-col bg-white border-r border-gray-100 transition-all duration-300 ease-in-out ${isOpen
+					? "w-64 translate-x-0"
+					: "w-0 -translate-x-full overflow-hidden md:w-0 md:translate-x-0 md:overflow-hidden"
+					}`}
 			>
 				{/* Header */}
 				<div className="h-16 flex items-center justify-between px-6 border-b border-gray-100 shrink-0">
 					<h1
-						className={`font-bold text-xl text-gray-900 whitespace-nowrap overflow-hidden transition-opacity duration-300 ${
-							isOpen ? "opacity-100" : "opacity-0"
-						}`}
+						className={`font-bold text-xl text-gray-900 whitespace-nowrap overflow-hidden transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"
+							}`}
 					>
 						Menu
 					</h1>
 					<button
 						onClick={onToggle}
-						className="lg:hidden p-2 -mr-2 text-gray-500 hover:bg-gray-100 rounded-lg"
+						className="md:hidden p-2 -mr-2 text-gray-500 hover:bg-gray-100 rounded-lg"
 					>
 						<X className="w-5 h-5" />
 					</button>
@@ -216,30 +214,26 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
 									className={`
                     w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors
                     whitespace-nowrap overflow-hidden
-                    ${
-											isActive
-												? "bg-brand-primary/10 text-brand-primary"
-												: "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                    ${isActive
+											? "bg-brand-primary/10 text-brand-primary"
+											: "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
 										}
                   `}
 								>
 									<item.icon
-										className={`w-5 h-5 shrink-0 ${
-											isActive ? "text-brand-primary" : "text-gray-400"
-										}`}
+										className={`w-5 h-5 shrink-0 ${isActive ? "text-brand-primary" : "text-gray-400"
+											}`}
 									/>
 									<span
-										className={`flex-1 text-left transition-opacity duration-300 ${
-											isOpen ? "opacity-100" : "opacity-0"
-										}`}
+										className={`flex-1 text-left transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"
+											}`}
 									>
 										{item.label}
 									</span>
 									{hasChildren && isOpen && (
 										<ChevronRight
-											className={`w-4 h-4 shrink-0 transition-transform duration-200 ${
-												expanded ? "rotate-90" : ""
-											} ${isActive ? "text-brand-primary" : "text-gray-400"}`}
+											className={`w-4 h-4 shrink-0 transition-transform duration-200 ${expanded ? "rotate-90" : ""
+												} ${isActive ? "text-brand-primary" : "text-gray-400"}`}
 										/>
 									)}
 								</button>
@@ -253,11 +247,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
 												<button
 													key={`${child.path}`}
 													onClick={() => navigate({ to: child.path })}
-													className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors whitespace-nowrap overflow-hidden ${
-														childActive
-															? "text-brand-primary font-semibold bg-brand-primary/5"
-															: "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
-													}`}
+													className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors whitespace-nowrap overflow-hidden ${childActive
+														? "text-brand-primary font-semibold bg-brand-primary/5"
+														: "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
+														}`}
 												>
 													<ShoppingCart
 														className={`w-4 h-4 shrink-0 ${childActive ? "text-brand-primary" : "text-gray-400"}`}
@@ -292,9 +285,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
 							)}
 						</div>
 						<div
-							className={`flex flex-col overflow-hidden transition-opacity duration-300 ${
-								isOpen ? "opacity-100" : "opacity-0 w-0"
-							}`}
+							className={`flex flex-col overflow-hidden transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0 w-0"
+								}`}
 						>
 							{user ? (
 								<>

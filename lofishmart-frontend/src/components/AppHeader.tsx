@@ -19,7 +19,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ title, description, childr
 				<Button
 					variant="ghost"
 					size="icon-sm"
-					className="-ml-2 text-slate-500"
+					className="-ml-2 text-slate-500 hidden md:block"
 					onClick={() => setIsSidebarOpen(!isSidebarOpen)}
 				>
 					<Menu className="w-5 h-5" />

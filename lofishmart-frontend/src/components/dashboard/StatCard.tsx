@@ -30,7 +30,7 @@ export function StatCard({
 					<p className="text-emerald-100 text-sm font-medium uppercase tracking-wider">
 						{label}
 					</p>
-					<p className="text-3xl sm:text-4xl font-bold mt-3 tracking-tight">
+					<p className="text-3xl sm:text-4xl font-bold mt-3 tracking-tight break-words">
 						{value}
 					</p>
 					{trend && (
@@ -63,7 +63,7 @@ export function StatCard({
 						<Icon className="w-4 h-4" />
 					</div>
 				</div>
-				<p className={`text-2xl font-bold ${hasValue ? `text-red-600` : `text-gray-900`} `}>
+				<p className={`text-2xl font-bold break-words ${hasValue ? `text-red-600` : `text-gray-900`} `}>
 					{value}
 				</p>
 				{footer && (
@@ -86,7 +86,7 @@ export function StatCard({
 					<Icon className="w-4 h-4" />
 				</div>
 			</div>
-			<p className="text-2xl font-bold text-gray-900">{value}</p>
+			<p className="text-2xl font-bold text-gray-900 break-words">{value}</p>
 			{trend && (
 				<div className="flex items-center gap-1.5 mt-2">
 					<Icon className={`w-3.5 h-3.5 ${trend.isPositive ? "text-emerald-500" : "text-red-500"}`} />

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Outlet } from "@tanstack/react-router";
 import Sidebar from "@/components/Sidebar";
+import { BottomNav } from "@/components/BottomNav";
 import { MainLayoutContext } from "./MainLayoutContext";
 import { UnassignedOutletModal } from "@/components/ui/modals/UnassignedOutletModal";
 import { useAuth } from "@/hooks/useAuth";
@@ -8,7 +9,7 @@ import { useRoleAndPermission } from "@/hooks/useRoleAndPermission";
 import { AuthService } from "@/services/auth.service";
 
 export const MainLayout: React.FC = () => {
-	const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 1024);
+	const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 768);
 	const [isRefreshing, setIsRefreshing] = useState(false);
 	const { marketId, refreshUser } = useAuth();
 	const { isCashier, isSupervisor } = useRoleAndPermission();
@@ -36,13 +37,14 @@ export const MainLayout: React.FC = () => {
 
 	return (
 		<MainLayoutContext.Provider value={{ isSidebarOpen, setIsSidebarOpen }}>
-			<div className="flex h-screen bg-gray-100 font-sans overflow-hidden text-gray-800">
+			<div className="flex h-screen bg-gray-100 font-sans overflow-hidden text-gray-800 pb-16 md:pb-0">
 				<Sidebar
 					isOpen={isSidebarOpen}
 					onToggle={() => setIsSidebarOpen(!isSidebarOpen)}
 				/>
 				<Outlet />
 			</div>
+			<BottomNav />
 			<UnassignedOutletModal
 				isOpen={lockForUnassignedRole}
 				onClose={handleRetry}

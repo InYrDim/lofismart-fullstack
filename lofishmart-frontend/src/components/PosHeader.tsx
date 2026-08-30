@@ -36,7 +36,7 @@ export default function PosHeader({
 				<div className="flex items-center gap-4">
 					<button
 						onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-						className="p-2 -ml-2 text-gray-500 hover:bg-white hover:shadow-sm rounded-lg transition-all"
+						className="p-2 -ml-2 text-gray-500 hover:bg-white hover:shadow-sm rounded-lg transition-all hidden md:block"
 					>
 						<Menu className="w-6 h-6" />
 					</button>
@@ -55,11 +55,10 @@ export default function PosHeader({
 				<div className="flex gap-2 opacity-100 hover:opacity-100 transition-opacity">
 					{/* Serial Status Badge */}
 					<div
-						className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold border transition-colors ${
-							isConnected
-								? "bg-green-100 text-green-700 border-green-200"
-								: "bg-red-50 text-red-600 border-red-100"
-						}`}
+						className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold border transition-colors ${isConnected
+							? "bg-green-100 text-green-700 border-green-200"
+							: "bg-red-50 text-red-600 border-red-100"
+							}`}
 						title={
 							isConnected
 								? "Timbangan Serial Terhubung"
@@ -67,9 +66,8 @@ export default function PosHeader({
 						}
 					>
 						<div
-							className={`w-2 h-2 rounded-full ${
-								isConnected ? "bg-green-500 animate-pulse" : "bg-red-400"
-							}`}
+							className={`w-2 h-2 rounded-full ${isConnected ? "bg-green-500 animate-pulse" : "bg-red-400"
+								}`}
 						/>
 						<span className="hidden md:inline">
 							{isConnected ? "Terhubung" : "Tidak Ada Perangkat"}
@@ -94,11 +92,10 @@ export default function PosHeader({
 					</button>
 					<button
 						onClick={() => setIsCartOpen(!isCartOpen)}
-						className={`relative p-2 transition-all rounded-lg shadow-sm ${
-							isCartOpen
-								? "bg-brand-primary/10 text-brand-primary"
-								: "hover:bg-white text-gray-500"
-						}`}
+						className={`relative p-2 transition-all rounded-lg shadow-sm ${isCartOpen
+							? "bg-brand-primary/10 text-brand-primary"
+							: "hover:bg-white text-gray-500"
+							}`}
 						title={isCartOpen ? "Sembunyikan Keranjang" : "Tampilkan Keranjang"}
 					>
 						<ShoppingCart className="w-4 h-4" />

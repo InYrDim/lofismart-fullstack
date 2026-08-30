@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^cd c:/code/lofismart-fullstack/lofishmart-frontend && node -e \"console\\.log\\(require\\('\\./package\\.json'\\)\\.devDependencies\\['vite-plugin-pwa'\\]\\|\\|'NOT INSTALLED'\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

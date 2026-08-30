@@ -132,7 +132,7 @@ function ReportItemPage() {
 
 	return (
 		<div className="flex flex-col h-full bg-slate-50/50 w-full overflow-hidden">
-			<AppHeader 
+			<AppHeader
 				title="Laporan per Item"
 				description="Analisis rincian penjualan produk secara mendetail"
 			>
@@ -161,12 +161,12 @@ function ReportItemPage() {
 			<div className="flex-1 overflow-auto">
 				{/* Filter & Summary Bar */}
 				<div className="p-6 bg-white border-b space-y-6">
-					<div className="flex flex-wrap items-center gap-3">
-						<div className="flex items-center gap-2 bg-slate-100 p-1 rounded-lg">
+					<div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
+						<div className="flex items-center gap-2 bg-slate-100 p-1 rounded-lg overflow-x-auto">
 							<Button
 								variant={filterType === "today" ? "secondary" : "ghost"}
 								size="sm"
-								className="h-8 shadow-none"
+								className="h-8 shadow-none whitespace-nowrap"
 								onClick={() => handleFilterChange("today")}
 							>
 								Hari Ini
@@ -174,7 +174,7 @@ function ReportItemPage() {
 							<Button
 								variant={filterType === "week" ? "secondary" : "ghost"}
 								size="sm"
-								className="h-8 shadow-none"
+								className="h-8 shadow-none whitespace-nowrap"
 								onClick={() => handleFilterChange("week")}
 							>
 								Minggu Ini
@@ -182,7 +182,7 @@ function ReportItemPage() {
 							<Button
 								variant={filterType === "month" ? "secondary" : "ghost"}
 								size="sm"
-								className="h-8 shadow-none"
+								className="h-8 shadow-none whitespace-nowrap"
 								onClick={() => handleFilterChange("month")}
 							>
 								Bulan Ini
@@ -191,18 +191,18 @@ function ReportItemPage() {
 
 						<div className="h-8 w-[1px] bg-slate-200 mx-1 hidden md:block" />
 
-						<div className="relative flex-1 min-w-[240px]">
+						<div className="relative flex-1 min-w-0 sm:min-w-[240px]">
 							<Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
 							<Input
 								placeholder="Cari produk atau ID transaksi..."
-								className="pl-9 h-10 border-slate-200 bg-white"
+								className="pl-9 h-10 border-slate-200 bg-white w-full"
 								value={searchQuery}
 								onChange={(e) => setSearchQuery(e.target.value)}
 							/>
 						</div>
 
 						<Select value={selectedMarket} onChange={(val) => setSelectedMarket(val as string)}>
-							<SelectTrigger className="w-[180px] h-10 border-slate-200 bg-white">
+							<SelectTrigger className="w-full sm:w-[180px] h-10 border-slate-200 bg-white">
 								<SelectValue placeholder="Semua Outlet" />
 							</SelectTrigger>
 							<SelectContent>
@@ -278,10 +278,10 @@ function ReportItemPage() {
 					</div>
 				</div>
 
-				<div className="p-6">
+				<div className="p-4 sm:p-6">
 					<Card className="border-none shadow-sm">
 						<CardContent className="p-0">
-							<Table>
+							<Table className="min-w-[760px]">
 								<TableHeader className="bg-slate-50/50">
 									<TableRow className="hover:bg-transparent border-slate-100">
 										<TableHead className="w-[120px] font-semibold text-slate-700">Tanggal</TableHead>
