@@ -144,7 +144,6 @@ export const TransactionService = {
 			if (params.toString()) {
 				url += `?${params.toString()}`;
 			}
-			console.log("Fetching transactions URL:", url);
 
 			const response = await api.get<TransactionListResponse>(url);
 			const transactions = response.data || [];

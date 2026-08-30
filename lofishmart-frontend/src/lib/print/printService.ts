@@ -16,18 +16,35 @@ export const PrintService = {
 		PrintService._printFullPage(html, title);
 	},
 
-	/**
-	 * Print a thermal receipt (58mm) for POS checkout.
-	 */
 	printReceipt: (invoice: SalesInvoice) => {
 		const html = generateReceiptHtml(invoice);
-		const win = window.open("", "_blank", "width=700,height=800");
-		if (!win) {
-			toast.error("Please allow popups for this website");
-			return;
+		
+		const iframe = document.createElement("iframe");
+		iframe.style.position = "absolute";
+		iframe.style.width = "0";
+		iframe.style.height = "0";
+		iframe.style.border = "none";
+		document.body.appendChild(iframe);
+
+		const doc = iframe.contentWindow?.document;
+		if (doc) {
+			doc.open();
+			doc.write(html);
+			doc.close();
+
+			iframe.contentWindow?.addEventListener("load", () => {
+				setTimeout(() => {
+					iframe.contentWindow?.focus();
+					iframe.contentWindow?.print();
+					setTimeout(() => {
+						document.body.removeChild(iframe);
+					}, 1000);
+				}, 300);
+			});
+		} else {
+			toast.error("Gagal membuat frame cetak.");
+			document.body.removeChild(iframe);
 		}
-		win.document.write(html);
-		win.document.close();
 	},
 
 	/**

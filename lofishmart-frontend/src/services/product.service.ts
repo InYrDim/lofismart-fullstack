@@ -38,21 +38,21 @@ export const ProductService = {
 			const services = serviceRes.data.map(mapToService);
 			const allProducts = [...products, ...services];
 
-		if (targetMarketId) {
-			try {
-				const stockRes = await api.get<{ data: StockResponse[] }>(
-					`/product/stock/list?market_id=${encodeURIComponent(targetMarketId)}`,
-				);
-				if (stockRes.data && Array.isArray(stockRes.data)) {
-					const merged = mergeProductsWithStock(allProducts, stockRes.data);
-					return deduplicatePrices(merged);
+			if (targetMarketId) {
+				try {
+					const stockRes = await api.get<{ data: StockResponse[] }>(
+						`/product/stock/list?market_id=${encodeURIComponent(targetMarketId)}`,
+					);
+					if (stockRes.data && Array.isArray(stockRes.data)) {
+						const merged = mergeProductsWithStock(allProducts, stockRes.data);
+						return deduplicatePrices(merged);
+					}
+				} catch (stockError) {
+					console.warn("Failed to fetch stock data:", stockError);
 				}
-			} catch (stockError) {
-				console.warn("Failed to fetch stock data:", stockError);
 			}
-		}
 
-		return deduplicatePrices(allProducts);
+			return deduplicatePrices(allProducts);
 		} catch (error) {
 			console.error("Failed to fetch products/services:", error);
 			throw error;
@@ -65,9 +65,6 @@ export const ProductService = {
 				api.get<{ data: ApiProductDetail[] }>("/product/product/list"),
 				api.get<{ data: ServiceResponse[] }>("/product/service/list"),
 			]);
-
-			console.log(productRes);
-			console.log(serviceRes);
 
 			const products = productRes.data.map(mapToBaseProduct);
 			const services = serviceRes.data.map(mapToService);

@@ -41,8 +41,8 @@ export function generateReceiptHtml(invoice: SalesInvoice): string {
   <title>Struk - ${invoice.invoiceNumber}</title>
   <style>
     @page {
-      width: 58mm;
-      margin: 0;
+      size: 58mm auto;
+      margin: 0mm;
     }
     * {
       margin: 0;
@@ -212,11 +212,6 @@ export function generateReceiptHtml(invoice: SalesInvoice): string {
     <p>dikembalikan atau ditukar</p>
     <p style="margin-top: 2px;">${formatInvoiceDateTime(invoice.createdAt)}</p>
   </div>
-  <script>
-    window.onload = () => {
-      setTimeout(() => { window.print(); window.close(); }, 300);
-    };
-  </script>
 </body>
 </html>`;
 }
